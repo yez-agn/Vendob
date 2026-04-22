@@ -1,74 +1,203 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Mon Premier Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendob</title><style>
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#222}
+header{background:#0a7f3f;color:#fff;padding:15px;text-align:center}
+header img{width:60px;margin-bottom:5px}
+header h1{margin:0;font-size:20px}
+header p{margin:4px 0 0;font-size:13px;opacity:.9}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e90ff, #00c9a7);
-      color: white;
-      text-align: center;
-    }
+.container{padding:14px}
 
-    header {
-      padding: 20px;
-      font-size: 24px;
-      font-weight: bold;
-    }
+.categories{display:flex;gap:10px;overflow-x:auto;margin-bottom:15px}
+.categories button{border:none;padding:8px 12px;border-radius:20px;background:#e6e6e6;cursor:pointer;white-space:nowrap}
+.categories button.active{background:#0a7f3f;color:#fff}
 
-    .container {
-      margin-top: 50px;
-    }
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 8px rgba(0,0,0,.08)}
+.card img{width:100%;height:150px;object-fit:cover}
+.card-content{padding:10px}
+.card h3{margin:0;font-size:15px}
+.price{color:#0a7f3f;font-weight:bold;font-size:13px;margin-top:5px}
+.info{font-size:12px;color:#666;margin-top:4px}
 
-    button {
-      padding: 15px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      background: white;
-      color: #1e90ff;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.actions{display:flex;gap:8px;margin-top:10px}
+.actions button{flex:1;border:none;border-radius:8px;padding:8px;font-size:12px;cursor:pointer}
+.btn-more{background:#eee}
+.btn-buy{background:#0a7f3f;color:#fff}
 
-    button:hover {
-      background: #ddd;
-    }
+.page{display:none}
+.page.active{display:block}
 
-    #message {
-      margin-top: 20px;
-      font-size: 18px;
-    }
-  </style>
-</head>
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px}
 
-<body>
+.details-info{margin:10px 0;font-size:13px;color:#444}
 
-  <header>🚀 Mon site mobile</header>
+.bottom-btn{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#0a7f3f;
+color:#fff;
+text-align:center;
+padding:15px;
+font-weight:bold;
+text-decoration:none;
+animation:pulse 1.5s infinite;
+}
 
-  <div class="container">
-    <p>Clique sur le bouton 👇</p>
-    <button onclick="changerMessage()">Clique ici</button>
-    <p id="message"></p>
-  </div>
+@keyframes pulse{
+0%{opacity:1}
+50%{opacity:.7}
+100%{opacity:1}
+}
 
-  <script>
-    function changerMessage() {
-      const messages = [
-        "🔥 Tu progresses vraiment !",
-        "💡 Continue comme ça !",
-        "🚀 Tu peux créer des trucs lourds !",
-        "😎 Le code devient facile hein ?"
-      ];
+.back{border:none;background:#ddd;padding:8px 10px;border-radius:8px;margin-bottom:10px;cursor:pointer}
+</style></head><body><header>
+<img src="logo.png" alt="Vendob logo">
+<h1>Vendob</h1>
+<p>Achat & Vente - Bénin | Nigeria | Togo</p>
+</header><div class="container page active" id="homePage"><div class="categories">
+<button class="active" onclick="filter('all')">Tous</button>
+<button onclick="filter('telephone')">Téléphones</button>
+<button onclick="filter('vetement')">Vêtements</button>
+<button onclick="filter('sac')">Sacs</button>
+<button onclick="filter('parfum')">Parfums</button>
+<button onclick="filter('sport')">Sport</button>
+</div><div class="products" id="products"></div>
+</div><div class="container page" id="detailsPage">
+<button class="back" onclick="back()">⬅ Retour</button>
+<h2 id="title"></h2>
+<div class="details-info" id="info"></div>
+<div class="gallery" id="gallery"></div>
+</div><script>
 
-      let random = Math.floor(Math.random() * messages.length);
-      document.getElementById("message").textContent = messages[random];
-    }
-  </script>
+const data=[
+{
+name:"iPhone (11 à 15)",
+category:"telephone",
+priceFrom:"150 000 FCFA",
+location:"Cotonou",
+country:"🇧🇯",
+seller:"Apple Store",
+delivery:true,
+whatsapp:"22900000000",
+images:["https://via.placeholder.com/300","https://via.placeholder.com/301","https://via.placeholder.com/302"]
+},
+{
+name:"T-shirts",
+category:"vetement",
+priceFrom:"3 000 FCFA",
+location:"Porto-Novo",
+country:"🇧🇯",
+seller:"Fashion Shop",
+delivery:false,
+whatsapp:"22900000000",
+images:["https://via.placeholder.com/303","https://via.placeholder.com/304"]
+},
+{
+name:"Ballon de foot",
+category:"sport",
+priceFrom:"3 000 FCFA",
+location:"Porto-Novo",
+country:"🇧🇯",
+seller:"Sport Shop",
+delivery:true,
+whatsapp:"22900000000",
+images:["https://via.placeholder.com/305","https://via.placeholder.com/306"]
+}
+];
 
-</body>
-</html>
+let currentItem=null;
+
+function display(list){
+const container=document.getElementById('products');
+container.innerHTML="";
+
+list.forEach((p,i)=>{
+container.innerHTML+=`
+<div class="card">
+<img src="${p.images[0]}">
+<div class="card-content">
+<h3>${p.name}</h3>
+<div class="price">À partir de ${p.priceFrom}</div>
+<div class="info">📍 ${p.location} ${p.country}</div>
+<div class="info">🛍️ ${p.seller}</div>
+
+<div class="actions">
+<button class="btn-more" onclick="openDetails(${i})">Voir plus de produits</button>
+<button class="btn-buy" onclick="openDetails(${i})">Acheter</button>
+</div>
+</div>
+</div>
+`;
+});
+}
+
+function filter(cat){
+document.querySelectorAll('.categories button').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+
+if(cat==='all') display(data);
+else display(data.filter(p=>p.category===cat));
+}
+
+function openDetails(i){
+currentItem=data[i];
+
+document.getElementById('homePage').classList.remove('active');
+document.getElementById('detailsPage').classList.add('active');
+
+document.getElementById('title').innerText=currentItem.name;
+
+let delivery=currentItem.delivery
+?"🚚 Livraison gratuite (possible)"
+:"❌ Livraison non disponible";
+
+let info=`
+Prix: ${currentItem.priceFrom}<br>
+📍 ${currentItem.location} ${currentItem.country}<br>
+🛍️ ${currentItem.seller}<br>
+${delivery}
+`;
+
+document.getElementById('info').innerHTML=info;
+
+let gal="";
+currentItem.images.forEach(img=>{
+gal+=`<img src="${img}">`;
+});
+
+document.getElementById('gallery').innerHTML=gal;
+
+const msg=encodeURIComponent("Bonjour, je veux acheter "+currentItem.name);
+const link=`https://wa.me/${currentItem.whatsapp}?text=${msg}`;
+
+let btn=document.createElement('a');
+btn.href=link;
+btn.target="_blank";
+btn.className="bottom-btn";
+btn.innerText="Acheter maintenant";
+
+let old=document.querySelector('.bottom-btn');
+if(old) old.remove();
+
+document.body.appendChild(btn);
+}
+
+function back(){
+document.getElementById('homePage').classList.add('active');
+document.getElementById('detailsPage').classList.remove('active');
+
+let old=document.querySelector('.bottom-btn');
+if(old) old.remove();
+}
+
+display(data);
+
+</script></body>
+  </html>
