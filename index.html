@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Premier Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e90ff, #00c9a7);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: #1e90ff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>🚀 Mon site mobile</header>
+
+  <div class="container">
+    <p>Clique sur le bouton 👇</p>
+    <button onclick="changerMessage()">Clique ici</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function changerMessage() {
+      const messages = [
+        "🔥 Tu progresses vraiment !",
+        "💡 Continue comme ça !",
+        "🚀 Tu peux créer des trucs lourds !",
+        "😎 Le code devient facile hein ?"
+      ];
+
+      let random = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").textContent = messages[random];
+    }
+  </script>
+
+</body>
+</html>
