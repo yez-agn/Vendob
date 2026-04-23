@@ -325,4 +325,440 @@ footer{background:#080808;padding:52px 0 24px}
     <p class="sub rv">On a pensé à tout pour vous faciliter la vie</p>
     <div class="why-grid">
       <div class="wcard rv"><div class="wico">✅</div><h4>Fournisseurs vérifiés</h4><p>Chaque vendeur est contacté et sélectionné personnellement avant d'apparaître sur VENDOB.</p></div>
-      <div class="wcard rv"><div class="wico">💬</div><h4>Commande via WhatsApp</h4><p>Un clic vous connecte au vendeur directement. Aucu
+      <div class="wcard rv"><div class="wico">💬</div><h4>Commande via WhatsApp</h4><p>Un clic vous connecte au vendeur directement. Aucun compte requis, c'est simple et rapide.</p></div>
+      <div class="wcard rv"><div class="wico">🚚</div><h4>Livraison multi-pays</h4><p>Bénin, Togo, Nigeria. Livraison locale et inter-pays en cours de développement.</p></div>
+      <div class="wcard rv"><div class="wico">🔒</div><h4>Paiement à la livraison</h4><p>Vous vérifiez le produit avant de payer. Zéro risque pour l'acheteur.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section class="reviews" id="reviews">
+  <div class="W">
+    <h2 class="rv">Ce que disent nos clients</h2>
+    <p class="sub rv">Des familles entières nous font déjà confiance</p>
+    <div class="rev-grid">
+      <div class="rcard rv"><div class="rstars">★★★★★</div><p class="rtext">« J'ai commandé un téléphone, il est arrivé le lendemain exactement comme sur la photo. Je recommande vraiment VENDOB ! »</p><div class="rauthor"><div class="rav">AM</div><div><div class="rname">Aminata M.</div><div class="rcity">🇧🇯 Cotonou, Bénin</div></div></div></div>
+      <div class="rcard rv"><div class="rstars">★★★★★</div><p class="rtext">« Sérieux et rapide. J'ai eu un souci et ils l'ont réglé en moins d'une heure sur WhatsApp. Du très bon travail. »</p><div class="rauthor"><div class="rav">KD</div><div><div class="rname">Kofi D.</div><div class="rcity">🇹🇬 Lomé, Togo</div></div></div></div>
+      <div class="rcard rv"><div class="rstars">★★★★☆</div><p class="rtext">« Prix corrects, produits de qualité. Je commande régulièrement pour toute ma famille. Très bonne boutique. »</p><div class="rauthor"><div class="rav">FS</div><div><div class="rname">Fatou S.</div><div class="rcity">🇧🇯 Parakou, Bénin</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-s" id="contact">
+  <div class="W">
+    <h2 class="rv">Prêt à commander ?</h2>
+    <p class="rv">Contactez-nous sur WhatsApp, on répond en quelques minutes.</p>
+    <a href="https://wa.me/22900000000?text=Bonjour%20VENDOB%20!" class="btn-white rv" target="_blank">💬 Nous écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="W">
+    <div class="fgrid">
+      <div><div class="flogo">VEND<span>OB</span></div><p class="fdesc">Boutique en ligne de confiance. Produits sélectionnés auprès de fournisseurs vérifiés au Bénin, Togo et Nigeria.</p></div>
+      <div class="fcol"><h5>Navigation</h5><ul><li><a href="#">Accueil</a></li><li><a href="#shop">Produits</a></li><li><a href="#why">Comment ça marche</a></li><li><a href="#reviews">Avis clients</a></li></ul></div>
+      <div class="fcol"><h5>Contact</h5><ul><li><a href="#">📍 Cotonou, Bénin</a></li><li><a href="https://wa.me/22900000000" target="_blank">💬 WhatsApp</a></li><li><a href="#">📧 contact@vendob.com</a></li><li><a href="#">🇧🇯 🇹🇬 🇳🇬</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <span>© 2025 VENDOB — Tous droits réservés</span>
+      <div class="socs"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a><a class="soc" href="#">tk</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/22900000000?text=Bonjour%20VENDOB%20!" class="wa-float" target="_blank">💬</a>
+
+<!-- MODAL -->
+<div class="ov" id="ov">
+  <div class="mbox">
+    <button class="mx" id="mx">✕</button>
+    <div class="mgal">
+      <div class="mgal-main" id="mgMain"></div>
+      <div class="mgal-thumbs" id="mgThumbs"></div>
+    </div>
+    <div class="minfo">
+      <div class="mrange" id="mRange"></div>
+      <div class="mname" id="mName"></div>
+      <div><div class="mprice" id="mPrice"></div><div class="mprice-lbl" id="mPriceLbl"></div></div>
+      <p class="mdesc" id="mDesc"></p>
+      <div class="mhr"></div>
+      <div class="mmeta"><div class="mrow" id="mCountry"></div><div class="mrow" id="mStock"></div></div>
+      <div class="mhr"></div>
+      <div class="mactions">
+        <a href="#" class="bwa" id="mWa" target="_blank">💬 Commander sur WhatsApp</a>
+        <p class="mnote">Message pré-rempli. Réponse garantie sous 30 min.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+//  ✅ CHANGE TON NUMÉRO ICI
+// ══════════════════════════════════════════════
+const WA = "22900000000";
+
+// ══════════════════════════════════════════════
+//  PAYS
+// ══════════════════════════════════════════════
+const PAYS = {
+  benin:{flag:"🇧🇯",label:"Bénin"},nigeria:{flag:"🇳🇬",label:"Nigeria"},
+  togo:{flag:"🇹🇬",label:"Togo"},france:{flag:"🇫🇷",label:"France"},
+  chine:{flag:"🇨🇳",label:"Chine"},ghana:{flag:"🇬🇭",label:"Ghana"},
+};
+
+// ══════════════════════════════════════════════
+//  CATÉGORIES
+// ══════════════════════════════════════════════
+const CATS = [
+  {id:"tous",label:"Tout voir",ico:"🛒"},
+  {id:"electronique",label:"Électronique",ico:"📱"},
+  {id:"mode",label:"Mode & Sacs",ico:"👗"},
+  {id:"sport",label:"Sport",ico:"⚽"},
+  {id:"maison",label:"Maison",ico:"🏠"},
+  {id:"beaute",label:"Beauté",ico:"💄"},
+  {id:"enfants",label:"Enfants",ico:"🧸"},
+  {id:"alimentation",label:"Alimentation",ico:"🍎"},
+];
+
+const ICO = {electronique:"📱",mode:"👗",sport:"⚽",maison:"🏠",beaute:"💄",enfants:"🧸",alimentation:"🍎"};
+
+// ══════════════════════════════════════════════
+//  ✅ TES PRODUITS — AJOUTE ICI
+//  Copie un bloc {}, change les valeurs, c'est tout.
+// ══════════════════════════════════════════════
+const PRODUITS = [
+  // ─ iPHONE
+  {id:1,name:"iPhone 11 — 64Go / 128Go",cat:"electronique",range:"iPhone",
+   prix:80000,prixMax:110000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["pom_iphone11_1.jpg","pom_iphone11_2.jpg"],
+   desc:"iPhone 11 reconditionné excellent état. Batterie 85%+. Débloqué tout opérateur.",
+   badge:"Populaire",stock:true},
+
+  {id:2,name:"iPhone 12 — 64Go / 128Go",cat:"electronique",range:"iPhone",
+   prix:110000,prixMax:145000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["pom_iphone12_1.jpg"],
+   desc:"iPhone 12 reconditionné, excellent état. Compatible 5G.",
+   badge:null,stock:true},
+
+  {id:3,name:"iPhone 13 — 128Go / 256Go",cat:"electronique",range:"iPhone",
+   prix:145000,prixMax:185000,pays:"nigeria",ville:"Lagos",wa:"23400000000",
+   imgs:["pom_iphone13_1.jpg","pom_iphone13_2.jpg"],
+   desc:"iPhone 13 double SIM, caméra 12MP, autonomie exceptionnelle.",
+   badge:"Promo",stock:true},
+
+  {id:4,name:"iPhone 14 — 128Go / 256Go",cat:"electronique",range:"iPhone",
+   prix:185000,prixMax:235000,pays:"togo",ville:"Lomé",wa:"22800000000",
+   imgs:["pom_iphone14_1.jpg"],
+   desc:"iPhone 14 neuf sous blister. Garantie 6 mois.",
+   badge:"Nouveau",stock:true},
+
+  {id:5,name:"iPhone 15 — 128Go / 256Go / 512Go",cat:"electronique",range:"iPhone",
+   prix:235000,prixMax:320000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["pom_iphone15_1.jpg","pom_iphone15_2.jpg"],
+   desc:"iPhone 15 USB-C. Puce A16 Bionic. Neuf scellé.",
+   badge:"Nouveau",stock:true},
+
+  {id:6,name:"iPhone 16 — 128Go / 256Go / 512Go",cat:"electronique",range:"iPhone",
+   prix:290000,prixMax:390000,pays:"nigeria",ville:"Abuja",wa:"23400000001",
+   imgs:["pom_iphone16_1.jpg"],
+   desc:"iPhone 16 dernière génération. Apple Intelligence. Neuf scellé.",
+   badge:"Stock limité",stock:true},
+
+  // ─ SAMSUNG GALAXY S
+  {id:10,name:"Samsung Galaxy S22 — 128Go / 256Go",cat:"electronique",range:"Samsung Galaxy S",
+   prix:120000,prixMax:160000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["pom_s22_1.jpg"],
+   desc:"Galaxy S22 reconditionné excellent état. Écran AMOLED 6.1\".",
+   badge:null,stock:true},
+
+  {id:11,name:"Samsung Galaxy S23 — 128Go / 256Go",cat:"electronique",range:"Samsung Galaxy S",
+   prix:160000,prixMax:210000,pays:"togo",ville:"Lomé",wa:"22800000000",
+   imgs:["pom_s23_1.jpg","pom_s23_2.jpg"],
+   desc:"Galaxy S23, Snapdragon 8 Gen 2. Caméra 50MP. Neuf.",
+   badge:"Populaire",stock:true},
+
+  {id:12,name:"Samsung Galaxy S24 — 128Go / 256Go",cat:"electronique",range:"Samsung Galaxy S",
+   prix:200000,prixMax:270000,pays:"nigeria",ville:"Lagos",wa:"23400000000",
+   imgs:["pom_s24_1.jpg"],
+   desc:"Galaxy S24 avec Galaxy AI. Dynamic AMOLED 6.2\".",
+   badge:"Nouveau",stock:true},
+
+  // ─ SAMSUNG GALAXY A
+  {id:20,name:"Samsung Galaxy A05 / A05s",cat:"electronique",range:"Samsung Galaxy A",
+   prix:35000,prixMax:50000,pays:"benin",ville:"Porto-Novo",wa:"22900000002",
+   imgs:["pom_a05_1.jpg"],
+   desc:"Galaxy A05 entrée de gamme. Batterie 5000mAh. Dual SIM.",
+   badge:null,stock:true},
+
+  {id:21,name:"Samsung Galaxy A14 / A15 / A16",cat:"electronique",range:"Samsung Galaxy A",
+   prix:50000,prixMax:80000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["pom_a14_1.jpg","pom_a15_1.jpg"],
+   desc:"Milieu de gamme. Écran 90Hz, triple caméra, charge rapide.",
+   badge:"Populaire",stock:true},
+
+  {id:22,name:"Samsung Galaxy A25 / A35 / A55",cat:"electronique",range:"Samsung Galaxy A",
+   prix:80000,prixMax:140000,pays:"togo",ville:"Lomé",wa:"22800000000",
+   imgs:["pom_a35_1.jpg"],
+   desc:"Haut de gamme Galaxy A. Caméra 50MP OIS, Super AMOLED, charge 45W.",
+   badge:null,stock:true},
+
+  // ─ MODE
+  {id:30,name:"T-shirts Homme & Femme",cat:"mode",range:"T-shirts",
+   prix:2500,prixMax:8000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["sport_tshirt1.jpg","sport_tshirt2.jpg"],
+   desc:"T-shirts coton premium S à XXL. Large choix de couleurs.",
+   badge:null,stock:true},
+
+  {id:31,name:"Jeans Homme Slim / Regular / Large",cat:"mode",range:"Jean",
+   prix:8000,prixMax:20000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["sport_jean1.jpg"],
+   desc:"Toutes coupes, tailles 28 à 44. Qualité durable.",
+   badge:null,stock:true},
+
+  {id:32,name:"Robes Femme Ankara & Moderne",cat:"mode",range:"Robes",
+   prix:6000,prixMax:18000,pays:"benin",ville:"Porto-Novo",wa:"22900000002",
+   imgs:["sport_robe1.jpg","sport_robe2.jpg"],
+   desc:"Robes Ankara et tissus modernes. Tailles S à XXL.",
+   badge:"Populaire",stock:true},
+
+  // ─ SACS
+  {id:40,name:"Sacs à Main Femme",cat:"mode",range:"Sacs à main",
+   prix:5000,prixMax:25000,pays:"togo",ville:"Lomé",wa:"22800000000",
+   imgs:["sac_main1.jpg","sac_main2.jpg","sac_main3.jpg"],
+   desc:"Sacs à main tendance, cuir synthétique. Plusieurs coloris.",
+   badge:null,stock:true},
+
+  {id:41,name:"Sacs à Dos Homme & Femme",cat:"mode",range:"Sacs à dos",
+   prix:7000,prixMax:22000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["sac_dos1.jpg","sac_dos2.jpg"],
+   desc:"Sacs à dos résistants pour l'école, bureau, voyage.",
+   badge:"Populaire",stock:true},
+
+  // ─ SPORT
+  {id:50,name:"Maillots de Football",cat:"sport",range:"Maillots",
+   prix:5000,prixMax:15000,pays:"nigeria",ville:"Lagos",wa:"23400000000",
+   imgs:["sport_maillot1.jpg","sport_maillot2.jpg"],
+   desc:"PSG, Real Madrid, Barça, équipes africaines. S à XXL.",
+   badge:"Populaire",stock:true},
+
+  {id:51,name:"Chaussures de Sport",cat:"sport",range:"Chaussures sport",
+   prix:10000,prixMax:35000,pays:"benin",ville:"Cotonou",wa:"22900000000",
+   imgs:["sport_shoes1.jpg"],
+   desc:"Nike, Adidas, Puma. Running, basketball, lifestyle. 36 à 47.",
+   badge:null,stock:true},
+];
+
+// ══════════════════════════════════════════════
+//  LOGIQUE
+// ══════════════════════════════════════════════
+const fmt = n => n.toLocaleString("fr-FR") + " FCFA";
+const p   = id => PRODUITS.find(x => x.id === id);
+const pys = k  => PAYS[k] || {flag:"🌍",label:k};
+
+let state = {cat:"tous", range:"tous", q:""};
+
+function waMsg(prod) {
+  const num = prod.wa || WA;
+  const msg = encodeURIComponent(`Bonjour VENDOB ! 👋\n\n📦 *${prod.name}*\n💰 À partir de ${fmt(prod.prix)}\n📍 ${prod.ville}\n\nPouvez-vous m'aider ?`);
+  return `https://wa.me/${num}?text=${msg}`;
+}
+
+// ── TABS ──
+function buildTabs() {
+  const el = document.getElementById("tabs");
+  el.innerHTML = CATS.map(c => {
+    const cnt = c.id === "tous" ? PRODUITS.length : PRODUITS.filter(x => x.cat === c.id).length;
+    if (cnt === 0 && c.id !== "tous") return "";
+    return `<button class="ctab${c.id===state.cat?" on":""}" data-c="${c.id}">${c.ico} ${c.label}</button>`;
+  }).join("");
+
+  el.querySelectorAll(".ctab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      state.cat = btn.dataset.c;
+      state.range = "tous";
+      el.querySelectorAll(".ctab").forEach(b => b.classList.toggle("on", b === btn));
+      buildRanges();
+      render();
+      document.getElementById("shop").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
+}
+
+// ── RANGES ──
+function buildRanges() {
+  const el  = document.getElementById("ranges");
+  const pool = state.cat === "tous" ? PRODUITS : PRODUITS.filter(x => x.cat === state.cat);
+  const rs   = [...new Set(pool.map(x => x.range).filter(Boolean))];
+  if (rs.length <= 1) { el.innerHTML = ""; return; }
+  el.innerHTML = ["tous",...rs].map(r =>
+    `<button class="rpill${r===state.range?" on":""}" data-r="${r}">${r==="tous"?"Toutes les gammes":r}</button>`
+  ).join("");
+  el.querySelectorAll(".rpill").forEach(btn => {
+    btn.addEventListener("click", () => {
+      state.range = btn.dataset.r;
+      el.querySelectorAll(".rpill").forEach(b => b.classList.toggle("on", b === btn));
+      render();
+    });
+  });
+}
+
+// ── RENDER ──
+function render() {
+  const grid  = document.getElementById("pgrid");
+  const count = document.getElementById("pcount");
+  let list = PRODUITS;
+  if (state.cat !== "tous")   list = list.filter(x => x.cat === state.cat);
+  if (state.range !== "tous") list = list.filter(x => x.range === state.range);
+  if (state.q) {
+    const q = state.q.toLowerCase();
+    list = list.filter(x => x.name.toLowerCase().includes(q) || (x.range||"").toLowerCase().includes(q) || (x.desc||"").toLowerCase().includes(q));
+  }
+
+  count.innerHTML = `<b>${list.length}</b> produit${list.length!==1?"s":""} trouvé${list.length!==1?"s":""}`;
+
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty"><div class="empty-ico">🔍</div><p>Aucun produit trouvé.</p></div>`;
+    return;
+  }
+
+  const BCLS = {"Populaire":"bp","Promo":"bpr","Nouveau":"bn","Stock limité":"bl"};
+
+  grid.innerHTML = list.map((prod, i) => {
+    const py      = pys(prod.pays);
+    const hasImg  = prod.imgs?.length;
+    const bTxt    = !prod.stock ? "Rupture" : prod.badge;
+    const bCls    = !prod.stock ? "bo" : (BCLS[prod.badge] || "");
+    const imgHtml = hasImg
+      ? `<img src="images/${prod.imgs[0]}" alt="${prod.name}" loading="lazy" onerror="this.parentElement.innerHTML='<span>${ICO[prod.cat]||"📦"}</span>'">`
+      : `<span>${ICO[prod.cat]||"📦"}</span>`;
+
+    return `
+    <div class="pcard" data-id="${prod.id}" style="animation:scl .35s ${i*.04}s ease both">
+      ${bTxt?`<div class="pbadge ${bCls}">${bTxt}</div>`:""}
+      <div class="pimg">${imgHtml}</div>
+      <div class="pbody">
+        <div class="prange">${prod.range||""}</div>
+        <div class="pname">${prod.name}</div>
+        <div class="pprice">${prod.prixMax?`À partir de ${fmt(prod.prix)}`:fmt(prod.prix)}</div>
+        ${prod.prixMax?`<div class="pprice-sub">jusqu'à ${fmt(prod.prixMax)}</div>`:""}
+        <div class="pfoot">
+          <div class="porigin">${py.flag} ${py.label} · ${prod.ville}</div>
+          <button class="bcmd" data-id="${prod.id}">💬 Commander</button>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+
+  grid.querySelectorAll(".pcard").forEach(card => {
+    card.addEventListener("click", e => {
+      if (e.target.closest(".bcmd")) return;
+      openModal(+card.dataset.id);
+    });
+  });
+  grid.querySelectorAll(".bcmd").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      const prod = p(+btn.dataset.id);
+      if (prod) window.open(waMsg(prod), "_blank");
+    });
+  });
+}
+
+// ── MODAL ──
+function openModal(id) {
+  const prod = p(id);
+  if (!prod) return;
+  const py     = pys(prod.pays);
+  const hasImg = prod.imgs?.length;
+  const ico_   = ICO[prod.cat] || "📦";
+
+  document.getElementById("mgMain").innerHTML = hasImg
+    ? `<img src="images/${prod.imgs[0]}" alt="${prod.name}" onerror="this.parentElement.innerHTML='<span style=font-size:4rem>${ico_}</span>'">`
+    : `<span style="font-size:4rem">${ico_}</span>`;
+
+  document.getElementById("mgThumbs").innerHTML = hasImg
+    ? prod.imgs.map((img,i) => `
+        <div class="mthumb${i===0?" on":""}" data-i="${i}">
+          <img src="images/${img}" alt="" onerror="this.style.display='none'">
+        </div>`).join("")
+    : "";
+
+  document.querySelectorAll(".mthumb").forEach(t => {
+    t.addEventListener("click", () => {
+      document.getElementById("mgMain").innerHTML =
+        `<img src="images/${prod.imgs[+t.dataset.i]}" alt="${prod.name}">`;
+      document.querySelectorAll(".mthumb").forEach(x => x.classList.toggle("on", x===t));
+    });
+  });
+
+  document.getElementById("mRange").textContent = prod.range || "";
+  document.getElementById("mName").textContent  = prod.name;
+  document.getElementById("mPrice").textContent = prod.prixMax
+    ? `${fmt(prod.prix)} – ${fmt(prod.prixMax)}`
+    : fmt(prod.prix);
+  document.getElementById("mPriceLbl").textContent = prod.prixMax ? "Fourchette selon modèle / stockage" : "Prix fixe";
+  document.getElementById("mDesc").textContent  = prod.desc || "";
+  document.getElementById("mCountry").innerHTML =
+    `<div class="mico">${py.flag}</div><div><b>${py.label}</b> <span>· ${prod.ville}</span></div>`;
+  document.getElementById("mStock").innerHTML   = prod.stock
+    ? `<div class="mico">✅</div><div><b style="color:#16a34a">En stock</b></div>`
+    : `<div class="mico">❌</div><div><b style="color:#dc2626">Rupture de stock</b></div>`;
+
+  const wa = document.getElementById("mWa");
+  wa.href = waMsg(prod);
+  wa.textContent = prod.stock ? "💬 Commander sur WhatsApp" : "💬 Me prévenir quand disponible";
+
+  document.getElementById("ov").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  document.getElementById("ov").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+// ── EVENTS GLOBAUX ──
+document.getElementById("mx").addEventListener("click", closeModal);
+document.getElementById("ov").addEventListener("click", e => { if (e.target.id==="ov") closeModal(); });
+document.addEventListener("keydown", e => { if (e.key==="Escape") closeModal(); });
+
+document.getElementById("searchInput").addEventListener("input", e => {
+  state.q = e.target.value.trim();
+  render();
+});
+
+document.getElementById("burger").addEventListener("click", function() {
+  this.classList.toggle("open");
+  document.getElementById("mobNav").classList.toggle("show");
+});
+document.querySelectorAll(".mob-nav a").forEach(a => a.addEventListener("click", () => {
+  document.getElementById("burger").classList.remove("open");
+  document.getElementById("mobNav").classList.remove("show");
+}));
+
+// Scroll reveal
+new IntersectionObserver((entries, obs) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }});
+}, {threshold:.1}).observe.bind(
+  new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }});
+  }, {threshold:.1})
+);
+// Simpler reveal
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); });
+}, {threshold:.1});
+document.querySelectorAll(".rv").forEach(el => revObs.observe(el));
+
+// ── INIT ──
+buildTabs();
+buildRanges();
+render();
+</script>
+</body>
+</html>
