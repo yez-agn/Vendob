@@ -3,235 +3,228 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>VENDOB – La boutique qui livre</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<title>VendoB – Achetez Malin, Vivez Mieux</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  --orange:#F4521E;--black:#0D0D0D;--white:#fff;
-  --g1:#F5F5F5;--g2:#E8E8E8;--g3:#ABABAB;
-  --green:#16A34A;--nav:64px;--r:14px;
-}
+:root{--or:#F4821E;--nv:#0D1B2A;--g1:#F6F6F6;--g2:#E8E8E8;--g3:#ABABAB;--gr:#16A34A;--nav:64px}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:#fff;color:var(--black);overflow-x:hidden}
+body{font-family:'Outfit',sans-serif;background:#fff;color:var(--nv);overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;border:none;background:none;font-family:'Outfit',sans-serif}
-img{display:block;max-width:100%;height:auto}
+img{display:block;max-width:100%}
 ul{list-style:none}
-::-webkit-scrollbar{height:3px;width:3px}
-::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px}
+::-webkit-scrollbar{width:3px;height:3px}
+::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px}
 .W{max-width:1160px;margin:0 auto;padding:0 24px}
 
-/* ── NAVBAR ── */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--g2)}
 .nav-in{height:100%;display:flex;align-items:center;gap:28px}
 .logo{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.5px;flex-shrink:0}
-.logo span{color:var(--orange)}
+.logo b{color:var(--or)}
 .nav-links{display:flex;gap:4px;margin-right:auto}
 .nav-links a{font-size:.85rem;font-weight:500;color:#666;padding:7px 12px;border-radius:8px;transition:.2s}
-.nav-links a:hover{color:var(--black);background:var(--g1)}
-.nav-wa{display:flex;align-items:center;gap:7px;background:var(--orange);color:#fff;padding:9px 20px;border-radius:50px;font-weight:700;font-size:.84rem;transition:.2s;flex-shrink:0}
-.nav-wa:hover{opacity:.9;transform:translateY(-1px)}
+.nav-links a:hover{color:var(--nv);background:var(--g1)}
+.nav-wa{display:flex;align-items:center;gap:7px;background:var(--or);color:#fff;padding:9px 20px;border-radius:50px;font-weight:700;font-size:.84rem;flex-shrink:0;transition:.2s}
+.nav-wa:hover{opacity:.88}
 .burger{display:none;flex-direction:column;gap:5px;padding:6px}
-.burger span{display:block;width:21px;height:2px;background:var(--black);border-radius:2px;transition:.25s}
+.burger span{display:block;width:21px;height:2px;background:var(--nv);border-radius:2px;transition:.25s}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mob-nav{display:none;position:fixed;top:var(--nav);inset-inline:0;background:#fff;border-bottom:1px solid var(--g2);padding:14px 20px;flex-direction:column;gap:2px;z-index:899;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.mob-nav{display:none;position:fixed;top:var(--nav);inset-inline:0;background:#fff;border-bottom:1px solid var(--g2);padding:14px 20px;flex-direction:column;gap:4px;z-index:899;box-shadow:0 8px 24px rgba(0,0,0,.1)}
 .mob-nav.show{display:flex}
 .mob-nav a{padding:11px 12px;border-radius:8px;font-weight:500;font-size:.95rem;transition:.2s}
 .mob-nav a:hover{background:var(--g1)}
 
-/* ── HERO ── */
-.hero{padding-top:calc(var(--nav)+60px);padding-bottom:70px;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;top:-100px;right:-150px;width:550px;height:550px;background:radial-gradient(circle,rgba(244,82,30,.07),transparent 65%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:center}
+/* HERO */
+.hero{padding-top:calc(var(--nav)+60px);padding-bottom:64px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-80px;right:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(244,130,30,.08),transparent 65%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:center}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--g1);border:1px solid var(--g2);padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:600;color:#666;margin-bottom:20px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,.4)}70%{box-shadow:0 0 0 6px rgba(22,163,74,0)}}
-.hero h1{font-family:'Nunito',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
-.hero h1 b{color:var(--orange)}
-.hero p{font-size:1rem;color:#555;line-height:1.75;max-width:460px;margin-bottom:28px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gr);animation:pls 2s infinite}
+@keyframes pls{0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,.4)}70%{box-shadow:0 0 0 6px transparent}}
+.hero h1{font-family:'Nunito',sans-serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
+.hero h1 b{color:var(--or)}
+.hero p{font-size:.97rem;color:#555;line-height:1.75;max-width:440px;margin-bottom:28px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-o{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:.9rem;transition:.22s;box-shadow:0 8px 24px rgba(244,82,30,.28)}
-.btn-o:hover{opacity:.9;transform:translateY(-2px)}
-.btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--black);padding:13px 24px;border-radius:50px;font-weight:600;font-size:.9rem;border:1.5px solid var(--g2);transition:.22s}
-.btn-g:hover{border-color:var(--orange);color:var(--orange)}
-.hero-stats{display:flex;gap:28px;margin-top:36px;padding-top:28px;border-top:1px solid var(--g2);flex-wrap:wrap}
-.stat-n{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;line-height:1}
-.stat-l{font-size:.74rem;color:var(--g3);margin-top:3px}
+.btn-or{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;padding:13px 26px;border-radius:50px;font-weight:700;font-size:.88rem;transition:.22s;box-shadow:0 8px 24px rgba(244,130,30,.28)}
+.btn-or:hover{opacity:.9;transform:translateY(-2px)}
+.btn-brd{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--nv);padding:13px 22px;border-radius:50px;font-weight:600;font-size:.88rem;border:1.5px solid var(--g2);transition:.22s}
+.btn-brd:hover{border-color:var(--or);color:var(--or)}
+.hero-stats{display:flex;gap:24px;margin-top:32px;padding-top:28px;border-top:1px solid var(--g2);flex-wrap:wrap}
+.sn{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;line-height:1}
+.sl{font-size:.72rem;color:var(--g3);margin-top:3px}
 .hero-cards{display:flex;flex-direction:column;gap:12px}
-.hcard{background:#fff;border:1px solid var(--g2);border-radius:var(--r);padding:16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);animation:float 4s ease-in-out infinite}
-.hcard:nth-child(2){animation-delay:.7s}
-.hcard:nth-child(3){animation-delay:1.4s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.hcard-ico{width:42px;height:42px;border-radius:10px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
-.hcard-name{font-size:.82rem;font-weight:600;margin-bottom:3px}
-.hcard-price{font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:900;color:var(--orange)}
+.hc{background:#fff;border:1px solid var(--g2);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);animation:flt 4s ease-in-out infinite}
+.hc:nth-child(2){animation-delay:.7s}
+.hc:nth-child(3){animation-delay:1.4s}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hc-ico{width:40px;height:40px;border-radius:10px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.hc-n{font-size:.8rem;font-weight:600;margin-bottom:3px}
+.hc-p{font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:900;color:var(--or)}
 
-/* ── CATEGORIES TABS ── */
-.cats-wrap{position:sticky;top:var(--nav);z-index:800;background:#fff;border-bottom:1px solid var(--g2)}
-.cats-inner{display:flex;align-items:center;gap:6px;padding:12px 0;overflow-x:auto;scrollbar-width:none}
-.cats-inner::-webkit-scrollbar{display:none}
-.ctab{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:50px;font-size:.84rem;font-weight:600;color:#666;background:var(--g1);border:1.5px solid transparent;white-space:nowrap;transition:.2s;flex-shrink:0}
-.ctab:hover{background:var(--g2);color:var(--black)}
-.ctab.on{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 14px rgba(244,82,30,.22)}
+/* TABS */
+.tabs-wrap{position:sticky;top:var(--nav);z-index:800;background:#fff;border-bottom:1px solid var(--g2)}
+.tabs-row{display:flex;gap:6px;padding:12px 0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs-row::-webkit-scrollbar{display:none}
+.tab{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;font-size:.82rem;font-weight:600;color:#666;background:var(--g1);border:1.5px solid transparent;white-space:nowrap;transition:.2s;flex-shrink:0}
+.tab:hover{background:var(--g2);color:var(--nv)}
+.tab.on{background:var(--or);color:#fff;border-color:var(--or);box-shadow:0 4px 14px rgba(244,130,30,.22)}
 
-/* ── SHOP SECTION ── */
-.shop{padding:40px 0 80px}
-.search-wrap{position:relative;max-width:500px;margin-bottom:32px}
-.search-wrap input{width:100%;padding:12px 18px 12px 42px;border:1.5px solid var(--g2);border-radius:50px;font-size:.9rem;font-family:'Outfit',sans-serif;outline:none;background:var(--g1);transition:.2s}
-.search-wrap input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(244,82,30,.1);background:#fff}
-.search-ico{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--g3);pointer-events:none}
+/* SHOP */
+.shop{padding:32px 0 80px}
+.search-wrap{position:relative;max-width:480px;margin-bottom:28px}
+.search-wrap input{width:100%;padding:11px 18px 11px 40px;border:1.5px solid var(--g2);border-radius:50px;font-size:.88rem;font-family:'Outfit',sans-serif;outline:none;background:var(--g1);transition:.2s}
+.search-wrap input:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(244,130,30,.1);background:#fff}
+.s-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--g3);pointer-events:none}
 
-/* ── SOUS-CATÉGORIE BLOC ── */
-.range-block{margin-bottom:52px}
-.range-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px}
-.range-title{font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:8px}
-.range-title .rtag{font-size:.72rem;font-weight:700;background:var(--orange);color:#fff;padding:3px 10px;border-radius:50px}
-.range-sub{font-size:.82rem;color:var(--g3);margin-top:2px}
-.btn-voir{display:inline-flex;align-items:center;gap:6px;background:var(--black);color:#fff;padding:9px 20px;border-radius:50px;font-size:.82rem;font-weight:700;transition:.2s;flex-shrink:0}
-.btn-voir:hover{background:var(--orange);transform:translateY(-1px)}
+/* GAMME BLOC */
+.gamme{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--g2);animation:fadeUp .4s ease both}
+.gamme:last-child{border-bottom:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.gamme-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;gap:12px;flex-wrap:wrap}
+.gamme-title{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;color:var(--nv);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.gtag{font-size:.68rem;font-weight:800;background:var(--or);color:#fff;padding:3px 9px;border-radius:50px}
+.gamme-sous{font-size:.78rem;color:var(--g3);margin-top:3px}
+.btn-voir{display:inline-flex;align-items:center;gap:6px;background:var(--nv);color:#fff;padding:9px 18px;border-radius:50px;font-size:.8rem;font-weight:700;transition:.2s;white-space:nowrap;flex-shrink:0}
+.btn-voir:hover{background:var(--or)}
 
-/* image grid par sous-cat */
-.img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.img-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--g2);transition:transform .3s,box-shadow .3s;cursor:pointer}
-.img-grid img:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.12)}
-.img-placeholder{aspect-ratio:1/1;border-radius:10px;background:var(--g1);border:1.5px dashed var(--g2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--g3);font-size:.78rem}
-.img-placeholder span{font-size:1.6rem}
+/* INFOS FOURNISSEUR */
+.ftags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
+.ftag{display:inline-flex;align-items:center;gap:5px;background:var(--g1);border:1px solid var(--g2);padding:5px 11px;border-radius:50px;font-size:.73rem;font-weight:500;color:#444;white-space:nowrap}
+.ftag-ok{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;font-weight:600}
+.ftag-prix{background:#fff7ed;border-color:#fed7aa;color:#c2410c;font-weight:700}
 
-/* empty search */
+/* GRILLE 4 IMAGES */
+.preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.preview-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--g2);cursor:pointer;display:block;transition:transform .3s,box-shadow .3s}
+.preview-grid img:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.ph{aspect-ratio:1/1;border-radius:10px;background:var(--g1);border:1.5px dashed var(--g2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:var(--g3);font-size:.72rem}
+.ph-ico{font-size:1.8rem}
+
+/* BOUTONS BAS GAMME */
+.gamme-footer{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;align-items:center}
+.btn-wa-home{display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-size:.82rem;font-weight:700;transition:.2s;box-shadow:0 4px 14px rgba(37,211,102,.25)}
+.btn-wa-home:hover{background:#1da851;transform:translateY(-1px)}
+
+/* EMPTY */
 .empty{text-align:center;padding:60px 20px;color:var(--g3)}
 .empty-ico{font-size:2.5rem;margin-bottom:10px}
 
-/* ── CATALOGUE VIEW (plein écran) ── */
-.catalogue-view{
-  display:none;position:fixed;inset:0;z-index:1800;
-  background:#fff;overflow-y:auto;
-}
-.catalogue-view.show{display:block}
-.cat-view-nav{
-  position:sticky;top:0;background:#fff;border-bottom:1px solid var(--g2);
-  padding:16px 24px;display:flex;align-items:center;gap:16px;z-index:10;
-}
-.cat-view-back{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;background:var(--g1);padding:9px 18px;border-radius:50px;transition:.2s}
-.cat-view-back:hover{background:var(--g2)}
-.cat-view-title{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900}
-.cat-view-body{padding:28px 24px;max-width:1160px;margin:0 auto}
-.cat-view-desc{font-size:.9rem;color:#555;line-height:1.7;margin-bottom:24px;max-width:600px}
+/* CATALOGUE PAGE */
+.cat-page{display:none;position:fixed;inset:0;z-index:1800;background:#fff;overflow-y:auto}
+.cat-page.show{display:block}
+.cat-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--g2);padding:0 20px;height:56px;display:flex;align-items:center;gap:14px;z-index:10}
+.btn-back{display:flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;background:var(--g1);padding:8px 16px;border-radius:50px;transition:.2s}
+.btn-back:hover{background:var(--g2)}
+.cat-nav-title{font-family:'Nunito',sans-serif;font-size:.98rem;font-weight:900;color:var(--nv)}
+.cat-body{padding:24px 20px 110px;max-width:1160px;margin:0 auto}
+.cat-desc{font-size:.87rem;color:#555;line-height:1.7;margin-bottom:20px;max-width:540px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.cat-item{border-radius:12px;overflow:hidden;border:1px solid var(--g2);cursor:pointer;position:relative;transition:.22s;background:var(--g1)}
+.cat-item:hover{border-color:var(--or);box-shadow:0 6px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.cat-item img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .3s}
+.cat-item:hover img{transform:scale(1.04)}
+.cat-num{position:absolute;top:7px;left:7px;background:rgba(0,0,0,.5);color:#fff;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:50px}
 
-/* grille catalogue */
-.cat-img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:100px}
-.cat-img-item{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--g2);cursor:pointer}
-.cat-img-item img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .3s}
-.cat-img-item:hover img{transform:scale(1.04)}
-.cat-img-item .img-num{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);color:#fff;font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:50px}
+/* BARRE COMMANDER FIXE */
+.cmd-bar{position:fixed;bottom:0;left:0;right:0;z-index:1900;background:#fff;border-top:2px solid var(--g2);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+.cmd-info{font-size:.82rem;color:#555;line-height:1.4}
+.cmd-info b{color:var(--nv);font-size:.9rem;display:block}
+.btn-wa-big{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 24px;border-radius:50px;font-weight:800;font-size:.9rem;transition:.22s;box-shadow:0 6px 18px rgba(37,211,102,.32);white-space:nowrap}
+.btn-wa-big:hover{background:#1da851;transform:translateY(-1px)}
 
-/* bouton commander fixe en bas du catalogue */
-.cat-cmd-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:1900;
-  background:#fff;border-top:1px solid var(--g2);
-  padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;
-  box-shadow:0 -4px 24px rgba(0,0,0,.08);
-}
-.cat-cmd-bar .cmd-info{font-size:.85rem;color:#555;line-height:1.4}
-.cat-cmd-bar .cmd-info b{color:var(--black);font-size:.95rem}
-.btn-wa-big{display:flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:14px 28px;border-radius:50px;font-weight:800;font-size:.95rem;transition:.22s;box-shadow:0 6px 20px rgba(37,211,102,.35);white-space:nowrap}
-.btn-wa-big:hover{background:#1da851;transform:translateY(-1px);box-shadow:0 10px 28px rgba(37,211,102,.45)}
-
-/* ── IMAGE LIGHTBOX ── */
-.lightbox{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.92);align-items:center;justify-content:center}
-.lightbox.show{display:flex}
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.93);align-items:center;justify-content:center}
+.lb.show{display:flex}
 .lb-img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:10px}
-.lb-close{position:absolute;top:18px;right:20px;color:#fff;font-size:1.8rem;cursor:pointer;line-height:1;opacity:.8;transition:.2s}
-.lb-close:hover{opacity:1}
-.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;cursor:pointer;padding:12px;opacity:.7;transition:.2s;background:rgba(255,255,255,.08);border-radius:50%}
-.lb-prev{left:16px}
-.lb-next{right:16px}
-.lb-prev:hover,.lb-next:hover{opacity:1;background:rgba(255,255,255,.15)}
+.lb-x{position:absolute;top:16px;right:18px;color:#fff;font-size:1.8rem;cursor:pointer;opacity:.75;line-height:1;transition:.2s}
+.lb-x:hover{opacity:1}
+.lb-p,.lb-n{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;cursor:pointer;padding:12px;background:rgba(255,255,255,.1);border-radius:50%;transition:.2s;user-select:none}
+.lb-p{left:14px}.lb-n{right:14px}
+.lb-p:hover,.lb-n:hover{background:rgba(255,255,255,.2)}
 
-/* ── WHY ── */
-.why{background:var(--black);padding:80px 0}
-.why h2{font-family:'Nunito',sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:6px}
-.why .sub{font-size:.9rem;color:#666;margin-bottom:40px}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.wcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);padding:24px;transition:.22s}
-.wcard:hover{background:rgba(244,82,30,.09);border-color:rgba(244,82,30,.3)}
-.wico{width:44px;height:44px;border-radius:10px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:12px}
-.wcard h4{font-family:'Nunito',sans-serif;font-size:.93rem;font-weight:800;color:#fff;margin-bottom:7px}
-.wcard p{font-size:.83rem;color:#666;line-height:1.65}
+/* WHY */
+.why{background:var(--nv);padding:72px 0}
+.why h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:6px}
+.why .sub{font-size:.88rem;color:#555;margin-bottom:36px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.wc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:22px;transition:.22s}
+.wc:hover{background:rgba(244,130,30,.09);border-color:rgba(244,130,30,.3)}
+.wi{width:42px;height:42px;border-radius:10px;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:12px}
+.wc h4{font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:6px}
+.wc p{font-size:.81rem;color:#666;line-height:1.6}
 
-/* ── REVIEWS ── */
-.reviews{padding:80px 0;background:var(--g1)}
-.reviews h2{font-family:'Nunito',sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:900;letter-spacing:-1px;margin-bottom:6px}
-.reviews .sub{font-size:.9rem;color:var(--g3);margin-bottom:40px}
-.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px}
-.rcard{background:#fff;border:1px solid var(--g2);border-radius:var(--r);padding:24px}
-.rstars{color:#F59E0B;font-size:.88rem;margin-bottom:10px}
-.rtext{font-size:.88rem;color:#555;line-height:1.75;font-style:italic}
-.rauthor{display:flex;align-items:center;gap:10px;margin-top:16px}
-.rav{width:36px;height:36px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex-shrink:0}
-.rname{font-weight:700;font-size:.85rem}
-.rcity{font-size:.75rem;color:var(--g3)}
+/* REVIEWS */
+.reviews{padding:72px 0;background:var(--g1)}
+.reviews h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-1px;margin-bottom:6px}
+.reviews .sub{font-size:.88rem;color:var(--g3);margin-bottom:36px}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:12px}
+.rc{background:#fff;border:1px solid var(--g2);border-radius:14px;padding:22px}
+.rstars{color:#F59E0B;font-size:.86rem;margin-bottom:10px}
+.rtext{font-size:.86rem;color:#555;line-height:1.75;font-style:italic}
+.rauthor{display:flex;align-items:center;gap:10px;margin-top:14px}
+.rav{width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0}
+.rname{font-weight:700;font-size:.83rem}
+.rcity{font-size:.73rem;color:var(--g3)}
 
-/* ── CTA ── */
-.cta-s{padding:80px 0;background:linear-gradient(135deg,#F4521E,#FF7A45);text-align:center;color:#fff}
-.cta-s h2{font-family:'Nunito',sans-serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-1px;margin-bottom:12px}
-.cta-s p{font-size:1rem;opacity:.88;margin-bottom:30px}
-.btn-white{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--orange);padding:14px 34px;border-radius:50px;font-weight:800;font-size:.95rem;transition:.22s;box-shadow:0 8px 24px rgba(0,0,0,.14)}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.2)}
+/* CTA */
+.cta{padding:72px 0;background:linear-gradient(135deg,#F4821E,#FF6B00);text-align:center;color:#fff}
+.cta h2{font-family:'Nunito',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;letter-spacing:-1px;margin-bottom:12px}
+.cta p{font-size:.97rem;opacity:.88;margin-bottom:28px}
+.btn-wh{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--or);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.92rem;transition:.22s;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+.btn-wh:hover{transform:translateY(-2px)}
 
-/* ── FOOTER ── */
-footer{background:#080808;padding:52px 0 24px}
-.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:40px}
-.flogo{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:9px}
-.flogo span{color:var(--orange)}
-.fdesc{font-size:.83rem;color:#555;line-height:1.7;max-width:250px}
-.fcol h5{font-size:.8rem;font-weight:700;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.6px}
-.fcol li{margin-bottom:8px}
-.fcol a{font-size:.83rem;color:#555;transition:.2s}
-.fcol a:hover{color:var(--orange)}
-.fbot{border-top:1px solid #161616;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.79rem;color:#444}
+/* FOOTER */
+footer{background:#080808;padding:48px 0 22px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.flogo{font-family:'Nunito',sans-serif;font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:8px}
+.flogo b{color:var(--or)}
+.fdesc{font-size:.81rem;color:#555;line-height:1.7;max-width:240px}
+.fcol h5{font-size:.78rem;font-weight:700;color:#fff;margin-bottom:11px;text-transform:uppercase;letter-spacing:.6px}
+.fcol li{margin-bottom:7px}
+.fcol a{font-size:.81rem;color:#555;transition:.2s}
+.fcol a:hover{color:var(--or)}
+.fbot{border-top:1px solid #161616;padding-top:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.77rem;color:#444}
 .socs{display:flex;gap:8px}
-.soc{width:32px;height:32px;border-radius:50%;background:#131313;border:1px solid #222;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#555;transition:.2s}
-.soc:hover{background:var(--orange);border-color:var(--orange);color:#fff}
+.soc{width:30px;height:30px;border-radius:50%;background:#131313;border:1px solid #222;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#555;transition:.2s}
+.soc:hover{background:var(--or);border-color:var(--or);color:#fff}
 
-/* ── WA FLOAT ── */
-.wa-float{position:fixed;bottom:22px;right:22px;z-index:1200;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;font-size:1.4rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);transition:.2s;animation:wab 2.5s ease-in-out infinite}
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:1200;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;font-size:1.35rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);animation:wab 2.5s ease-in-out infinite}
 .wa-float:hover{transform:scale(1.12);animation:none}
 @keyframes wab{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
 
-/* ── REVEAL ── */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
 .rv.in{opacity:1;transform:none}
 
-/* ── RESPONSIVE ── */
-@media(max-width:880px){
+/* RESPONSIVE */
+@media(max-width:860px){
   .nav-links,.nav-wa{display:none}
   .burger{display:flex}
   .hero-grid{grid-template-columns:1fr}
   .hero-cards{display:none}
-  .fgrid{grid-template-columns:1fr;gap:24px}
+  .fgrid{grid-template-columns:1fr;gap:22px}
   .fbot{flex-direction:column;text-align:center}
-  .img-grid{grid-template-columns:repeat(3,1fr)}
-  .cat-img-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 }
-@media(max-width:580px){
-  .hero{padding-top:calc(var(--nav)+36px);padding-bottom:48px}
-  .W{padding:0 16px}
-  .img-grid{grid-template-columns:repeat(2,1fr)}
-  .cat-cmd-bar{flex-direction:column;align-items:stretch;gap:10px}
+@media(max-width:560px){
+  .hero{padding-top:calc(var(--nav)+32px);padding-bottom:40px}
+  .W{padding:0 14px}
+  .preview-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+  .cmd-bar{flex-direction:column;align-items:stretch;gap:10px}
   .btn-wa-big{justify-content:center}
 }
-@keyframes scl{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <div class="W nav-in">
-    <a href="#" class="logo">VEND<span>OB</span></a>
+    <a href="#" class="logo">Vendo<b>b</b></a>
     <ul class="nav-links">
       <li><a href="#shop">Produits</a></li>
       <li><a href="#why">Pourquoi nous</a></li>
@@ -249,172 +242,133 @@ footer{background:#080808;padding:52px 0 24px}
   <a href="#contact">💬 Contact</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="W">
     <div class="hero-grid">
       <div>
         <div class="hero-pill"><span class="dot"></span>Bénin · Togo · Nigeria</div>
-        <h1>Les meilleurs produits,<br><b>livrés chez vous.</b></h1>
-        <p>VENDOB connecte acheteurs et fournisseurs vérifiés. Commandez en quelques clics — qualité garantie, prix honnêtes.</p>
+        <h1>Fini de fouiller partout —<br><b>tout est là, moins cher.</b></h1>
+        <p>VendoB connecte acheteurs et fournisseurs vérifiés. Téléphones, mode, sport — commande en 1 clic via WhatsApp.</p>
         <div class="hero-btns">
-          <a href="#shop" class="btn-o">🛍️ Voir les produits</a>
-          <a href="#why" class="btn-g">Comment ça marche ?</a>
+          <a href="#shop" class="btn-or">🛍️ Voir les produits</a>
+          <a href="#why" class="btn-brd">Comment ça marche ?</a>
         </div>
         <div class="hero-stats">
-          <div><div class="stat-n">300+</div><div class="stat-l">Produits</div></div>
-          <div><div class="stat-n">3</div><div class="stat-l">Pays couverts</div></div>
-          <div><div class="stat-n">98%</div><div class="stat-l">Satisfaits</div></div>
-          <div><div class="stat-n">24h</div><div class="stat-l">Livraison</div></div>
+          <div><div class="sn">300+</div><div class="sl">Produits</div></div>
+          <div><div class="sn">3</div><div class="sl">Pays</div></div>
+          <div><div class="sn">98%</div><div class="sl">Satisfaits</div></div>
+          <div><div class="sn">24h</div><div class="sl">Livraison</div></div>
         </div>
       </div>
       <div class="hero-cards">
-        <div class="hcard"><div class="hcard-ico">📱</div><div><div class="hcard-name">iPhone 15 128Go</div><div class="hcard-price">À partir de 235 000 FCFA</div></div></div>
-        <div class="hcard"><div class="hcard-ico">👟</div><div><div class="hcard-name">Sneakers Sport</div><div class="hcard-price">À partir de 10 000 FCFA</div></div></div>
-        <div class="hcard"><div class="hcard-ico">👜</div><div><div class="hcard-name">Sacs à main femme</div><div class="hcard-price">À partir de 5 000 FCFA</div></div></div>
+        <div class="hc"><div class="hc-ico">📱</div><div><div class="hc-n">iPhone 15 128Go</div><div class="hc-p">À partir de 235 000 FCFA</div></div></div>
+        <div class="hc"><div class="hc-ico">👟</div><div><div class="hc-n">Sneakers Sport</div><div class="hc-p">À partir de 10 000 FCFA</div></div></div>
+        <div class="hc"><div class="hc-ico">👜</div><div><div class="hc-n">Sacs à main</div><div class="hc-p">À partir de 5 000 FCFA</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CATEGORIES TABS -->
-<div class="cats-wrap">
-  <div class="W">
-    <div class="cats-inner" id="tabs"></div>
-  </div>
+<div class="tabs-wrap">
+  <div class="W"><div class="tabs-row" id="tabs"></div></div>
 </div>
 
-<!-- SHOP -->
-<section class="shop W" id="shop">
-  <div class="search-wrap">
-    <svg class="search-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input id="searchInput" type="text" placeholder="Rechercher une sous-catégorie…"/>
+<section class="shop" id="shop">
+  <div class="W">
+    <div class="search-wrap">
+      <svg class="s-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" type="text" placeholder="Rechercher une gamme…"/>
+    </div>
+    <div id="shopContent"></div>
   </div>
-  <div id="shopContent"></div>
 </section>
 
-<!-- WHY -->
 <section class="why" id="why">
   <div class="W">
-    <h2 class="rv">Pourquoi choisir VENDOB ?</h2>
+    <h2 class="rv">Pourquoi choisir VendoB ?</h2>
     <p class="sub rv">On a pensé à tout pour vous faciliter la vie</p>
     <div class="why-grid">
-      <div class="wcard rv"><div class="wico">✅</div><h4>Fournisseurs vérifiés</h4><p>Chaque vendeur est contacté et sélectionné personnellement avant d'apparaître sur VENDOB.</p></div>
-      <div class="wcard rv"><div class="wico">💬</div><h4>Commande via WhatsApp</h4><p>Un clic vous connecte au vendeur directement. Aucun compte requis.</p></div>
-      <div class="wcard rv"><div class="wico">🚚</div><h4>Livraison multi-pays</h4><p>Bénin, Togo, Nigeria. Livraison locale et inter-pays disponible.</p></div>
-      <div class="wcard rv"><div class="wico">🔒</div><h4>Paiement à la livraison</h4><p>Vous vérifiez le produit avant de payer. Zéro risque.</p></div>
+      <div class="wc rv"><div class="wi">✅</div><h4>Fournisseurs vérifiés</h4><p>Chaque vendeur est sélectionné personnellement avant d'apparaître sur VendoB.</p></div>
+      <div class="wc rv"><div class="wi">💬</div><h4>Commande via WhatsApp</h4><p>Un clic et vous êtes en contact direct. Aucune inscription requise.</p></div>
+      <div class="wc rv"><div class="wi">🚚</div><h4>Livraison rapide</h4><p>Bénin, Togo, Nigeria. Livraison locale sous 24h dans les grandes villes.</p></div>
+      <div class="wc rv"><div class="wi">🔒</div><h4>Paiement à la livraison</h4><p>Vous vérifiez le produit avant de payer. Zéro risque pour l'acheteur.</p></div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section class="reviews" id="reviews">
   <div class="W">
     <h2 class="rv">Ce que disent nos clients</h2>
     <p class="sub rv">Des familles entières nous font déjà confiance</p>
     <div class="rev-grid">
-      <div class="rcard rv"><div class="rstars">★★★★★</div><p class="rtext">« J'ai commandé un téléphone, il est arrivé le lendemain exactement comme sur la photo. Je recommande vraiment ! »</p><div class="rauthor"><div class="rav">AM</div><div><div class="rname">Aminata M.</div><div class="rcity">🇧🇯 Cotonou, Bénin</div></div></div></div>
-      <div class="rcard rv"><div class="rstars">★★★★★</div><p class="rtext">« Sérieux et rapide. J'ai eu un souci et ils l'ont réglé en moins d'une heure sur WhatsApp. »</p><div class="rauthor"><div class="rav">KD</div><div><div class="rname">Kofi D.</div><div class="rcity">🇹🇬 Lomé, Togo</div></div></div></div>
-      <div class="rcard rv"><div class="rstars">★★★★☆</div><p class="rtext">« Prix corrects, produits de qualité. Je commande régulièrement pour toute ma famille. »</p><div class="rauthor"><div class="rav">FS</div><div><div class="rname">Fatou S.</div><div class="rcity">🇧🇯 Parakou, Bénin</div></div></div></div>
+      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« J'ai commandé un téléphone, il est arrivé le lendemain exactement comme sur la photo. »</p><div class="rauthor"><div class="rav">AM</div><div><div class="rname">Aminata M.</div><div class="rcity">🇧🇯 Cotonou</div></div></div></div>
+      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« Sérieux et rapide. Ils ont réglé mon souci en moins d'une heure sur WhatsApp. »</p><div class="rauthor"><div class="rav">KD</div><div><div class="rname">Kofi D.</div><div class="rcity">🇹🇬 Lomé</div></div></div></div>
+      <div class="rc rv"><div class="rstars">★★★★☆</div><p class="rtext">« Prix corrects, produits de qualité. Je commande régulièrement pour toute ma famille. »</p><div class="rauthor"><div class="rav">FS</div><div><div class="rname">Fatou S.</div><div class="rcity">🇧🇯 Parakou</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-s" id="contact">
+<section class="cta" id="contact">
   <div class="W">
     <h2 class="rv">Prêt à commander ?</h2>
-    <p class="rv">Contactez-nous sur WhatsApp, on répond en quelques minutes.</p>
-    <a href="https://wa.me/22900000000?text=Bonjour%20VENDOB%20!" class="btn-white rv" target="_blank">💬 Nous écrire sur WhatsApp</a>
+    <p class="rv">On répond sur WhatsApp en quelques minutes.</p>
+    <a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="btn-wh rv" target="_blank">💬 Nous écrire sur WhatsApp</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="W">
     <div class="fgrid">
-      <div><div class="flogo">VEND<span>OB</span></div><p class="fdesc">Boutique en ligne de confiance. Produits sélectionnés auprès de fournisseurs vérifiés au Bénin, Togo et Nigeria.</p></div>
+      <div><div class="flogo">Vendo<b>b</b></div><p class="fdesc">Boutique en ligne de confiance. Produits vérifiés, prix honnêtes. Bénin · Togo · Nigeria.</p></div>
       <div class="fcol"><h5>Navigation</h5><ul><li><a href="#">Accueil</a></li><li><a href="#shop">Produits</a></li><li><a href="#why">Comment ça marche</a></li><li><a href="#reviews">Avis clients</a></li></ul></div>
       <div class="fcol"><h5>Contact</h5><ul><li><a href="#">📍 Cotonou, Bénin</a></li><li><a href="https://wa.me/22900000000" target="_blank">💬 WhatsApp</a></li><li><a href="#">📧 contact@vendob.com</a></li><li><a href="#">🇧🇯 🇹🇬 🇳🇬</a></li></ul></div>
     </div>
     <div class="fbot">
-      <span>© 2025 VENDOB — Tous droits réservés</span>
+      <span>© 2025 VendoB — Achetez Malin, Vivez Mieux</span>
       <div class="socs"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a><a class="soc" href="#">tk</a></div>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/22900000000?text=Bonjour%20VENDOB%20!" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="wa-float" target="_blank">💬</a>
 
-<!-- CATALOGUE VIEW -->
-<div class="catalogue-view" id="catalogueView">
-  <div class="cat-view-nav">
-    <button class="cat-view-back" id="catViewBack">← Retour</button>
-    <div class="cat-view-title" id="catViewTitle"></div>
+<div class="cat-page" id="catPage">
+  <div class="cat-nav">
+    <button class="btn-back" id="btnBack">← Retour</button>
+    <div class="cat-nav-title" id="catTitle"></div>
   </div>
-  <div class="cat-view-body">
-    <p class="cat-view-desc" id="catViewDesc"></p>
-    <div class="cat-img-grid" id="catViewGrid"></div>
+  <div class="cat-body">
+    <p class="cat-desc" id="catDesc"></p>
+    <div class="cat-grid" id="catGrid"></div>
   </div>
-  <!-- Bouton commander fixe en bas -->
-  <div class="cat-cmd-bar">
-    <div class="cmd-info">
-      <b id="catCmdName"></b><br>
-      Cliquez pour commander via WhatsApp
-    </div>
-    <a href="#" class="btn-wa-big" id="catCmdBtn" target="_blank">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      Commander sur WhatsApp
-    </a>
+  <div class="cmd-bar">
+    <div class="cmd-info"><b id="cmdName"></b>Appuyez pour commander via WhatsApp</div>
+    <a href="#" class="btn-wa-big" id="cmdBtn" target="_blank">💬 Commander sur WhatsApp</a>
   </div>
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <span class="lb-close" id="lbClose">✕</span>
-  <span class="lb-prev" id="lbPrev">‹</span>
+<div class="lb" id="lb">
+  <span class="lb-x" id="lbX">✕</span>
+  <span class="lb-p" id="lbP">‹</span>
   <img class="lb-img" id="lbImg" src="" alt=""/>
-  <span class="lb-next" id="lbNext">›</span>
+  <span class="lb-n" id="lbN">›</span>
 </div>
 
 <script>
-// ══════════════════════════════════════════════════════════════
-//  ✅ TON NUMÉRO WHATSAPP
-// ══════════════════════════════════════════════════════════════
-const WA = "22900000000";
+// ✅ TON NUMÉRO WHATSAPP
+var WA = "22900000000";
 
-// ══════════════════════════════════════════════════════════════
-//  ✅ MESSAGE WHATSAPP — Modifie le texte entre les guillemets
-//  Les variables {nom} et {pays} seront remplacées automatiquement
-// ══════════════════════════════════════════════════════════════
-function msgWA(nom, pays, ville) {
-  return `Bonjour VENDOB ! 👋
-
-Je suis intéressé(e) par votre gamme :
-📦 *${nom}*
-📍 Vendeur basé à ${ville} (${pays})
-
-Pouvez-vous me donner les disponibilités et les prix exacts ?
-
-Merci 🙏`;
+// ✅ MESSAGE WHATSAPP
+function msgWA(nom) {
+  return encodeURIComponent(
+    "Bonjour VendoB ! 👋\n\n" +
+    "Je suis intéressé(e) par :\n" +
+    "🛍️ *" + nom + "*\n\n" +
+    "Pouvez-vous me donner les disponibilités et les prix ?\n\nMerci 🙏"
+  );
 }
 
-// ══════════════════════════════════════════════════════════════
-//  PAYS
-// ══════════════════════════════════════════════════════════════
-const PAYS = {
-  benin:{flag:"🇧🇯",label:"Bénin"},
-  nigeria:{flag:"🇳🇬",label:"Nigeria"},
-  togo:{flag:"🇹🇬",label:"Togo"},
-  france:{flag:"🇫🇷",label:"France"},
-  chine:{flag:"🇨🇳",label:"Chine"},
-  ghana:{flag:"🇬🇭",label:"Ghana"},
-};
-
-// ══════════════════════════════════════════════════════════════
-//  CATÉGORIES
-// ══════════════════════════════════════════════════════════════
-const CATS = [
+var CATS = [
   {id:"tous",label:"Tout voir",ico:"🛒"},
   {id:"electronique",label:"Électronique",ico:"📱"},
   {id:"mode",label:"Mode & Sacs",ico:"👗"},
@@ -422,331 +376,290 @@ const CATS = [
   {id:"maison",label:"Maison",ico:"🏠"},
   {id:"beaute",label:"Beauté",ico:"💄"},
   {id:"enfants",label:"Enfants",ico:"🧸"},
-  {id:"alimentation",label:"Alimentation",ico:"🍎"},
+  {id:"alimentation",label:"Alimentation",ico:"🍎"}
 ];
 
-const ICO = {electronique:"📱",mode:"👗",sport:"⚽",maison:"🏠",beaute:"💄",enfants:"🧸",alimentation:"🍎"};
+var ICO = {electronique:"📱",mode:"👗",sport:"⚽",maison:"🏠",beaute:"💄",enfants:"🧸",alimentation:"🍎"};
 
-// ══════════════════════════════════════════════════════════════
-//  ✅ TES SOUS-CATÉGORIES (GAMMES)
-//
-//  CONVENTION IMAGES : 3 lettres + numéro
-//    iph1.jpg iph2.jpg iph3.jpg iph4.jpg → iPhone
-//    sas1.jpg sas2.jpg                   → Samsung Galaxy S
-//    saa1.jpg saa2.jpg                   → Samsung Galaxy A
-//    sac1.jpg sac2.jpg sac3.jpg          → Sacs à main
-//    sad1.jpg sad2.jpg                   → Sacs à dos
-//    tsh1.jpg tsh2.jpg                   → T-shirts
-//    jea1.jpg jea2.jpg                   → Jeans
-//    rob1.jpg rob2.jpg                   → Robes
-//    mai1.jpg mai2.jpg                   → Maillots
-//    cha1.jpg cha2.jpg                   → Chaussures
-//
-//  previewImgs → images affichées en grille sur la page principale (4 max)
-//  catalogueImgs → TOUTES les images du catalogue (autant que tu veux)
-//
-//  POUR AJOUTER UNE GAMME : copie un bloc {}, change les infos
-// ══════════════════════════════════════════════════════════════
-const GAMMES = [
-
-  // ── ELECTRONIQUE ─────────────────────────────────────────
+// ✅ TES GAMMES — MODIFIE ICI POUR AJOUTER DES PRODUITS
+// IMAGES : mets tes photos dans /images/ avec la convention 3lettres+numéro
+// Exemple : iph1.jpg iph2.jpg ... sac1.jpg sad1.jpg mai1.jpg cha1.jpg
+var GAMMES = [
   {
-    id:"iphone", cat:"electronique",
-    nom:"iPhone",
+    id:"iphone", cat:"electronique", nom:"iPhone", badge:"Populaire",
     sous:"iPhone 11 · 12 · 13 · 14 · 15 · 16",
-    desc:"Tous les modèles disponibles, reconditionnés ou neufs. Débloqués tout opérateur. Prix selon modèle et stockage.",
-    prixFrom:80000, prixTo:390000,
-    pays:"benin", ville:"Cotonou", wa:"22900000000",
-    badge:"Populaire",
-    previewImgs:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg"],
-    catalogueImgs:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg","iph5.jpg","iph6.jpg","iph7.jpg","iph8.jpg"]
+    desc:"Tous modèles disponibles, reconditionnés ou neufs. Débloqués tout opérateur. Prix selon modèle et stockage.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:80000, prixTo:390000,
+    preview:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg"],
+    catalogue:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg","iph5.jpg","iph6.jpg","iph7.jpg","iph8.jpg"]
   },
   {
-    id:"samsung-s", cat:"electronique",
-    nom:"Samsung Galaxy S",
+    id:"samsung-s", cat:"electronique", nom:"Samsung Galaxy S", badge:null,
     sous:"Galaxy S22 · S23 · S24",
-    desc:"Gamme premium Samsung. Écran AMOLED, triple caméra, charge rapide. Neufs et reconditionnés disponibles.",
-    prixFrom:120000, prixTo:270000,
-    pays:"togo", ville:"Lomé", wa:"22800000000",
-    badge:null,
-    previewImgs:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg"],
-    catalogueImgs:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg","sas5.jpg","sas6.jpg"]
+    desc:"Gamme premium Samsung. Écran AMOLED, triple caméra, charge rapide. Neufs et reconditionnés.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:120000, prixTo:270000,
+    preview:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg"],
+    catalogue:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg","sas5.jpg","sas6.jpg"]
   },
   {
-    id:"samsung-a", cat:"electronique",
-    nom:"Samsung Galaxy A",
-    sous:"Galaxy A05 · A14 · A15 · A16 · A25 · A35 · A55",
-    desc:"Du bas de gamme solide au haut de gamme abordable. Batterie longue durée, dual SIM, charge rapide.",
-    prixFrom:35000, prixTo:140000,
-    pays:"benin", ville:"Cotonou", wa:"22900000000",
-    badge:"Populaire",
-    previewImgs:["saa1.jpg","saa2.jpg","saa3.jpg","saa4.jpg"],
-    catalogueImgs:["saa1.jpg","saa2.jpg","saa3.jpg","saa4.jpg","saa5.jpg","saa6.jpg"]
+    id:"samsung-a", cat:"electronique", nom:"Samsung Galaxy A", badge:"Populaire",
+    sous:"A05 · A14 · A15 · A16 · A25 · A35 · A55",
+    desc:"Du bas de gamme solide au haut de gamme abordable. Batterie longue durée, dual SIM.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:35000, prixTo:140000,
+    preview:["saa1.jpg","saa2.jpg","saa3.jpg","saa4.jpg"],
+    catalogue:["saa1.jpg","saa2.jpg","saa3.jpg","saa4.jpg","saa5.jpg","saa6.jpg"]
   },
-
-  // ── MODE ─────────────────────────────────────────────────
   {
-    id:"tshirts", cat:"mode",
-    nom:"T-shirts",
+    id:"tshirts", cat:"mode", nom:"T-shirts", badge:null,
     sous:"Homme & Femme · S à XXL",
     desc:"T-shirts coton premium, toutes tailles et couleurs. Marques variées, qualité durable.",
-    prixFrom:2500, prixTo:8000,
-    pays:"benin", ville:"Cotonou", wa:"22900000000",
-    badge:null,
-    previewImgs:["tsh1.jpg","tsh2.jpg","tsh3.jpg","tsh4.jpg"],
-    catalogueImgs:["tsh1.jpg","tsh2.jpg","tsh3.jpg","tsh4.jpg","tsh5.jpg","tsh6.jpg"]
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:2500, prixTo:8000,
+    preview:["tsh1.jpg","tsh2.jpg","tsh3.jpg","tsh4.jpg"],
+    catalogue:["tsh1.jpg","tsh2.jpg","tsh3.jpg","tsh4.jpg","tsh5.jpg","tsh6.jpg"]
   },
   {
-    id:"jeans", cat:"mode",
-    nom:"Jeans",
+    id:"jeans", cat:"mode", nom:"Jeans", badge:null,
     sous:"Slim · Regular · Large · Tailles 28 à 44",
-    desc:"Jeans de qualité, toutes coupes disponibles. Délavé, brut, déchiré — large choix.",
-    prixFrom:8000, prixTo:20000,
-    pays:"benin", ville:"Cotonou", wa:"22900000000",
-    badge:null,
-    previewImgs:["jea1.jpg","jea2.jpg","jea3.jpg","jea4.jpg"],
-    catalogueImgs:["jea1.jpg","jea2.jpg","jea3.jpg","jea4.jpg"]
+    desc:"Jeans de qualité, toutes coupes. Délavé, brut, déchiré — large choix.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"48h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:8000, prixTo:20000,
+    preview:["jea1.jpg","jea2.jpg","jea3.jpg","jea4.jpg"],
+    catalogue:["jea1.jpg","jea2.jpg","jea3.jpg","jea4.jpg"]
   },
   {
-    id:"robes", cat:"mode",
-    nom:"Robes",
+    id:"robes", cat:"mode", nom:"Robes", badge:"Populaire",
     sous:"Ankara · Moderne · Soirée",
     desc:"Robes Ankara et tissus modernes. Sur commande possible. Tailles S à XXL.",
-    prixFrom:6000, prixTo:18000,
-    pays:"benin", ville:"Porto-Novo", wa:"22900000002",
-    badge:"Populaire",
-    previewImgs:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg"],
-    catalogueImgs:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg","rob5.jpg","rob6.jpg"]
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:18000,
+    preview:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg"],
+    catalogue:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg","rob5.jpg","rob6.jpg"]
   },
   {
-    id:"sacs-main", cat:"mode",
-    nom:"Sacs à main",
-    sous:"Femme · Cuir · Tissu",
+    id:"sacs-main", cat:"mode", nom:"Sacs à main", badge:null,
+    sous:"Femme · Cuir · Tissu · Plusieurs coloris",
     desc:"Sacs à main tendance. Cuir synthétique et tissu. Plusieurs coloris disponibles.",
-    prixFrom:5000, prixTo:25000,
-    pays:"togo", ville:"Lomé", wa:"22800000000",
-    badge:null,
-    previewImgs:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg"],
-    catalogueImgs:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg","sac5.jpg","sac6.jpg"]
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:25000,
+    preview:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg"],
+    catalogue:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg","sac5.jpg","sac6.jpg"]
   },
   {
-    id:"sacs-dos", cat:"mode",
-    nom:"Sacs à dos",
+    id:"sacs-dos", cat:"mode", nom:"Sacs à dos", badge:null,
     sous:"Homme & Femme · École · Bureau · Voyage",
-    desc:"Sacs à dos résistants avec compartiment PC. Idéal pour l'école, le bureau et le voyage.",
-    prixFrom:7000, prixTo:22000,
-    pays:"benin", ville:"Cotonou", wa:"22900000000",
-    badge:"Populaire",
-    previewImgs:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg"],
-    catalogueImgs:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg"]
+    desc:"Sacs résistants avec compartiment PC. Idéal école, bureau et voyage.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:7000, prixTo:22000,
+    preview:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg"],
+    catalogue:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg"]
   },
-
-  // ── SPORT ────────────────────────────────────────────────
   {
-    id:"maillots", cat:"sport",
-    nom:"Maillots de Football",
+    id:"maillots", cat:"sport", nom:"Maillots de Football", badge:"Populaire",
     sous:"PSG · Real Madrid · Barça · Équipes africaines",
-    desc:"Maillots de foot tous clubs et sélections nationales. Tailles S à XXL disponibles.",
-    prixFrom:5000, prixTo:15000,
-    pays:"nigeria", ville:"Lagos", wa:"23400000000",
-    badge:"Populaire",
-    previewImgs:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg"],
-    catalogueImgs:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg","mai5.jpg","mai6.jpg"]
+    desc:"Tous clubs et sélections nationales. Tailles S à XXL.",
+    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:15000,
+    preview:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg"],
+    catalogue:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg","mai5.jpg","mai6.jpg"]
   },
   {
-    id:"chaussures", cat:"sport",
-    nom:"Chaussures de Sport",
-    sous:"Nike · Adidas · Puma · 36 à 47",
-    desc:"Running, basketball, lifestyle. Grandes marques à prix accessibles. Toutes tailles.",
-    prixFrom:10000, prixTo:35000,
-    pays:"benin", ville:"Cotonou", wa:"22900000000",
-    badge:null,
-    previewImgs:["cha1.jpg","cha2.jpg","cha3.jpg","cha4.jpg"],
-    catalogueImgs:["cha1.jpg","cha2.jpg","cha3.jpg","cha4.jpg","cha5.jpg","cha6.jpg"]
-  },
-
-  // ── MODÈLE POUR AJOUTER UNE GAMME ───────────────────────
-  /*
-  {
-    id:"mon-produit", cat:"electronique",
-    nom:"Nom de la gamme",
-    sous:"Sous-titre court",
-    desc:"Description affichée dans le catalogue.",
-    prixFrom:10000, prixTo:50000,
-    pays:"benin", ville:"Cotonou", wa:"22900000000",
-    badge:null,               // null | "Populaire" | "Promo" | "Nouveau" | "Stock limité"
-    previewImgs:["xxx1.jpg","xxx2.jpg","xxx3.jpg","xxx4.jpg"],   // 4 images max pour l'aperçu
-    catalogueImgs:["xxx1.jpg","xxx2.jpg","xxx3.jpg","xxx4.jpg","xxx5.jpg"]  // toutes les images
-  },
+    id:"chaussures", cat:"sport", nom:"Chaussures de Sport", badge:null,
+    sous:"Nike · Adidas · Puma · Tailles 36 à 47",
+    desc:"Running, basketball, lifestyle. Grandes marques à prix accessibles.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:10000, prixTo:35000,
+    preview:["cha1.jpg","cha2.jpg","cha3.jpg","cha4.jpg"],
+    catalogue:["cha1.jpg","cha2.jpg","cha3.jpg","cha4.jpg","cha5.jpg","cha6.jpg"]
+  }
+  /* ✅ COPIE CE BLOC POUR AJOUTER UNE GAMME :
+  ,{
+    id:"mon-id", cat:"electronique", nom:"Nom Gamme", badge:null,
+    sous:"Sous-titre", desc:"Description.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:10000, prixTo:50000,
+    preview:["xxx1.jpg","xxx2.jpg","xxx3.jpg","xxx4.jpg"],
+    catalogue:["xxx1.jpg","xxx2.jpg","xxx3.jpg","xxx4.jpg","xxx5.jpg"]
+  }
   */
 ];
 
-// ══════════════════════════════════════════════════════════════
-//  LOGIQUE
-// ══════════════════════════════════════════════════════════════
-const fmt = n => n.toLocaleString("fr-FR") + " FCFA";
-const p   = k => PAYS[k] || {flag:"🌍",label:k};
+// ── LOGIQUE ──
+var currentCat = "tous";
+var lbImgs = [], lbIdx = 0;
 
-let currentCat = "tous";
-let lbImgs = [], lbIdx = 0;
+function fmt(n) { return n.toLocaleString("fr-FR") + " FCFA"; }
 
-// ── TABS ──
 function buildTabs() {
-  const el = document.getElementById("tabs");
-  el.innerHTML = CATS.map(c => {
-    const cnt = c.id==="tous" ? GAMMES.length : GAMMES.filter(g=>g.cat===c.id).length;
-    if (cnt===0 && c.id!=="tous") return "";
-    return `<button class="ctab${c.id===currentCat?" on":""}" data-c="${c.id}">${c.ico} ${c.label}</button>`;
-  }).join("");
-  el.querySelectorAll(".ctab").forEach(btn => {
-    btn.addEventListener("click", () => {
-      currentCat = btn.dataset.c;
-      el.querySelectorAll(".ctab").forEach(b => b.classList.toggle("on", b===btn));
+  var el = document.getElementById("tabs");
+  if (!el) return;
+  var html = "";
+  for (var i = 0; i < CATS.length; i++) {
+    var c = CATS[i];
+    var cnt = c.id === "tous" ? GAMMES.length : GAMMES.filter(function(g){ return g.cat === c.id; }).length;
+    if (cnt === 0 && c.id !== "tous") continue;
+    html += '<button class="tab' + (c.id === currentCat ? " on" : "") + '" data-c="' + c.id + '">' + c.ico + ' ' + c.label + '</button>';
+  }
+  el.innerHTML = html;
+  el.querySelectorAll(".tab").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      currentCat = btn.getAttribute("data-c");
+      el.querySelectorAll(".tab").forEach(function(b) { b.classList.toggle("on", b === btn); });
       render();
-      document.getElementById("shop").scrollIntoView({behavior:"smooth",block:"start"});
+      document.getElementById("shop").scrollIntoView({behavior:"smooth", block:"start"});
     });
   });
 }
 
-// ── RENDER ──
 function render() {
-  const q = document.getElementById("searchInput").value.trim().toLowerCase();
-  let list = GAMMES;
-  if (currentCat !== "tous") list = list.filter(g => g.cat === currentCat);
-  if (q) list = list.filter(g =>
-    g.nom.toLowerCase().includes(q) ||
-    g.sous.toLowerCase().includes(q) ||
-    g.desc.toLowerCase().includes(q)
-  );
-
-  const wrap = document.getElementById("shopContent");
+  var wrap = document.getElementById("shopContent");
+  if (!wrap) return;
+  var q = (document.getElementById("searchInput").value || "").trim().toLowerCase();
+  var list = GAMMES.filter(function(g) {
+    if (currentCat !== "tous" && g.cat !== currentCat) return false;
+    if (q && g.nom.toLowerCase().indexOf(q) < 0 && g.sous.toLowerCase().indexOf(q) < 0) return false;
+    return true;
+  });
 
   if (!list.length) {
-    wrap.innerHTML = `<div class="empty"><div class="empty-ico">🔍</div><p>Aucun produit trouvé.</p></div>`;
+    wrap.innerHTML = '<div class="empty"><div class="empty-ico">🔍</div><p>Aucune gamme trouvée.</p></div>';
     return;
   }
 
-  const BCLS = {"Populaire":"bp","Promo":"bpr","Nouveau":"bn","Stock limité":"bl"};
+  var html = "";
+  for (var i = 0; i < list.length; i++) {
+    var g = list[i];
+    var ico = ICO[g.cat] || "📦";
 
-  wrap.innerHTML = list.map(g => {
-    const py = p(g.pays);
-    // Preview grid : on prend les 4 premières images, on complète avec des placeholders
-    const previews = [...g.previewImgs].slice(0,4);
-    while (previews.length < 4) previews.push(null);
+    // 4 cases images
+    var cells = "";
+    for (var j = 0; j < 4; j++) {
+      if (g.preview[j]) {
+        cells += '<img src="images/' + g.preview[j] + '" alt="' + g.nom + '" loading="lazy" ' +
+          'onerror="this.outerHTML=\'<div class=ph><div class=ph-ico>' + ico + '</div><span>Photo ' + (j+1) + '</span></div>\'">';
+      } else {
+        cells += '<div class="ph"><div class="ph-ico">' + ico + '</div><span>Photo ' + (j+1) + '</span></div>';
+      }
+    }
 
-    const gridHtml = previews.map((img, i) => img
-      ? `<img src="images/${img}" alt="${g.nom}" loading="lazy"
-             onerror="this.style.display='none';this.parentElement.innerHTML='<div class=img-placeholder><span>${ICO[g.cat]||"📦"}</span><span>Image ${i+1}</span></div>'">`
-      : `<div class="img-placeholder"><span>${ICO[g.cat]||"📦"}</span><span>Photo ${i+1}</span></div>`
-    ).join("");
+    // Infos fournisseur
+    var ftags = "";
+    if (g.pays)      ftags += '<span class="ftag">📍 ' + g.pays + ' &nbsp;·&nbsp; ' + g.ville + '</span>';
+    if (g.verifie)   ftags += '<span class="ftag ftag-ok">✅ Fournisseur vérifié VendoB</span>';
+    if (g.livraison) ftags += '<span class="ftag">🚚 ' + g.livraison + '</span>';
+    if (g.paiement)  ftags += '<span class="ftag">🔒 ' + g.paiement + '</span>';
+    if (g.prixFrom)  ftags += '<span class="ftag ftag-prix">💰 ' + fmt(g.prixFrom) + (g.prixTo ? ' – ' + fmt(g.prixTo) : '') + '</span>';
 
-    return `
-    <div class="range-block" style="animation:scl .4s ease both">
-      <div class="range-header">
-        <div>
-          <div class="range-title">
-            ${g.nom}
-            ${g.badge?`<span class="rtag">${g.badge}</span>`:""}
-          </div>
-          <div class="range-sub">${g.sous} &nbsp;·&nbsp; ${py.flag} ${py.label} · ${g.ville} &nbsp;·&nbsp; À partir de ${fmt(g.prixFrom)}${g.prixTo?` – ${fmt(g.prixTo)}`:""}</div>
-        </div>
-        <button class="btn-voir" data-id="${g.id}">Voir le catalogue →</button>
-      </div>
-      <div class="img-grid">${gridHtml}</div>
-    </div>`;
-  }).join("");
+    html += '<div class="gamme" style="animation-delay:' + (i * 0.05) + 's">' +
+      '<div class="gamme-head">' +
+        '<div>' +
+          '<div class="gamme-title">' + g.nom + (g.badge ? ' <span class="gtag">' + g.badge + '</span>' : '') + '</div>' +
+          '<div class="gamme-sous">' + g.sous + '</div>' +
+        '</div>' +
+        '<button class="btn-voir" data-id="' + g.id + '">Voir le catalogue →</button>' +
+      '</div>' +
+      '<div class="ftags">' + ftags + '</div>' +
+      '<div class="preview-grid">' + cells + '</div>' +
+      '<div class="gamme-footer">' +
+        '<a href="https://wa.me/' + WA + '?text=' + msgWA(g.nom) + '" class="btn-wa-home" target="_blank">' +
+          '💬 Commander sur WhatsApp' +
+        '</a>' +
+        '<button class="btn-voir" data-id="' + g.id + '" style="background:transparent;color:var(--nv);border:1.5px solid var(--g2)">📷 Voir le catalogue</button>' +
+      '</div>' +
+    '</div>';
+  }
+  wrap.innerHTML = html;
 
-  // boutons "voir catalogue"
-  wrap.querySelectorAll(".btn-voir").forEach(btn => {
-    btn.addEventListener("click", () => openCatalogue(btn.dataset.id));
+  wrap.querySelectorAll(".btn-voir").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      openCatalogue(btn.getAttribute("data-id"));
+    });
   });
 }
 
-// ── CATALOGUE VIEW ──
 function openCatalogue(id) {
-  const g = GAMMES.find(x => x.id === id);
+  var g = null;
+  for (var i = 0; i < GAMMES.length; i++) { if (GAMMES[i].id === id) { g = GAMMES[i]; break; } }
   if (!g) return;
-  const py = p(g.pays);
 
-  document.getElementById("catViewTitle").textContent = g.nom;
-  document.getElementById("catViewDesc").textContent  = g.desc;
-  document.getElementById("catCmdName").textContent   = g.nom;
+  document.getElementById("catTitle").textContent = g.nom;
+  document.getElementById("catDesc").textContent  = g.desc;
+  document.getElementById("cmdName").textContent  = g.nom + " — ";
+  document.getElementById("cmdBtn").href = "https://wa.me/" + WA + "?text=" + msgWA(g.nom);
 
-  // WhatsApp link
-  const msg = encodeURIComponent(msgWA(g.nom, py.label, g.ville));
-  const num = g.wa || WA;
-  document.getElementById("catCmdBtn").href = `https://wa.me/${num}?text=${msg}`;
+  lbImgs = g.catalogue;
+  var grid = document.getElementById("catGrid");
+  var html = "";
+  for (var i = 0; i < g.catalogue.length; i++) {
+    var ico = ICO[g.cat] || "📦";
+    html += '<div class="cat-item" data-i="' + i + '">' +
+      '<img src="images/' + g.catalogue[i] + '" alt="' + g.nom + ' ' + (i+1) + '" loading="lazy" ' +
+      'onerror="this.parentElement.innerHTML=\'<div style=padding:30px;text-align:center;color:#bbb><div style=font-size:2rem>' + ico + '</div><div style=font-size:.72rem;margin-top:6px>Photo ' + (i+1) + '</div></div>\'">' +
+      '<div class="cat-num">' + (i+1) + '</div>' +
+      '</div>';
+  }
+  grid.innerHTML = html;
 
-  // grille images
-  const grid = document.getElementById("catViewGrid");
-  grid.innerHTML = g.catalogueImgs.map((img, i) => `
-    <div class="cat-img-item" data-idx="${i}">
-      <img src="images/${img}" alt="${g.nom} ${i+1}" loading="lazy"
-           onerror="this.parentElement.innerHTML='<div style=padding:40px;text-align:center;color:#aaa><div style=font-size:2.5rem>${ICO[g.cat]||"📦"}</div><div style=font-size:.8rem;margin-top:8px>Image ${i+1}</div></div>'">
-      <div class="img-num">${i+1}</div>
-    </div>`).join("");
-
-  // lightbox on image click
-  lbImgs = g.catalogueImgs;
-  grid.querySelectorAll(".cat-img-item").forEach(item => {
-    item.addEventListener("click", () => openLightbox(+item.dataset.idx));
+  grid.querySelectorAll(".cat-item").forEach(function(item) {
+    item.addEventListener("click", function() { openLb(parseInt(item.getAttribute("data-i"))); });
   });
 
-  document.getElementById("catalogueView").classList.add("show");
+  document.getElementById("catPage").classList.add("show");
   document.body.style.overflow = "hidden";
 }
 
 function closeCatalogue() {
-  document.getElementById("catalogueView").classList.remove("show");
+  document.getElementById("catPage").classList.remove("show");
   document.body.style.overflow = "";
 }
 
-document.getElementById("catViewBack").addEventListener("click", closeCatalogue);
-
-// ── LIGHTBOX ──
-function openLightbox(idx) {
+function openLb(idx) {
   lbIdx = idx;
   document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
-  document.getElementById("lightbox").classList.add("show");
+  document.getElementById("lb").classList.add("show");
 }
-function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("show");
-}
-document.getElementById("lbClose").addEventListener("click", closeLightbox);
-document.getElementById("lbPrev").addEventListener("click", () => {
+function closeLb() { document.getElementById("lb").classList.remove("show"); }
+
+document.getElementById("btnBack").addEventListener("click", closeCatalogue);
+document.getElementById("lbX").addEventListener("click", closeLb);
+document.getElementById("lb").addEventListener("click", function(e) { if (e.target === this) closeLb(); });
+document.getElementById("lbP").addEventListener("click", function() {
   lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length;
   document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
 });
-document.getElementById("lbNext").addEventListener("click", () => {
+document.getElementById("lbN").addEventListener("click", function() {
   lbIdx = (lbIdx + 1) % lbImgs.length;
   document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
 });
-document.getElementById("lightbox").addEventListener("click", e => {
-  if (e.target.id === "lightbox") closeLightbox();
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") { closeLb(); closeCatalogue(); }
+  if (e.key === "ArrowLeft")  document.getElementById("lbP").click();
+  if (e.key === "ArrowRight") document.getElementById("lbN").click();
 });
-
-// ── SEARCH ──
 document.getElementById("searchInput").addEventListener("input", render);
-
-// ── HAMBURGER ──
-document.getElementById("burger").addEventListener("click", function(){
+document.getElementById("burger").addEventListener("click", function() {
   this.classList.toggle("open");
   document.getElementById("mobNav").classList.toggle("show");
 });
-document.querySelectorAll(".mob-nav a").forEach(a => a.addEventListener("click", () => {
-  document.getElementById("burger").classList.remove("open");
-  document.getElementById("mobNav").classList.remove("show");
-}));
+document.querySelectorAll(".mob-nav a").forEach(function(a) {
+  a.addEventListener("click", function() {
+    document.getElementById("burger").classList.remove("open");
+    document.getElementById("mobNav").classList.remove("show");
+  });
+});
 
-// ── REVEAL ──
-const revObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("in"); });
-},{threshold:.1});
-document.querySelectorAll(".rv").forEach(el => revObs.observe(el));
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add("in"); });
+}, {threshold:0.1});
+document.querySelectorAll(".rv").forEach(function(el) { obs.observe(el); });
 
-// ── INIT ──
-buildTabs();
-render();
+document.addEventListener("DOMContentLoaded", function() {
+  buildTabs();
+  render();
+});
 </script>
 </body>
 </html>
