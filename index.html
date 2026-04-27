@@ -263,7 +263,7 @@ footer{background:#080808;padding:48px 0 22px}
       <div class="hero-cards">
         <div class="hc"><div class="hc-ico">📱</div><div><div class="hc-n">iPhone 15 128Go</div><div class="hc-p">À partir de 235 000 FCFA</div></div></div>
         <div class="hc"><div class="hc-ico">👜</div><div><div class="hc-n">Sacs à main</div><div class="hc-p">À partir de 5 000 FCFA</div></div></div>
-        <div class="hc"><div class="hc-ico">🧕</div><div><div class="hc-n">Mode Musulmane</div><div class="hc-p">À partir de 8 000 FCFA</div></div></div>
+        <div class="hc"><div class="hc-ico">⚽</div><div><div class="hc-n">Articles de Sport</div><div class="hc-p">À partir de 3 000 FCFA</div></div></div>
       </div>
     </div>
   </div>
@@ -368,188 +368,154 @@ function msgWA(nom) {
   );
 }
 
-// ✅ CATÉGORIES COMPLÉTÉES
+// ✅ 5 CATÉGORIES FINALES
 var CATS = [
   {id:"tous",label:"Tout voir",ico:"🛒"},
-  {id:"electronique",label:"Électronique",ico:"📱"},
-  {id:"mode-homme",label:"Mode Homme",ico:"👔"},
-  {id:"sacs-homme",label:"Sacs à Main Homme",ico:"👜"},
-  {id:"femme-musulmane",label:"Mode Musulmane",ico:"🧕"},
-  {id:"mode-femme",label:"Mode Femme",ico:"👗"},
-  {id:"chaussures",label:"Chaussures",ico:"👟"},
-  {id:"accessoires",label:"Accessoires",ico:"💍"},
+  {id:"telephone",label:"Téléphone",ico:"📱"},
+  {id:"sac-femmes",label:"Sac Femmes",ico:"👜"},
   {id:"sport",label:"Sport",ico:"⚽"},
-  {id:"maison",label:"Maison",ico:"🏠"},
-  {id:"beaute",label:"Beauté",ico:"💄"},
-  {id:"enfants",label:"Enfants",ico:"🧸"},
-  {id:"technologie",label:"Technologie",ico:"💻"},
-  {id:"alimentation",label:"Alimentation",ico:"🍎"}
+  {id:"sac-homme",label:"Sac Homme",ico:"👜"},
+  {id:"mode-musulman",label:"Mode Musulman",ico:"🧕"}
 ];
 
-var ICO = {electronique:"📱",mode:"👗",sport:"⚽",maison:"🏠",beaute:"💄",enfants:"🧸",alimentation:"🍎",};
+var ICO = {telephone:"📱",sac:"👜",sport:"⚽",mus:"🧕"};
 
-// ✅ GAMMES AVEC CATÉGORIES COMPLÉTÉES
+// ✅ GAMMES - CODE NAMING : 3 LETTRES + CHIFFRE
 var GAMMES = [
-  // ÉLECTRONIQUE
+  // TÉLÉPHONE
   {
-    id:"iphone", cat:"electronique", nom:"iPhone", badge:"Populaire",
+    id:"iphone", cat:"telephone", nom:"iPhone", badge:"Populaire",
     sous:"iPhone 11 · 12 · 13 · 14 · 15 · 16",
-    desc:"Tous modèles disponibles, reconditionnés ou neufs. Débloqués tout opérateur. Prix selon modèle et stockage.",
+    desc:"Tous modèles disponibles, reconditionnés ou neufs. Débloqués tout opérateur.",
     pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
     verifie:true, paiement:"Paiement à la livraison", prixFrom:80000, prixTo:390000,
-    preview:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg"],
-    catalogue:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg","iph5.jpg","iph6.jpg","iph7.jpg","iph8.jpg"]
+    preview:["tel1.jpg","tel2.jpg","tel3.jpg","tel4.jpg"],
+    catalogue:["tel1.jpg","tel2.jpg","tel3.jpg","tel4.jpg","tel5.jpg","tel6.jpg","tel7.jpg","tel8.jpg"]
   },
   {
-    id:"samsung-s", cat:"electronique", nom:"Samsung Galaxy S", badge:null,
-    sous:"Galaxy S22 · S23 · S24",
-    desc:"Gamme premium Samsung. Écran AMOLED, triple caméra, charge rapide. Neufs et reconditionnés.",
+    id:"samsung", cat:"telephone", nom:"Samsung", badge:null,
+    sous:"Galaxy S · A · Note · Tab",
+    desc:"Gamme complète Samsung. Écran AMOLED, caméras performantes.",
     pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:120000, prixTo:270000,
-    preview:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg"],
-    catalogue:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg","sas5.jpg","sas6.jpg"]
-  },
-
-  // MODE HOMME
-  {
-    id:"chemises", cat:"mode-homme", nom:"Chemises Homme", badge:null,
-    sous:"Coton · Polyester · Toutes tailles",
-    desc:"Chemises classiques et modernes. Couleurs variées, coupe ajustée ou large. Qualité premium.",
-    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
-    preview:["che1.jpg","che2.jpg","che3.jpg","che4.jpg"],
-    catalogue:["che1.jpg","che2.jpg","che3.jpg","che4.jpg","che5.jpg","che6.jpg"]
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:45000, prixTo:250000,
+    preview:["tel5.jpg","tel6.jpg","tel7.jpg","tel8.jpg"],
+    catalogue:["tel5.jpg","tel6.jpg","tel7.jpg","tel8.jpg"]
   },
   {
-    id:"pantalons-homme", cat:"mode-homme", nom:"Pantalons Homme", badge:"Populaire",
-    sous:"Slim · Regular · Large · Jeans · Chino",
-    desc:"Pantalons de qualité pour tous les styles. Confortables, durables, tendance.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:8000, prixTo:25000,
-    preview:["pan1.jpg","pan2.jpg","pan3.jpg","pan4.jpg"],
-    catalogue:["pan1.jpg","pan2.jpg","pan3.jpg","pan4.jpg","pan5.jpg"]
-  },
-
-  // SACS À MAIN HOMME
-  {
-    id:"sacs-dos-homme", cat:"sacs-homme", nom:"Sacs à Dos Homme", badge:null,
-    sous:"Bureau · Voyage · Casual · Avec compartiment PC",
-    desc:"Sacs résistants et stylés. Compartiments multiples, tissus de qualité, design moderne.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:40000,
-    preview:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg"],
-    catalogue:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg","sad5.jpg"]
-  },
-  {
-    id:"portefeuilles-homme", cat:"sacs-homme", nom:"Portefeuilles & Porte-cartes", badge:null,
-    sous:"Cuir · Synthétique · Avec RFID",
-    desc:"Portefeuilles pratiques et élégants. Protection RFID, rangements optimisés, matériaux premium.",
-    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:15000,
-    preview:["por1.jpg","por2.jpg","por3.jpg","por4.jpg"],
-    catalogue:["por1.jpg","por2.jpg","por3.jpg","por4.jpg"]
-  },
-  {
-    id:"sacs-messager-homme", cat:"sacs-homme", nom:"Sacs Messager Homme", badge:"Populaire",
-    sous:"Cuir · Toile · Bandoulière ajustable",
-    desc:"Parfaits pour le travail ou les déplacements. Style intemporel, durabilité garantie.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:45000,
-    preview:["mes1.jpg","mes2.jpg","mes3.jpg","mes4.jpg"],
-    catalogue:["mes1.jpg","mes2.jpg","mes3.jpg","mes4.jpg","mes5.jpg","mes6.jpg"]
-  },
-
-  // MODE FEMME MUSULMANE
-  {
-    id:"hijabs", cat:"femme-musulmane", nom:"Hijabs & Foulards", badge:"Populaire",
-    sous:"Coton · Soie · Mousseline · Tous coloris",
-    desc:"Hijabs élégants et confortables. Motifs classiques et modernes. Qualité premium pour jour et soirée.",
-    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:3000, prixTo:12000,
-    preview:["hij1.jpg","hij2.jpg","hij3.jpg","hij4.jpg"],
-    catalogue:["hij1.jpg","hij2.jpg","hij3.jpg","hij4.jpg","hij5.jpg","hij6.jpg","hij7.jpg"]
-  },
-  {
-    id:"robes-musulmanes", cat:"femme-musulmane", nom:"Robes Musulmanes", badge:"Populaire",
-    sous:"Maxi · Midi · Diverses couleurs",
-    desc:"Robes musulmanes modernes et élégantes. Coupes flatteuses, tissus de qualité, tailles S à XXL.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:35000,
-    preview:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg"],
-    catalogue:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg","rob5.jpg","rob6.jpg"]
-  },
-  {
-    id:"abayas", cat:"femme-musulmane", nom:"Abayas & Djellabas", badge:null,
-    sous:"Noir · Couleurs · Brodées · Premium",
-    desc:"Abayas et djellabas de qualité supérieure. Design traditionnel et moderne, confortables et élégantes.",
-    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:20000, prixTo:60000,
-    preview:["aba1.jpg","aba2.jpg","aba3.jpg","aba4.jpg"],
-    catalogue:["aba1.jpg","aba2.jpg","aba3.jpg","aba4.jpg","aba5.jpg","aba6.jpg"]
-  },
-
-  // MODE FEMME GÉNÉRALE
-  {
-    id:"robes-femme", cat:"mode-femme", nom:"Robes Femme", badge:null,
-    sous:"Casual · Soirée · Maxi · Midi",
-    desc:"Robes pour tous les occasions. Styles variés, couleurs tendance, qualité durable.",
-    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:8000, prixTo:28000,
-    preview:["rofem1.jpg","rofem2.jpg","rofem3.jpg","rofem4.jpg"],
-    catalogue:["rofem1.jpg","rofem2.jpg","rofem3.jpg","rofem4.jpg","rofem5.jpg"]
-  },
-  {
-    id:"blouses", cat:"mode-femme", nom:"Blouses & Chemises Femme", badge:null,
-    sous:"Coton · Polyester · Diverses coupes",
-    desc:"Blouses élégantes et pratiques. Parfaites pour le bureau ou les sorties.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:16000,
-    preview:["blo1.jpg","blo2.jpg","blo3.jpg","blo4.jpg"],
-    catalogue:["blo1.jpg","blo2.jpg","blo3.jpg","blo4.jpg"]
-  },
-
-  // CHAUSSURES
-  {
-    id:"chaussures-sport", cat:"chaussures", nom:"Chaussures de Sport", badge:"Populaire",
-    sous:"Running · Basketball · Casual · Tailles 36-47",
-    desc:"Chaussures de grandes marques. Confort optimal, designs tendance, durabilité garantie.",
+    id:"google-pixel", cat:"telephone", nom:"Google Pixel", badge:null,
+    sous:"Pixel 6 · 7 · 8 · Pro",
+    desc:"Caméra exceptionnelle, IA Google intégrée. Performance premium.",
     pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h – Bénin · Togo · Nigeria",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:45000,
-    preview:["cho1.jpg","cho2.jpg","cho3.jpg","cho4.jpg"],
-    catalogue:["cho1.jpg","cho2.jpg","cho3.jpg","cho4.jpg","cho5.jpg","cho6.jpg"]
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:120000, prixTo:320000,
+    preview:["tel9.jpg","tel10.jpg","tel11.jpg","tel12.jpg"],
+    catalogue:["tel9.jpg","tel10.jpg","tel11.jpg","tel12.jpg"]
   },
 
-  // ACCESSOIRES
+  // SAC FEMMES
   {
-    id:"bijoux", cat:"accessoires", nom:"Bijoux & Montres", badge:null,
-    sous:"Colliers · Bracelets · Boucles · Montres",
-    desc:"Bijoux élégants et intemporels. Qualité premium, designs variés pour tous les styles.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:30000,
-    preview:["bij1.jpg","bij2.jpg","bij3.jpg","bij4.jpg"],
-    catalogue:["bij1.jpg","bij2.jpg","bij3.jpg","bij4.jpg","bij5.jpg"]
+    id:"sac-main-femme", cat:"sac-femmes", nom:"Sacs à Main Femme", badge:"Populaire",
+    sous:"Cuir · Tissu · Tous coloris",
+    desc:"Sacs élégants et pratiques. Designs variés, qualité premium.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:8000, prixTo:35000,
+    preview:["saf1.jpg","saf2.jpg","saf3.jpg","saf4.jpg"],
+    catalogue:["saf1.jpg","saf2.jpg","saf3.jpg","saf4.jpg","saf5.jpg","saf6.jpg"]
+  },
+  {
+    id:"sac-dos-femme", cat:"sac-femmes", nom:"Sacs à Dos Femme", badge:null,
+    sous:"Casual · Voyage · Sport",
+    desc:"Sacs à dos féminins et fonctionnels. Confortables et stylés.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:28000,
+    preview:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"],
+    catalogue:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"]
+  },
+  {
+    id:"pochettes", cat:"sac-femmes", nom:"Pochettes & Clutch", badge:null,
+    sous:"Soirée · Casual · Mini",
+    desc:"Pochettes élégantes pour tous les occasions. Designs tendance.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:15000,
+    preview:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"],
+    catalogue:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"]
   },
 
   // SPORT
   {
-    id:"maillots-foot", cat:"sport", nom:"Maillots de Football", badge:"Populaire",
-    sous:"PSG · Real Madrid · Barça · Équipes africaines",
-    desc:"Maillots de tous les clubs et sélections. Confortable, respirant, qualité official.",
-    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:18000,
-    preview:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg"],
-    catalogue:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg","mai5.jpg"]
+    id:"ballon", cat:"sport", nom:"Ballons de Sport", badge:"Populaire",
+    sous:"Football · Basketball · Volleyball",
+    desc:"Ballons officiels de qualité supérieure. Durabilité garantie.",
+    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
+    preview:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg"],
+    catalogue:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg","spo5.jpg","spo6.jpg"]
+  },
+  {
+    id:"tenue-sport", cat:"sport", nom:"Tenues de Sport", badge:null,
+    sous:"Homme · Femme · Enfant",
+    desc:"Vêtements de sport confortables et respirants. Tous styles.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:22000,
+    preview:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg"],
+    catalogue:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg","spo11.jpg"]
   },
 
-  // BEAUTÉ
+  // SAC À MAIN HOMME
   {
-    id:"cosmetiques", cat:"beaute", nom:"Cosmétiques & Soins", badge:null,
-    sous:"Maquillage · Soins visage · Crèmes",
-    desc:"Produits de beauté qualité. Marques reconnues, formules efficaces, prix accessibles.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:22000,
-    preview:["cos1.jpg","cos2.jpg","cos3.jpg","cos4.jpg"],
-    catalogue:["cos1.jpg","cos2.jpg","cos3.jpg","cos4.jpg"]
+    id:"sac-dos-homme", cat:"sac-homme", nom:"Sacs à Dos Homme", badge:"Populaire",
+    sous:"Bureau · Voyage · Casual",
+    desc:"Sacs résistants avec compartiments PC. Style professionnel.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:40000,
+    preview:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg"],
+    catalogue:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg","sah5.jpg","sah6.jpg"]
+  },
+  {
+    id:"messager", cat:"sac-homme", nom:"Sacs Messager Homme", badge:null,
+    sous:"Cuir · Bandoulière · Travail",
+    desc:"Sacs intemporels et élégants. Parfaits pour le bureau.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:45000,
+    preview:["sah7.jpg","sah8.jpg","sah9.jpg","sah10.jpg"],
+    catalogue:["sah7.jpg","sah8.jpg","sah9.jpg","sah10.jpg","sah11.jpg"]
+  },
+  {
+    id:"porte-feuille", cat:"sac-homme", nom:"Portefeuilles Homme", badge:null,
+    sous:"Cuir · Synthétique · RFID",
+    desc:"Portefeuilles robustes et pratiques. Protection RFID.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
+    preview:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"],
+    catalogue:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"]
+  },
+
+  // MODE MUSULMANE
+  {
+    id:"hijab", cat:"mode-musulman", nom:"Hijabs & Foulards", badge:"Populaire",
+    sous:"Coton · Soie · Mousseline",
+    desc:"Hijabs élégants et confortables. Motifs variés pour tous les styles.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:3000, prixTo:12000,
+    preview:["mus1.jpg","mus2.jpg","mus3.jpg","mus4.jpg"],
+    catalogue:["mus1.jpg","mus2.jpg","mus3.jpg","mus4.jpg","mus5.jpg","mus6.jpg","mus7.jpg"]
+  },
+  {
+    id:"robe-musulmane", cat:"mode-musulman", nom:"Robes Musulmanes", badge:"Populaire",
+    sous:"Maxi · Midi · Diverses couleurs",
+    desc:"Robes modernes et élégantes. Coupes flatteuses, qualité premium.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:40000,
+    preview:["mus8.jpg","mus9.jpg","mus10.jpg","mus11.jpg"],
+    catalogue:["mus8.jpg","mus9.jpg","mus10.jpg","mus11.jpg","mus12.jpg","mus13.jpg"]
+  },
+  {
+    id:"abaya", cat:"mode-musulman", nom:"Abayas & Djellabas", badge:null,
+    sous:"Noir · Couleurs · Brodées",
+    desc:"Abayas de qualité supérieure. Design traditionnel et moderne.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:20000, prixTo:65000,
+    preview:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg"],
+    catalogue:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg","mus18.jpg"]
   }
 ];
 
