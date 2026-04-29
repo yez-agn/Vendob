@@ -38,8 +38,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .mob-nav a{padding:11px 12px;border-radius:8px;font-weight:500;font-size:.95rem;transition:.2s}
 .mob-nav a:hover{background:var(--g1)}
 
-/* HERO, TABS, SHOP, etc. */ 
-/* (Le reste du CSS reste inchangé pour garder la propreté) */
+/* HERO */
 .hero{padding-top:calc(var(--nav)+60px);padding-bottom:64px;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;top:-80px;right:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(244,130,30,.08),transparent 65%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:center}
@@ -74,12 +73,14 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .tab:hover{background:var(--g2);color:var(--nv)}
 .tab.on{background:var(--or);color:#fff;border-color:var(--or);box-shadow:0 4px 14px rgba(244,130,30,.22)}
 
-/* Le reste du CSS est conservé tel quel (shop, gamme, cat-page, etc.) */
+/* SHOP */
 .shop{padding:32px 0 80px}
 .search-wrap{position:relative;max-width:480px;margin-bottom:28px}
 .search-wrap input{width:100%;padding:11px 18px 11px 40px;border:1.5px solid var(--g2);border-radius:50px;font-size:.88rem;font-family:'Outfit',sans-serif;outline:none;background:var(--g1);transition:.2s}
 .search-wrap input:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(244,130,30,.1);background:#fff}
 .s-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--g3);pointer-events:none}
+
+/* GAMME BLOC */
 .gamme{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--g2);animation:fadeUp .4s ease both}
 .gamme:last-child{border-bottom:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -89,16 +90,30 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .gamme-sous{font-size:.78rem;color:var(--g3);margin-top:3px}
 .btn-voir{display:inline-flex;align-items:center;gap:6px;background:var(--nv);color:#fff;padding:9px 18px;border-radius:50px;font-size:.8rem;font-weight:700;transition:.2s;white-space:nowrap;flex-shrink:0}
 .btn-voir:hover{background:var(--or)}
+
+/* INFOS FOURNISSEUR */
+.ftags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
+.ftag{display:inline-flex;align-items:center;gap:5px;background:var(--g1);border:1px solid var(--g2);padding:5px 11px;border-radius:50px;font-size:.73rem;font-weight:500;color:#444;white-space:nowrap}
+.ftag-ok{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;font-weight:600}
+.ftag-prix{background:#fff7ed;border-color:#fed7aa;color:#c2410c;font-weight:700}
+
+/* GRILLE 4 IMAGES */
 .preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .preview-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--g2);cursor:pointer;display:block;transition:transform .3s,box-shadow .3s}
 .preview-grid img:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .ph{aspect-ratio:1/1;border-radius:10px;background:var(--g1);border:1.5px dashed var(--g2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:var(--g3);font-size:.72rem}
 .ph-ico{font-size:1.8rem}
+
+/* BOUTONS BAS GAMME */
 .gamme-footer{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;align-items:center}
 .btn-wa-home{display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-size:.82rem;font-weight:700;transition:.2s;box-shadow:0 4px 14px rgba(37,211,102,.25)}
 .btn-wa-home:hover{background:#1da851;transform:translateY(-1px)}
+
+/* EMPTY */
 .empty{text-align:center;padding:60px 20px;color:var(--g3)}
 .empty-ico{font-size:2.5rem;margin-bottom:10px}
+
+/* CATALOGUE PAGE */
 .cat-page{display:none;position:fixed;inset:0;z-index:1800;background:#fff;overflow-y:auto}
 .cat-page.show{display:block}
 .cat-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--g2);padding:0 20px;height:56px;display:flex;align-items:center;gap:14px;z-index:10}
@@ -113,11 +128,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .cat-item img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .3s}
 .cat-item:hover img{transform:scale(1.04)}
 .cat-num{position:absolute;top:7px;left:7px;background:rgba(0,0,0,.5);color:#fff;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:50px}
+
+/* BARRE COMMANDER FIXE */
 .cmd-bar{position:fixed;bottom:0;left:0;right:0;z-index:1900;background:#fff;border-top:2px solid var(--g2);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
 .cmd-info{font-size:.82rem;color:#555;line-height:1.4}
 .cmd-info b{color:var(--nv);font-size:.9rem;display:block}
 .btn-wa-big{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 24px;border-radius:50px;font-weight:800;font-size:.9rem;transition:.22s;box-shadow:0 6px 18px rgba(37,211,102,.32);white-space:nowrap}
 .btn-wa-big:hover{background:#1da851;transform:translateY(-1px)}
+
+/* LIGHTBOX */
 .lb{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.93);align-items:center;justify-content:center}
 .lb.show{display:flex}
 .lb-img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:10px}
@@ -126,6 +145,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .lb-p,.lb-n{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;cursor:pointer;padding:12px;background:rgba(255,255,255,.1);border-radius:50%;transition:.2s;user-select:none}
 .lb-p{left:14px}.lb-n{right:14px}
 .lb-p:hover,.lb-n:hover{background:rgba(255,255,255,.2)}
+
+/* WHY */
 .why{background:var(--nv);padding:72px 0}
 .why h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:6px}
 .why .sub{font-size:.88rem;color:#555;margin-bottom:36px}
@@ -135,6 +156,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .wi{width:42px;height:42px;border-radius:10px;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:12px}
 .wc h4{font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:6px}
 .wc p{font-size:.81rem;color:#666;line-height:1.6}
+
+/* REVIEWS */
 .reviews{padding:72px 0;background:var(--g1)}
 .reviews h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-1px;margin-bottom:6px}
 .reviews .sub{font-size:.88rem;color:var(--g3);margin-bottom:36px}
@@ -146,11 +169,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .rav{width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0}
 .rname{font-weight:700;font-size:.83rem}
 .rcity{font-size:.73rem;color:var(--g3)}
+
+/* CTA */
 .cta{padding:72px 0;background:linear-gradient(135deg,#F4821E,#FF6B00);text-align:center;color:#fff}
 .cta h2{font-family:'Nunito',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;letter-spacing:-1px;margin-bottom:12px}
 .cta p{font-size:.97rem;opacity:.88;margin-bottom:28px}
 .btn-wh{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--or);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.92rem;transition:.22s;box-shadow:0 8px 24px rgba(0,0,0,.14)}
 .btn-wh:hover{transform:translateY(-2px)}
+
+/* FOOTER */
 footer{background:#080808;padding:48px 0 22px}
 .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
 .flogo{font-family:'Nunito',sans-serif;font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:8px}
@@ -164,11 +191,17 @@ footer{background:#080808;padding:48px 0 22px}
 .socs{display:flex;gap:8px}
 .soc{width:30px;height:30px;border-radius:50%;background:#131313;border:1px solid #222;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#555;transition:.2s}
 .soc:hover{background:var(--or);border-color:var(--or);color:#fff}
+
+/* WA FLOAT */
 .wa-float{position:fixed;bottom:22px;right:22px;z-index:1200;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;font-size:1.35rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);animation:wab 2.5s ease-in-out infinite}
 .wa-float:hover{transform:scale(1.12);animation:none}
 @keyframes wab{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+
+/* REVEAL */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
 .rv.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
 @media(max-width:860px){
   .nav-links,.nav-wa{display:none}
   .burger{display:flex}
@@ -189,7 +222,6 @@ footer{background:#080808;padding:48px 0 22px}
 </head>
 <body>
 
-<!-- Le HTML du corps reste identique (nav, hero, tabs, shop, etc.) -->
 <nav>
   <div class="W nav-in">
     <a href="#" class="logo">Vendo<b>b</b></a>
@@ -251,17 +283,76 @@ footer{background:#080808;padding:48px 0 22px}
   </div>
 </section>
 
-<!-- Sections why, reviews, cta, footer restent identiques -->
-<section class="why" id="why"> ... </section>
-<section class="reviews" id="reviews"> ... </section>
-<section class="cta" id="contact"> ... </section>
-<footer> ... </footer>
+<section class="why" id="why">
+  <div class="W">
+    <h2 class="rv">Pourquoi choisir VendoB ?</h2>
+    <p class="sub rv">On a pensé à tout pour vous faciliter la vie</p>
+    <div class="why-grid">
+      <div class="wc rv"><div class="wi">✅</div><h4>Fournisseurs vérifiés</h4><p>Chaque vendeur est sélectionné personnellement avant d'apparaître sur VendoB.</p></div>
+      <div class="wc rv"><div class="wi">💬</div><h4>Commande via WhatsApp</h4><p>Un clic et vous êtes en contact direct. Aucune inscription requise.</p></div>
+      <div class="wc rv"><div class="wi">🚚</div><h4>Livraison rapide</h4><p>Bénin, Togo, Nigeria. Livraison locale sous 24h dans les grandes villes.</p></div>
+      <div class="wc rv"><div class="wi">🔒</div><h4>Paiement à la livraison</h4><p>Vous vérifiez le produit avant de payer. Zéro risque pour l'acheteur.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="W">
+    <h2 class="rv">Ce que disent nos clients</h2>
+    <p class="sub rv">Des familles entières nous font déjà confiance</p>
+    <div class="rev-grid">
+      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« J'ai commandé un téléphone, il est arrivé le lendemain exactement comme sur la photo. »</p><div class="rauthor"><div class="rav">AM</div><div><div class="rname">Aminata M.</div><div class="rcity">🇧🇯 Cotonou</div></div></div></div>
+      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« Sérieux et rapide. Ils ont réglé mon souci en moins d'une heure sur WhatsApp. »</p><div class="rauthor"><div class="rav">KD</div><div><div class="rname">Kofi D.</div><div class="rcity">🇹🇬 Lomé</div></div></div></div>
+      <div class="rc rv"><div class="rstars">★★★★☆</div><p class="rtext">« Prix corrects, produits de qualité. Je commande régulièrement pour toute ma famille. »</p><div class="rauthor"><div class="rav">FS</div><div><div class="rname">Fatou S.</div><div class="rcity">🇧🇯 Parakou</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="W">
+    <h2 class="rv">Prêt à commander ?</h2>
+    <p class="rv">On répond sur WhatsApp en quelques minutes.</p>
+    <a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="btn-wh rv" target="_blank">💬 Nous écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="W">
+    <div class="fgrid">
+      <div><div class="flogo">Vendo<b>b</b></div><p class="fdesc">Boutique en ligne de confiance. Produits vérifiés, prix honnêtes. Bénin · Togo · Nigeria.</p></div>
+      <div class="fcol"><h5>Navigation</h5><ul><li><a href="#">Accueil</a></li><li><a href="#shop">Produits</a></li><li><a href="#why">Comment ça marche</a></li><li><a href="#reviews">Avis clients</a></li></ul></div>
+      <div class="fcol"><h5>Contact</h5><ul><li><a href="#">📍 Cotonou, Bénin</a></li><li><a href="https://wa.me/22900000000" target="_blank">💬 WhatsApp</a></li><li><a href="#">📧 contact@vendob.com</a></li><li><a href="#">🇧🇯 🇹🇬 🇳🇬</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <span>© 2025 VendoB — Achetez Malin, Vivez Mieux</span>
+      <div class="socs"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a><a class="soc" href="#">tk</a></div>
+    </div>
+  </div>
+</footer>
 
 <a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="wa-float" target="_blank">💬</a>
 
-<!-- Cat page et lightbox restent identiques -->
-<div class="cat-page" id="catPage"> ... </div>
-<div class="lb" id="lb"> ... </div>
+<div class="cat-page" id="catPage">
+  <div class="cat-nav">
+    <button class="btn-back" id="btnBack">← Retour</button>
+    <div class="cat-nav-title" id="catTitle"></div>
+  </div>
+  <div class="cat-body">
+    <p class="cat-desc" id="catDesc"></p>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+  <div class="cmd-bar">
+    <div class="cmd-info"><b id="cmdName"></b>Appuyez pour commander via WhatsApp</div>
+    <a href="#" class="btn-wa-big" id="cmdBtn" target="_blank">💬 Commander sur WhatsApp</a>
+  </div>
+</div>
+
+<div class="lb" id="lb">
+  <span class="lb-x" id="lbX">✕</span>
+  <span class="lb-p" id="lbP">‹</span>
+  <img class="lb-img" id="lbImg" src="" alt=""/>
+  <span class="lb-n" id="lbN">›</span>
+</div>
 
 <script>
 // ✅ TON NUMÉRO WHATSAPP
@@ -277,109 +368,21 @@ function msgWA(nom) {
   );
 }
 
-// ✅ CATÉGORIES (TABS) - TOUTES AJOUTÉES
+// ✅ 5 CATÉGORIES FINALES
 var CATS = [
-  {id:"tous", label:"Tout voir", ico:"🛒"},
-  {id:"telephone", label:"Téléphone", ico:"📱"},
-  {id:"sac-femmes", label:"Sac Femmes", ico:"👜"},
-  {id:"sport", label:"Sport", ico:"⚽"},
-  {id:"sac-homme", label:"Sac Homme", ico:"👜"},
-  {id:"mode-musulman", label:"Mode Musulman", ico:"🧕"},
-
-  // NOUVELLES CATÉGORIES
-  {id:"smartphones", label:"Smartphones", ico:"📱"},
-  {id:"tshirts", label:"T-shirts", ico:"👕"},
-  {id:"ecouteurs", label:"Écouteurs", ico:"🎧"},
-  {id:"riz", label:"Riz", ico:"🍚"},
-  {id:"baskets", label:"Baskets", ico:"👟"},
-  {id:"perruques", label:"Perruques", ico:"💇‍♀️"},
-  {id:"chargeurs", label:"Chargeurs", ico:"🔌"},
-  {id:"marmites", label:"Marmites", ico:"🍲"},
-  {id:"powerbanks", label:"Power Banks", ico:"🔋"},
-  {id:"robes", label:"Robes", ico:"👗"},
-  {id:"huile", label:"Huile", ico:"🛢️"},
-  {id:"casques-audio", label:"Casques Audio", ico:"🎧"},
-  {id:"sacs-main", label:"Sacs à Main", ico:"👜"},
-  {id:"televiseurs", label:"Téléviseurs", ico:"📺"},
-  {id:"cables-usb", label:"Câbles USB", ico:"🔌"},
-  {id:"friperie", label:"Friperie", ico:"👕"},
-  {id:"parfums", label:"Parfums", ico:"🧴"},
-  {id:"ventilateurs", label:"Ventilateurs", ico:"🌀"},
-  {id:"chaussures-sport", label:"Chaussures Sport", ico:"👟"},
-  {id:"cahiers", label:"Cahiers", ico:"📓"},
-  {id:"meches", label:"Mèches", ico:"💇‍♀️"},
-  {id:"boissons", label:"Boissons", ico:"🥤"},
-  {id:"montres", label:"Montres", ico:"⌚"},
-  {id:"mixeurs", label:"Mixeurs", ico:"🔌"},
-  {id:"coques", label:"Coques", ico:"📱"},
-  {id:"pantalons", label:"Pantalons", ico:"👖"},
-  {id:"lampes-solaires", label:"Lampes Solaires", ico:"☀️"},
-  {id:"stylos", label:"Stylos", ico:"✍️"},
-  {id:"produits-capillaires", label:"Produits Capillaires", ico:"💆‍♀️"},
-  {id:"ordinateurs", label:"Ordinateurs", ico:"💻"},
-  {id:"sandales", label:"Sandales", ico:"🥿"},
-  {id:"conserves", label:"Conserves", ico:"🥫"},
-  {id:"imprimantes", label:"Imprimantes", ico:"🖨️"},
-  {id:"matelas", label:"Matelas", ico:"🛏️"},
-  {id:"tissages", label:"Tissages", ico:"💇‍♀️"},
-  {id:"casques-moto", label:"Casques Moto", ico:"⛑️"},
-  {id:"livres", label:"Livres", ico:"📚"},
-  {id:"multiprises", label:"Multiprises", ico:"🔌"},
-  {id:"vetements-enfants", label:"Vêtements Enfants", ico:"👶"},
-  {id:"snacks", label:"Snacks", ico:"🍿"},
-  {id:"sacs-scolaires", label:"Sacs Scolaires", ico:"🎒"},
-  {id:"cremes-visage", label:"Crèmes Visage", ico:"🧴"},
-  {id:"moto", label:"Moto", ico:"🏍️"},
-  {id:"rideaux", label:"Rideaux", ico:"🪟"},
-  {id:"sous-vetements", label:"Sous-vêtements", ico:"🩲"},
-  {id:"batteries", label:"Batteries", ico:"🔋"},
-  {id:"jouets", label:"Jouets", ico:"🧸"},
-  {id:"couches", label:"Couches", ico:"🍼"},
-  {id:"haut-parleurs", label:"Haut-parleurs", ico:"🔊"},
-  {id:"chemises", label:"Chemises", ico:"👔"},
-  {id:"peinture", label:"Peinture", ico:"🎨"},
-  {id:"lunettes", label:"Lunettes", ico:"🕶️"},
-  {id:"telephones-simples", label:"Téléphones Simples", ico:"📞"},
-  {id:"eau", label:"Eau", ico:"💧"},
-  {id:"produits-locaux", label:"Produits Locaux", ico:"🌾"},
-  {id:"tenues-sport", label:"Tenues de Sport", ico:"⚽"},
-  {id:"outils", label:"Outils", ico:"🔧"},
-  {id:"formation", label:"Formation", ico:"📖"},
-  {id:"marketing-digital", label:"Marketing Digital", ico:"💻"},
-  {id:"vaisselle", label:"Vaisselle", ico:"🍽️"},
-  {id:"huiles-moteur", label:"Huiles Moteur", ico:"🛢️"},
-  {id:"creation-site", label:"Création de Site Web", ico:"🌐"},
-  {id:"livraison", label:"Livraison", ico:"🚚"},
-  {id:"chaussures-classiques", label:"Chaussures Classiques", ico:"👞"},
-  {id:"equipements-fitness", label:"Équipements Fitness", ico:"🏋️"},
-  {id:"ciment", label:"Ciment", ico:"🧱"},
-  {id:"vitres-protection", label:"Vitres de Protection", ico:"📱"}
+  {id:"tous",label:"Tout voir",ico:"🛒"},
+  {id:"telephone",label:"Téléphone",ico:"📱"},
+  {id:"sac-femmes",label:"Sac Femmes",ico:"👜"},
+  {id:"sport",label:"Sport",ico:"⚽"},
+  {id:"sac-homme",label:"Sac Homme",ico:"👜"},
+  {id:"mode-musulman",label:"Mode Musulman",ico:"🧕"}
 ];
 
-// ✅ ICO pour toutes les catégories
-var ICO = {
-  telephone: "📱", "sac-femmes": "👜", sport: "⚽", "sac-homme": "👜", "mode-musulman": "🧕",
-  smartphones: "📱", tshirts: "👕", ecouteurs: "🎧", riz: "🍚", baskets: "👟",
-  perruques: "💇‍♀️", chargeurs: "🔌", marmites: "🍲", powerbanks: "🔋", robes: "👗",
-  huile: "🛢️", "casques-audio": "🎧", "sacs-main": "👜", televiseurs: "📺", "cables-usb": "🔌",
-  friperie: "👕", parfums: "🧴", ventilateurs: "🌀", "chaussures-sport": "👟", cahiers: "📓",
-  meches: "💇‍♀️", boissons: "🥤", montres: "⌚", mixeurs: "🔌", coques: "📱",
-  pantalons: "👖", "lampes-solaires": "☀️", stylos: "✍️", "produits-capillaires": "💆‍♀️",
-  ordinateurs: "💻", sandales: "🥿", conserves: "🥫", imprimantes: "🖨️", matelas: "🛏️",
-  tissages: "💇‍♀️", "casques-moto": "⛑️", livres: "📚", multiprises: "🔌",
-  "vetements-enfants": "👶", snacks: "🍿", "sacs-scolaires": "🎒", "cremes-visage": "🧴",
-  moto: "🏍️", rideaux: "🪟", "sous-vetements": "🩲", batteries: "🔋", jouets: "🧸",
-  couches: "🍼", "haut-parleurs": "🔊", chemises: "👔", peinture: "🎨", lunettes: "🕶️",
-  "telephones-simples": "📞", eau: "💧", "produits-locaux": "🌾", "tenues-sport": "⚽",
-  outils: "🔧", formation: "📖", "marketing-digital": "💻", vaisselle: "🍽️",
-  "huiles-moteur": "🛢️", "creation-site": "🌐", livraison: "🚚",
-  "chaussures-classiques": "👞", "equipements-fitness": "🏋️", ciment: "🧱",
-  "vitres-protection": "📱"
-};
+var ICO = {telephone:"📱",sac:"👜",sport:"⚽",mus:"🧕"};
 
-// ✅ GAMMES - SEULEMENT LES ANCIENNES (je n’ai rien touché)
+// ✅ GAMMES - CODE NAMING : 3 LETTRES + CHIFFRE
 var GAMMES = [
-  // === GAMMES EXISTANTES (inchangées) ===
+  // TÉLÉPHONE
   {
     id:"iphone", cat:"telephone", nom:"iPhone", badge:"Populaire",
     sous:"iPhone 11 · 12 · 13 · 14 · 15 · 16",
@@ -407,7 +410,8 @@ var GAMMES = [
     preview:["goo1.jpg","goo2.jpg","goo3.jpg","goo4.jpg"],
     catalogue:["goo5.jpg","goo6.jpg","goo7.jpg","goo8.jpg"]
   },
-  // ... (toutes les autres gammes existantes : sac-main-femme, sac-dos-femme, etc. restent identiques)
+
+  // SAC FEMMES
   {
     id:"sac-main-femme", cat:"sac-femmes", nom:"Sacs à Main Femme", badge:"Populaire",
     sous:"Cuir · Tissu · Tous coloris",
@@ -417,7 +421,84 @@ var GAMMES = [
     preview:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg"],
     catalogue:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg","sac5.jpg","sac6.jpg"]
   },
-  // ... (je garde toutes les autres gammes existantes telles quelles)
+  {
+    id:"sac-dos-femme", cat:"sac-femmes", nom:"Sacs à Dos Femme", badge:null,
+    sous:"Casual · Voyage · Sport",
+    desc:"Sacs à dos féminins et fonctionnels. Confortables et stylés.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:28000,
+    preview:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"],
+    catalogue:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"]
+  },
+  {
+    id:"pochettes", cat:"sac-femmes", nom:"Pochettes & Clutch", badge:null,
+    sous:"Soirée · Casual · Mini",
+    desc:"Pochettes élégantes pour tous les occasions. Designs tendance.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:15000,
+    preview:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"],
+    catalogue:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"]
+  },
+
+  // SPORT
+  {
+    id:"ballon", cat:"sport", nom:"Ballons de Sport", badge:"Populaire",
+    sous:"Football · Basketball · Volleyball",
+    desc:"Ballons officiels de qualité supérieure. Durabilité garantie.",
+    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
+    preview:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg"],
+    catalogue:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg","spo5.jpg","spo6.jpg"]
+  },
+  {
+    id:"tenue-sport", cat:"sport", nom:"Tenues de Sport", badge:null,
+    sous:"Homme · Femme · Enfant",
+    desc:"Vêtements de sport confortables et respirants. Tous styles.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:22000,
+    preview:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg"],
+    catalogue:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg","spo11.jpg"]
+  },
+
+  // SAC À MAIN HOMME
+  {
+    id:"sac-dos-homme", cat:"sac-homme", nom:"Sacs à Dos Homme", badge:"Populaire",
+    sous:"Bureau · Voyage · Casual",
+    desc:"Sacs résistants avec compartiments PC. Style professionnel.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:40000,
+    preview:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg"],
+    catalogue:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg","sah5.jpg","sah6.jpg"]
+  },
+  {
+    id:"messager", cat:"sac-homme", nom:"Sacs Messager Homme", badge:null,
+    sous:"Cuir · Bandoulière · Travail",
+    desc:"Sacs intemporels et élégants. Parfaits pour le bureau.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:11000, prixTo: 25000,
+    preview:["smh(1).jpg","smh(2).jpg","smh(3).jpg","smh(4).jpg"],
+    catalogue:["smh(5).jpg","smh(6).jpg","smh(7).jpg","smh(8).jpg","smh(9).jpg","smh(10).jpg","smh(11).jpg","smh(12).jpg"]
+  },
+  {
+    id:"porte-feuille", cat:"sac-homme", nom:"Portefeuilles Homme", badge:null,
+    sous:"Cuir · Synthétique · RFID",
+    desc:"Portefeuilles robustes et pratiques. Protection RFID.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
+    preview:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"],
+    catalogue:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"]
+  },
+
+  // MODE MUSULMANE
+  {
+    id:"hijab", cat:"mode-musulman", nom:"Hijabs & Foulards", badge:"Populaire",
+    sous:"Coton · Soie · Mousseline",
+    desc:"Hijabs élégants et confortables. Motifs variés pour tous les styles.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:3000, prixTo:12000,
+    preview:["mush(1).jpg","mush(2).jpg","mush(3).jpg","mush(4).jpg"],
+    catalogue:["mush(1).jpg","mush(2).jpg","mush(3).jpg","mush(4).jpg"]
+  },
   {
     id:"robe-musulmane", cat:"mode-musulman", nom:"Robes Musulmanes", badge:"Populaire",
     sous:"Maxi · Midi · Diverses couleurs",
@@ -425,12 +506,20 @@ var GAMMES = [
     pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
     verifie:true, paiement:"Paiement à la livraison", prixFrom:10000, prixTo:30000,
     preview:["mus(1).jpg","mus(2).jpg","mus(3).jpg","mus(4).jpg"],
-    catalogue:["mus(1).jpg","mus(2).jpg","mus(3).jpg","mus(4).jpg", "mus(5).jpg","mus(6).jpg","mus(7).jpg","mus(8).jpg","mus(9).jpg","mus(10).jpg","mus(11).jpg","mus(12).jpg", "mus(13).jpg","mus(14).jpg","mus(15).jpg","mus(16).jpg"]
+    catalogue:["mus(1).jpg","mus(2).jpg","mus(3).jpg","mus(4).jpg", "mus(5).jpg","mus(6).jpg","mus(7).jpg","mus(8).jpg","mus(9).jpg","mus(10).jpg","mus(11).jpg","mus(12).jpg", "mus(13).jpg","mus(14).jpg","mus(15).jpg","mus(16).jpg "]
+  },
+  {
+    id:"abaya", cat:"mode-musulman", nom:"Abayas & Djellabas", badge:null,
+    sous:"Noir · Couleurs · Brodées",
+    desc:"Abayas de qualité supérieure. Design traditionnel et moderne.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:20000, prixTo:65000,
+    preview:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg"],
+    catalogue:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg","mus18.jpg"]
   }
-  // Ajoute ici les autres gammes existantes si tu les as toutes dans ton fichier original
 ];
 
-// ── LOGIQUE (inchangée) ──
+// ── LOGIQUE ──
 var currentCat = "tous";
 var lbImgs = [], lbIdx = 0;
 
@@ -477,6 +566,7 @@ function render() {
     var g = list[i];
     var ico = ICO[g.cat] || "📦";
 
+    // 4 cases images
     var cells = "";
     for (var j = 0; j < 4; j++) {
       if (g.preview[j]) {
@@ -487,6 +577,7 @@ function render() {
       }
     }
 
+    // Infos fournisseur
     var ftags = "";
     if (g.pays)      ftags += '<span class="ftag">📍 ' + g.pays + ' &nbsp;·&nbsp; ' + g.ville + '</span>';
     if (g.verifie)   ftags += '<span class="ftag ftag-ok">✅ Fournisseur vérifié VendoB</span>';
@@ -521,10 +612,9 @@ function render() {
   });
 }
 
-// Les fonctions openCatalogue, openLb, etc. restent identiques (non modifiées)
-
 function openCatalogue(id) {
-  var g = GAMMES.find(function(item){ return item.id === id; });
+  var g = null;
+  for (var i = 0; i < GAMMES.length; i++) { if (GAMMES[i].id === id) { g = GAMMES[i]; break; } }
   if (!g) return;
 
   document.getElementById("catTitle").textContent = g.nom;
@@ -553,7 +643,50 @@ function openCatalogue(id) {
   document.body.style.overflow = "hidden";
 }
 
-// ... (le reste des fonctions : closeCatalogue, openLb, closeLb, event listeners restent identiques)
+function closeCatalogue() {
+  document.getElementById("catPage").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+function openLb(idx) {
+  lbIdx = idx;
+  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
+  document.getElementById("lb").classList.add("show");
+}
+function closeLb() { document.getElementById("lb").classList.remove("show"); }
+
+document.getElementById("btnBack").addEventListener("click", closeCatalogue);
+document.getElementById("lbX").addEventListener("click", closeLb);
+document.getElementById("lb").addEventListener("click", function(e) { if (e.target === this) closeLb(); });
+document.getElementById("lbP").addEventListener("click", function() {
+  lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length;
+  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
+});
+document.getElementById("lbN").addEventListener("click", function() {
+  lbIdx = (lbIdx + 1) % lbImgs.length;
+  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
+});
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") { closeLb(); closeCatalogue(); }
+  if (e.key === "ArrowLeft")  document.getElementById("lbP").click();
+  if (e.key === "ArrowRight") document.getElementById("lbN").click();
+});
+document.getElementById("searchInput").addEventListener("input", render);
+document.getElementById("burger").addEventListener("click", function() {
+  this.classList.toggle("open");
+  document.getElementById("mobNav").classList.toggle("show");
+});
+document.querySelectorAll(".mob-nav a").forEach(function(a) {
+  a.addEventListener("click", function() {
+    document.getElementById("burger").classList.remove("open");
+    document.getElementById("mobNav").classList.remove("show");
+  });
+});
+
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add("in"); });
+}, {threshold:0.1});
+document.querySelectorAll(".rv").forEach(function(el) { obs.observe(el); });
 
 document.addEventListener("DOMContentLoaded", function() {
   buildTabs();
