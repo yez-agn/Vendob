@@ -1,667 +1,731 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partenariat Régional VENDOB</title>
-<script src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VendoB – Achetez Malin, Vivez Mieux</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+:root{--or:#F4821E;--nv:#0D1B2A;--g1:#F6F6F6;--g2:#E8E8E8;--g3:#ABABAB;--gr:#16A34A;--nav:64px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:#fff;color:var(--nv);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:'Outfit',sans-serif}
+img{display:block;max-width:100%}
+ul{list-style:none}
+::-webkit-scrollbar{width:3px;height:3px}
+::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px}
+.W{max-width:1160px;margin:0 auto;padding:0 24px}
 
-:root {
-  --orange: #F4521E;
-  --dark: #1a1a1a;
-  --light: #f5f5f5;
-  --border: #e0e0e0;
-}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--g2)}
+.nav-in{height:100%;display:flex;align-items:center;gap:28px}
+.logo{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.5px;flex-shrink:0}
+.logo b{color:var(--or)}
+.nav-links{display:flex;gap:4px;margin-right:auto}
+.nav-links a{font-size:.85rem;font-weight:500;color:#666;padding:7px 12px;border-radius:8px;transition:.2s}
+.nav-links a:hover{color:var(--nv);background:var(--g1)}
+.nav-wa{display:flex;align-items:center;gap:7px;background:var(--or);color:#fff;padding:9px 20px;border-radius:50px;font-weight:700;font-size:.84rem;flex-shrink:0;transition:.2s}
+.nav-wa:hover{opacity:.88}
+.burger{display:none;flex-direction:column;gap:5px;padding:6px}
+.burger span{display:block;width:21px;height:2px;background:var(--nv);border-radius:2px;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:var(--nav);inset-inline:0;background:#fff;border-bottom:1px solid var(--g2);padding:14px 20px;flex-direction:column;gap:4px;z-index:899;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.mob-nav.show{display:flex}
+.mob-nav a{padding:11px 12px;border-radius:8px;font-weight:500;font-size:.95rem;transition:.2s}
+.mob-nav a:hover{background:var(--g1)}
 
-html {
-  scroll-behavior: smooth;
-}
+/* HERO */
+.hero{padding-top:calc(var(--nav)+60px);padding-bottom:64px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-80px;right:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(244,130,30,.08),transparent 65%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:center}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--g1);border:1px solid var(--g2);padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:600;color:#666;margin-bottom:20px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gr);animation:pls 2s infinite}
+@keyframes pls{0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,.4)}70%{box-shadow:0 0 0 6px transparent}}
+.hero h1{font-family:'Nunito',sans-serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
+.hero h1 b{color:var(--or)}
+.hero p{font-size:.97rem;color:#555;line-height:1.75;max-width:440px;margin-bottom:28px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-or{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;padding:13px 26px;border-radius:50px;font-weight:700;font-size:.88rem;transition:.22s;box-shadow:0 8px 24px rgba(244,130,30,.28)}
+.btn-or:hover{opacity:.9;transform:translateY(-2px)}
+.btn-brd{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--nv);padding:13px 22px;border-radius:50px;font-weight:600;font-size:.88rem;border:1.5px solid var(--g2);transition:.22s}
+.btn-brd:hover{border-color:var(--or);color:var(--or)}
+.hero-stats{display:flex;gap:24px;margin-top:32px;padding-top:28px;border-top:1px solid var(--g2);flex-wrap:wrap}
+.sn{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;line-height:1}
+.sl{font-size:.72rem;color:var(--g3);margin-top:3px}
+.hero-cards{display:flex;flex-direction:column;gap:12px}
+.hc{background:#fff;border:1px solid var(--g2);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);animation:flt 4s ease-in-out infinite}
+.hc:nth-child(2){animation-delay:.7s}
+.hc:nth-child(3){animation-delay:1.4s}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hc-ico{width:40px;height:40px;border-radius:10px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.hc-n{font-size:.8rem;font-weight:600;margin-bottom:3px}
+.hc-p{font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:900;color:var(--or)}
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--light);
-  color: var(--dark);
-  line-height: 1.6;
-}
+/* TABS */
+.tabs-wrap{position:sticky;top:var(--nav);z-index:800;background:#fff;border-bottom:1px solid var(--g2)}
+.tabs-row{display:flex;gap:6px;padding:12px 0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs-row::-webkit-scrollbar{display:none}
+.tab{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;font-size:.82rem;font-weight:600;color:#666;background:var(--g1);border:1.5px solid transparent;white-space:nowrap;transition:.2s;flex-shrink:0}
+.tab:hover{background:var(--g2);color:var(--nv)}
+.tab.on{background:var(--or);color:#fff;border-color:var(--or);box-shadow:0 4px 14px rgba(244,130,30,.22)}
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 30px 20px;
-}
+/* SHOP */
+.shop{padding:32px 0 80px}
+.search-wrap{position:relative;max-width:480px;margin-bottom:28px}
+.search-wrap input{width:100%;padding:11px 18px 11px 40px;border:1.5px solid var(--g2);border-radius:50px;font-size:.88rem;font-family:'Outfit',sans-serif;outline:none;background:var(--g1);transition:.2s}
+.search-wrap input:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(244,130,30,.1);background:#fff}
+.s-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--g3);pointer-events:none}
 
-header {
-  background: white;
-  border-bottom: 3px solid var(--orange);
-  padding: 25px 0;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+/* GAMME BLOC */
+.gamme{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--g2);animation:fadeUp .4s ease both}
+.gamme:last-child{border-bottom:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.gamme-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;gap:12px;flex-wrap:wrap}
+.gamme-title{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;color:var(--nv);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.gtag{font-size:.68rem;font-weight:800;background:var(--or);color:#fff;padding:3px 9px;border-radius:50px}
+.gamme-sous{font-size:.78rem;color:var(--g3);margin-top:3px}
+.btn-voir{display:inline-flex;align-items:center;gap:6px;background:var(--nv);color:#fff;padding:9px 18px;border-radius:50px;font-size:.8rem;font-weight:700;transition:.2s;white-space:nowrap;flex-shrink:0}
+.btn-voir:hover{background:var(--or)}
 
-.header-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* INFOS FOURNISSEUR */
+.ftags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
+.ftag{display:inline-flex;align-items:center;gap:5px;background:var(--g1);border:1px solid var(--g2);padding:5px 11px;border-radius:50px;font-size:.73rem;font-weight:500;color:#444;white-space:nowrap}
+.ftag-ok{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;font-weight:600}
+.ftag-prix{background:#fff7ed;border-color:#fed7aa;color:#c2410c;font-weight:700}
 
-.logo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--orange);
-}
+/* GRILLE 4 IMAGES */
+.preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.preview-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--g2);cursor:pointer;display:block;transition:transform .3s,box-shadow .3s}
+.preview-grid img:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.ph{aspect-ratio:1/1;border-radius:10px;background:var(--g1);border:1.5px dashed var(--g2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:var(--g3);font-size:.72rem}
+.ph-ico{font-size:1.8rem}
 
-.status {
-  padding: 8px 16px;
-  background: #e8f4f0;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #00897b;
-}
+/* BOUTONS BAS GAMME */
+.gamme-footer{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;align-items:center}
+.btn-wa-home{display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-size:.82rem;font-weight:700;transition:.2s;box-shadow:0 4px 14px rgba(37,211,102,.25)}
+.btn-wa-home:hover{background:#1da851;transform:translateY(-1px)}
 
-.progress-bar {
-  width: 100%;
-  height: 6px;
-  background: var(--border);
-  margin-bottom: 30px;
-  border-radius: 3px;
-  overflow: hidden;
-}
+/* EMPTY */
+.empty{text-align:center;padding:60px 20px;color:var(--g3)}
+.empty-ico{font-size:2.5rem;margin-bottom:10px}
 
-.progress-fill {
-  height: 100%;
-  background: var(--orange);
-  width: 33%;
-  transition: width 0.3s ease;
-}
+/* CATALOGUE PAGE */
+.cat-page{display:none;position:fixed;inset:0;z-index:1800;background:#fff;overflow-y:auto}
+.cat-page.show{display:block}
+.cat-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--g2);padding:0 20px;height:56px;display:flex;align-items:center;gap:14px;z-index:10}
+.btn-back{display:flex;align-items:center;gap:7px;font-weight:700;font-size:.86rem;background:var(--g1);padding:8px 16px;border-radius:50px;transition:.2s}
+.btn-back:hover{background:var(--g2)}
+.cat-nav-title{font-family:'Nunito',sans-serif;font-size:.98rem;font-weight:900;color:var(--nv)}
+.cat-body{padding:24px 20px 110px;max-width:1160px;margin:0 auto}
+.cat-desc{font-size:.87rem;color:#555;line-height:1.7;margin-bottom:20px;max-width:540px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.cat-item{border-radius:12px;overflow:hidden;border:1px solid var(--g2);cursor:pointer;position:relative;transition:.22s;background:var(--g1)}
+.cat-item:hover{border-color:var(--or);box-shadow:0 6px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.cat-item img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .3s}
+.cat-item:hover img{transform:scale(1.04)}
+.cat-num{position:absolute;top:7px;left:7px;background:rgba(0,0,0,.5);color:#fff;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:50px}
 
-.tabs {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-  border-bottom: 2px solid var(--border);
-}
+/* BARRE COMMANDER FIXE */
+.cmd-bar{position:fixed;bottom:0;left:0;right:0;z-index:1900;background:#fff;border-top:2px solid var(--g2);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+.cmd-info{font-size:.82rem;color:#555;line-height:1.4}
+.cmd-info b{color:var(--nv);font-size:.9rem;display:block}
+.btn-wa-big{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 24px;border-radius:50px;font-weight:800;font-size:.9rem;transition:.22s;box-shadow:0 6px 18px rgba(37,211,102,.32);white-space:nowrap}
+.btn-wa-big:hover{background:#1da851;transform:translateY(-1px)}
 
-.tab {
-  padding: 15px 20px;
-  background: none;
-  border: none;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  color: #999;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s;
-}
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.93);align-items:center;justify-content:center}
+.lb.show{display:flex}
+.lb-img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:10px}
+.lb-x{position:absolute;top:16px;right:18px;color:#fff;font-size:1.8rem;cursor:pointer;opacity:.75;line-height:1;transition:.2s}
+.lb-x:hover{opacity:1}
+.lb-p,.lb-n{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;cursor:pointer;padding:12px;background:rgba(255,255,255,.1);border-radius:50%;transition:.2s;user-select:none}
+.lb-p{left:14px}.lb-n{right:14px}
+.lb-p:hover,.lb-n:hover{background:rgba(255,255,255,.2)}
 
-.tab.active {
-  color: var(--orange);
-  border-bottom-color: var(--orange);
-}
+/* WHY */
+.why{background:var(--nv);padding:72px 0}
+.why h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:6px}
+.why .sub{font-size:.88rem;color:#555;margin-bottom:36px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.wc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:22px;transition:.22s}
+.wc:hover{background:rgba(244,130,30,.09);border-color:rgba(244,130,30,.3)}
+.wi{width:42px;height:42px;border-radius:10px;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:12px}
+.wc h4{font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:6px}
+.wc p{font-size:.81rem;color:#666;line-height:1.6}
 
-.tab:hover {
-  color: var(--dark);
-}
+/* REVIEWS */
+.reviews{padding:72px 0;background:var(--g1)}
+.reviews h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-1px;margin-bottom:6px}
+.reviews .sub{font-size:.88rem;color:var(--g3);margin-bottom:36px}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:12px}
+.rc{background:#fff;border:1px solid var(--g2);border-radius:14px;padding:22px}
+.rstars{color:#F59E0B;font-size:.86rem;margin-bottom:10px}
+.rtext{font-size:.86rem;color:#555;line-height:1.75;font-style:italic}
+.rauthor{display:flex;align-items:center;gap:10px;margin-top:14px}
+.rav{width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0}
+.rname{font-weight:700;font-size:.83rem}
+.rcity{font-size:.73rem;color:var(--g3)}
 
-.content {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
+/* CTA */
+.cta{padding:72px 0;background:linear-gradient(135deg,#F4821E,#FF6B00);text-align:center;color:#fff}
+.cta h2{font-family:'Nunito',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;letter-spacing:-1px;margin-bottom:12px}
+.cta p{font-size:.97rem;opacity:.88;margin-bottom:28px}
+.btn-wh{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--or);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.92rem;transition:.22s;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+.btn-wh:hover{transform:translateY(-2px)}
 
-.section {
-  display: none;
-}
+/* FOOTER */
+footer{background:#080808;padding:48px 0 22px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.flogo{font-family:'Nunito',sans-serif;font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:8px}
+.flogo b{color:var(--or)}
+.fdesc{font-size:.81rem;color:#555;line-height:1.7;max-width:240px}
+.fcol h5{font-size:.78rem;font-weight:700;color:#fff;margin-bottom:11px;text-transform:uppercase;letter-spacing:.6px}
+.fcol li{margin-bottom:7px}
+.fcol a{font-size:.81rem;color:#555;transition:.2s}
+.fcol a:hover{color:var(--or)}
+.fbot{border-top:1px solid #161616;padding-top:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.77rem;color:#444}
+.socs{display:flex;gap:8px}
+.soc{width:30px;height:30px;border-radius:50%;background:#131313;border:1px solid #222;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#555;transition:.2s}
+.soc:hover{background:var(--or);border-color:var(--or);color:#fff}
 
-.section.active {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:1200;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;font-size:1.35rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);animation:wab 2.5s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.12);animation:none}
+@keyframes wab{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.rv.in{opacity:1;transform:none}
 
-.form-group {
-  margin-bottom: 20px;
+/* RESPONSIVE */
+@media(max-width:860px){
+  .nav-links,.nav-wa{display:none}
+  .burger{display:flex}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-cards{display:none}
+  .fgrid{grid-template-columns:1fr;gap:22px}
+  .fbot{flex-direction:column;text-align:center}
 }
-
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--dark);
-  font-size: 14px;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  transition: border-color 0.3s;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(244, 82, 30, 0.1);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-@media (max-width: 600px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.contract-box {
-  background: #fafafa;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 30px;
-  margin-bottom: 30px;
-  max-height: 400px;
-  overflow-y: auto;
-  font-size: 13px;
-  line-height: 1.8;
-  color: #333;
-}
-
-.contract-box h2 {
-  color: var(--orange);
-  font-size: 18px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.contract-box p {
-  margin-bottom: 12px;
-}
-
-.button-group {
-  display: flex;
-  gap: 12px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-button, a.btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-size: 14px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-}
-
-.btn-primary {
-  background: var(--orange);
-  color: white;
-}
-
-.btn-primary:hover:not(:disabled) {
-  background: #d93f15;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(244, 82, 30, 0.3);
-}
-
-.btn-primary:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
-
-.btn-secondary {
-  background: white;
-  color: var(--orange);
-  border: 2px solid var(--orange);
-}
-
-.btn-secondary:hover {
-  background: var(--orange);
-  color: white;
-}
-
-.btn-pdf {
-  background: #0066cc;
-  color: white;
-}
-
-.btn-pdf:hover {
-  background: #0052a3;
-  transform: translateY(-2px);
-}
-
-.alert {
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: none;
-  animation: slideIn 0.3s ease;
-}
-
-.alert.show {
-  display: block;
-}
-
-.alert-success {
-  background: #d4edda;
-  border-left: 4px solid #28a745;
-  color: #155724;
-}
-
-.alert-error {
-  background: #f8d7da;
-  border-left: 4px solid #dc3545;
-  color: #721c24;
-}
-
-.alert-info {
-  background: #d1ecf1;
-  border-left: 4px solid #17a2b8;
-  color: #0c5460;
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.loading {
-  display: none;
-  text-align: center;
-  padding: 20px;
-  color: var(--orange);
-}
-
-.loading.show {
-  display: block;
-}
-
-.spinner {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid var(--orange);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.section-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--orange);
-  margin-bottom: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  padding: 15px;
-  background: #f9f9f9;
-  border-radius: 8px;
-}
-
-.checkbox-group input {
-  width: auto;
-  cursor: pointer;
-}
-
-.checkbox-group label {
-  margin: 0;
-  font-weight: 500;
-  cursor: pointer;
+@media(max-width:560px){
+  .hero{padding-top:calc(var(--nav)+32px);padding-bottom:40px}
+  .W{padding:0 14px}
+  .preview-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+  .cmd-bar{flex-direction:column;align-items:stretch;gap:10px}
+  .btn-wa-big{justify-content:center}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-content">
-    <div class="logo">🚀 VENDOB</div>
-    <div class="status">🟢 Partenariat Régional</div>
+<nav>
+  <div class="W nav-in">
+    <a href="#" class="logo">Vendo<b>b</b></a>
+    <ul class="nav-links">
+      <li><a href="#shop">Produits</a></li>
+      <li><a href="#why">Pourquoi nous</a></li>
+      <li><a href="#reviews">Avis</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/22900000000" class="nav-wa" target="_blank">💬 WhatsApp</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
-</header>
-
-<div class="container">
-
-<div class="progress-bar">
-  <div class="progress-fill" id="progressFill"></div>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="#shop">📱 Produits</a>
+  <a href="#why">✅ Pourquoi nous</a>
+  <a href="#reviews">⭐ Avis</a>
+  <a href="#contact">💬 Contact</a>
 </div>
 
-<div class="tabs">
-  <button class="tab active" onclick="switchTab('profil', 0)">1. Profil</button>
-  <button class="tab" onclick="switchTab('contrat', 1)">2. Contrat</button>
-  <button class="tab" onclick="switchTab('confirmation', 2)">3. Confirmation</button>
+<section class="hero">
+  <div class="W">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-pill"><span class="dot"></span>Bénin · Togo · Nigeria</div>
+        <h1>Fini de fouiller partout —<br><b>tout est là, moins cher.</b></h1>
+        <p>VendoB connecte acheteurs et fournisseurs vérifiés. Téléphones, mode, sport — commande en 1 clic via WhatsApp.</p>
+        <div class="hero-btns">
+          <a href="#shop" class="btn-or">🛍️ Voir les produits</a>
+          <a href="#why" class="btn-brd">Comment ça marche ?</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="sn">300+</div><div class="sl">Produits</div></div>
+          <div><div class="sn">3</div><div class="sl">Pays</div></div>
+          <div><div class="sn">98%</div><div class="sl">Satisfaits</div></div>
+          <div><div class="sn">24h</div><div class="sl">Livraison</div></div>
+        </div>
+      </div>
+      <div class="hero-cards">
+        <div class="hc"><div class="hc-ico">📱</div><div><div class="hc-n">iPhone 15 128Go</div><div class="hc-p">À partir de 235 000 FCFA</div></div></div>
+        <div class="hc"><div class="hc-ico">👜</div><div><div class="hc-n">Sacs à main</div><div class="hc-p">À partir de 5 000 FCFA</div></div></div>
+        <div class="hc"><div class="hc-ico">🧕</div><div><div class="hc-n">Mode Musulmane</div><div class="hc-p">À partir de 8 000 FCFA</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tabs-wrap">
+  <div class="W"><div class="tabs-row" id="tabs"></div></div>
 </div>
 
-<div class="content">
-
-  <!-- ALERTES -->
-  <div id="alert" class="alert"></div>
-  <div id="loading" class="loading"><div class="spinner"></div> Envoi en cours...</div>
-
-  <!-- TAB 1: PROFIL -->
-  <div class="section active" id="profil">
-    
-    <div class="alert alert-info" style="display: block;">
-      <strong>ℹ️ Étape 1: Votre Profil</strong>
-      <p>Remplissez tous les champs pour continuer.</p>
+<section class="shop" id="shop">
+  <div class="W">
+    <div class="search-wrap">
+      <svg class="s-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" type="text" placeholder="Rechercher une gamme…"/>
     </div>
-
-    <form id="formProfil">
-
-      <div class="section-title">👤 Informations Personnelles</div>
-      
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Nom Complet *</label>
-          <input type="text" name="nom" required>
-        </div>
-        <div class="form-group">
-          <label>Email *</label>
-          <input type="email" name="email" required>
-        </div>
-      </div>
-
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Téléphone *</label>
-          <input type="tel" name="telephone" required>
-        </div>
-        <div class="form-group">
-          <label>WhatsApp</label>
-          <input type="tel" name="whatsapp">
-        </div>
-      </div>
-
-      <div class="section-title">🌍 Informations Régionales</div>
-
-      <div class="form-group">
-        <label>Pays *</label>
-        <select name="pays" required>
-          <option value="">-- Sélectionner --</option>
-          <option value="Côte d'Ivoire">Côte d'Ivoire</option>
-          <option value="Nigeria">Nigeria</option>
-          <option value="Togo">Togo</option>
-          <option value="Bénin">Bénin</option>
-          <option value="Burkina Faso">Burkina Faso</option>
-          <option value="Mali">Mali</option>
-          <option value="Sénégal">Sénégal</option>
-          <option value="Ghana">Ghana</option>
-        </select>
-      </div>
-
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Ville Principale *</label>
-          <input type="text" name="ville" required>
-        </div>
-        <div class="form-group">
-          <label>Région/Zone *</label>
-          <input type="text" name="zone" required>
-        </div>
-      </div>
-
-      <div class="section-title">🏢 Expérience & Capacités</div>
-
-      <div class="form-group">
-        <label>Expérience en Logistique/Commerce *</label>
-        <textarea name="experience" required></textarea>
-      </div>
-
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Fournisseurs Connus *</label>
-          <input type="number" name="fournisseurs" required>
-        </div>
-        <div class="form-group">
-          <label>Capacité d'Équipe *</label>
-          <select name="equipe" required>
-            <option value="">-- Sélectionner --</option>
-            <option value="1-2">1-2 personnes</option>
-            <option value="3-5">3-5 personnes</option>
-            <option value="6-10">6-10 personnes</option>
-            <option value="10+">10+ personnes</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="section-title">🚚 Logistique</div>
-
-      <div class="form-group">
-        <label>Capacité Logistique *</label>
-        <textarea name="logistique" required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Délai Moyen de Livraison (jours) *</label>
-        <input type="number" name="delai" required>
-      </div>
-
-      <div class="form-group">
-        <label>Zones de Livraison *</label>
-        <textarea name="zones" required></textarea>
-      </div>
-
-      <div class="button-group">
-        <button type="button" class="btn-secondary" onclick="resetForm()">Réinitialiser</button>
-        <button type="button" class="btn-primary" onclick="nextStep('contrat', 1)">Continuer →</button>
-      </div>
-
-    </form>
+    <div id="shopContent"></div>
   </div>
+</section>
 
-  <!-- TAB 2: CONTRAT -->
-  <div class="section" id="contrat">
-    
-    <div class="alert alert-info" style="display: block;">
-      <strong>📄 Étape 2: Lecture du Contrat</strong>
-      <p>Veuillez lire et télécharger le contrat de partenariat.</p>
-    </div>
-
-    <div class="contract-box">
-      <h2>CONTRAT DE PARTENARIAT RÉGIONAL VENDOB</h2>
-      
-      <p><strong>Entre VENDOB et le Partenaire Régional</strong></p>
-      
-      <p><strong>1. OBJET</strong><br>
-      Ce contrat établit les conditions de partenariat entre VENDOB et le partenaire régional pour le recrutement de fournisseurs et la gestion de la logistique.</p>
-      
-      <p><strong>2. RESPONSABILITÉS DU PARTENAIRE</strong><br>
-      • Recruter 20-30 fournisseurs dans les 3-6 premiers mois<br>
-      • Gérer la logistique et les livraisons<br>
-      • Assurer un support client 24/7<br>
-      • Maintenir les standards de qualité VENDOB</p>
-      
-      <p><strong>3. SYSTÈME DE COMMISSION</strong><br>
-      Commission sur chaque commande + frais logistique + bonus de performance. Paiement mensuel garanti.</p>
-      
-      <p><strong>4. ZONE D'EXCLUSIVITÉ</strong><br>
-      Le partenaire est l'UNIQUE représentant VENDOB pour sa région.</p>
-      
-      <p><strong>5. SUPPORT VENDOB</strong><br>
-      • Plateforme SaaS gratuite<br>
-      • Formation pour fournisseurs<br>
-      • Matériels marketing<br>
-      • Support opérationnel 24/7</p>
-      
-      <p><strong>6. DURÉE</strong><br>
-      Contrat indéterminé - Résiliation possible avec 30 jours de préavis.</p>
-    </div>
-
-    <div class="button-group">
-      <button type="button" class="btn-secondary" onclick="switchTab('profil', 0)">← Retour</button>
-      <a href="pr.pdf" class="btn-pdf" target="_blank">📄 Télécharger PDF</a>
-      <button type="button" class="btn-primary" onclick="nextStep('confirmation', 2)">Continuer →</button>
+<section class="why" id="why">
+  <div class="W">
+    <h2 class="rv">Pourquoi choisir VendoB ?</h2>
+    <p class="sub rv">On a pensé à tout pour vous faciliter la vie</p>
+    <div class="why-grid">
+      <div class="wc rv"><div class="wi">✅</div><h4>Fournisseurs vérifiés</h4><p>Chaque vendeur est sélectionné personnellement avant d'apparaître sur VendoB.</p></div>
+      <div class="wc rv"><div class="wi">💬</div><h4>Commande via WhatsApp</h4><p>Un clic et vous êtes en contact direct. Aucune inscription requise.</p></div>
+      <div class="wc rv"><div class="wi">🚚</div><h4>Livraison rapide</h4><p>Bénin, Togo, Nigeria. Livraison locale sous 24h dans les grandes villes.</p></div>
+      <div class="wc rv"><div class="wi">🔒</div><h4>Paiement à la livraison</h4><p>Vous vérifiez le produit avant de payer. Zéro risque pour l'acheteur.</p></div>
     </div>
   </div>
+</section>
 
-  <!-- TAB 3: CONFIRMATION -->
-  <div class="section" id="confirmation">
-    
-    <div class="alert alert-info" style="display: block;">
-      <strong>✅ Étape 3: Confirmation</strong>
-      <p>Vérifiez vos informations et confirmez votre demande.</p>
-    </div>
-
-    <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-      <p><strong>Vous êtes sur le point d'envoyer votre demande de partenariat à :</strong></p>
-      <p style="color: var(--orange); font-weight: 700; margin-top: 10px;">yezidagnide@gmail.com</p>
-      <p style="font-size: 13px; color: #666; margin-top: 10px;">Vérifiez que toutes les informations sont correctes avant de confirmer.</p>
-    </div>
-
-    <div class="checkbox-group">
-      <input type="checkbox" id="agree" required>
-      <label for="agree">J'accepte les conditions du contrat et j'autorise l'envoi de ma demande</label>
-    </div>
-
-    <div class="button-group">
-      <button type="button" class="btn-secondary" onclick="switchTab('contrat', 1)">← Retour</button>
-      <button type="button" class="btn-primary" onclick="sendForm()" id="submitBtn">✅ Envoyer ma Demande</button>
+<section class="reviews" id="reviews">
+  <div class="W">
+    <h2 class="rv">Ce que disent nos clients</h2>
+    <p class="sub rv">Des familles entières nous font déjà confiance</p>
+    <div class="rev-grid">
+      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« J'ai commandé un téléphone, il est arrivé le lendemain exactement comme sur la photo. »</p><div class="rauthor"><div class="rav">AM</div><div><div class="rname">Aminata M.</div><div class="rcity">🇧🇯 Cotonou</div></div></div></div>
+      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« Sérieux et rapide. Ils ont réglé mon souci en moins d'une heure sur WhatsApp. »</p><div class="rauthor"><div class="rav">KD</div><div><div class="rname">Kofi D.</div><div class="rcity">🇹🇬 Lomé</div></div></div></div>
+      <div class="rc rv"><div class="rstars">★★★★☆</div><p class="rtext">« Prix corrects, produits de qualité. Je commande régulièrement pour toute ma famille. »</p><div class="rauthor"><div class="rav">FS</div><div><div class="rname">Fatou S.</div><div class="rcity">🇧🇯 Parakou</div></div></div></div>
     </div>
   </div>
+</section>
 
+<section class="cta" id="contact">
+  <div class="W">
+    <h2 class="rv">Prêt à commander ?</h2>
+    <p class="rv">On répond sur WhatsApp en quelques minutes.</p>
+    <a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="btn-wh rv" target="_blank">💬 Nous écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="W">
+    <div class="fgrid">
+      <div><div class="flogo">Vendo<b>b</b></div><p class="fdesc">Boutique en ligne de confiance. Produits vérifiés, prix honnêtes. Bénin · Togo · Nigeria.</p></div>
+      <div class="fcol"><h5>Navigation</h5><ul><li><a href="#">Accueil</a></li><li><a href="#shop">Produits</a></li><li><a href="#why">Comment ça marche</a></li><li><a href="#reviews">Avis clients</a></li></ul></div>
+      <div class="fcol"><h5>Contact</h5><ul><li><a href="#">📍 Cotonou, Bénin</a></li><li><a href="https://wa.me/22900000000" target="_blank">💬 WhatsApp</a></li><li><a href="#">📧 contact@vendob.com</a></li><li><a href="#">🇧🇯 🇹🇬 🇳🇬</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <span>© 2025 VendoB — Achetez Malin, Vivez Mieux</span>
+      <div class="socs"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a><a class="soc" href="#">tk</a></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="wa-float" target="_blank">💬</a>
+
+<div class="cat-page" id="catPage">
+  <div class="cat-nav">
+    <button class="btn-back" id="btnBack">← Retour</button>
+    <div class="cat-nav-title" id="catTitle"></div>
+  </div>
+  <div class="cat-body">
+    <p class="cat-desc" id="catDesc"></p>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+  <div class="cmd-bar">
+    <div class="cmd-info"><b id="cmdName"></b>Appuyez pour commander via WhatsApp</div>
+    <a href="#" class="btn-wa-big" id="cmdBtn" target="_blank">💬 Commander sur WhatsApp</a>
+  </div>
 </div>
 
+<div class="lb" id="lb">
+  <span class="lb-x" id="lbX">✕</span>
+  <span class="lb-p" id="lbP">‹</span>
+  <img class="lb-img" id="lbImg" src="" alt=""/>
+  <span class="lb-n" id="lbN">›</span>
 </div>
 
 <script>
-// Initialiser EmailJS
-emailjs.init("rGXngAsslApFe-7us");
+// ✅ TON NUMÉRO WHATSAPP
+var WA = "22900000000";
 
-const formProfil = document.getElementById('formProfil');
-const alertBox = document.getElementById('alert');
-const loadingBox = document.getElementById('loading');
-
-function switchTab(tab, index) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  
-  document.getElementById(tab).classList.add('active');
-  document.querySelectorAll('.tab')[index].classList.add('active');
-  
-  document.getElementById('progressFill').style.width = ((index + 1) * 33) + '%';
-  
-  window.scrollTo(0, 0);
+// ✅ MESSAGE WHATSAPP
+function msgWA(nom) {
+  return encodeURIComponent(
+    "Bonjour VendoB ! 👋\n\n" +
+    "Je suis intéressé(e) par :\n" +
+    "🛍️ *" + nom + "*\n\n" +
+    "Pouvez-vous me donner les disponibilités et les prix ?\n\nMerci 🙏"
+  );
 }
 
-function nextStep(tab, index) {
-  if (tab === 'contrat' && !formProfil.checkValidity()) {
-    formProfil.reportValidity();
-    showAlert('Veuillez remplir tous les champs', 'error');
-    return;
+// ✅ CATÉGORIES COMPLÉTÉES
+var CATS = [
+  {id:"tous",label:"Tout voir",ico:"🛒"},
+  {id:"electronique",label:"Électronique",ico:"📱"},
+  {id:"mode-homme",label:"Mode Homme",ico:"👔"},
+  {id:"sacs-homme",label:"Sacs à Main Homme",ico:"👜"},
+  {id:"femme-musulmane",label:"Mode Musulmane",ico:"🧕"},
+  {id:"mode-femme",label:"Mode Femme",ico:"👗"},
+  {id:"chaussures",label:"Chaussures",ico:"👟"},
+  {id:"accessoires",label:"Accessoires",ico:"💍"},
+  {id:"sport",label:"Sport",ico:"⚽"},
+  {id:"maison",label:"Maison",ico:"🏠"},
+  {id:"beaute",label:"Beauté",ico:"💄"},
+  {id:"enfants",label:"Enfants",ico:"🧸"},
+  {id:"technologie",label:"Technologie",ico:"💻"},
+  {id:"alimentation",label:"Alimentation",ico:"🍎"}
+];
+
+var ICO = {electronique:"📱",mode:"👗",sport:"⚽",maison:"🏠",beaute:"💄",enfants:"🧸",alimentation:"🍎",};
+
+// ✅ GAMMES AVEC CATÉGORIES COMPLÉTÉES
+var GAMMES = [
+  // ÉLECTRONIQUE
+  {
+    id:"iphone", cat:"electronique", nom:"iPhone", badge:"Populaire",
+    sous:"iPhone 11 · 12 · 13 · 14 · 15 · 16",
+    desc:"Tous modèles disponibles, reconditionnés ou neufs. Débloqués tout opérateur. Prix selon modèle et stockage.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:80000, prixTo:390000,
+    preview:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg"],
+    catalogue:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg","iph5.jpg","iph6.jpg","iph7.jpg","iph8.jpg"]
+  },
+  {
+    id:"samsung-s", cat:"electronique", nom:"Samsung Galaxy S", badge:null,
+    sous:"Galaxy S22 · S23 · S24",
+    desc:"Gamme premium Samsung. Écran AMOLED, triple caméra, charge rapide. Neufs et reconditionnés.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:120000, prixTo:270000,
+    preview:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg"],
+    catalogue:["sas1.jpg","sas2.jpg","sas3.jpg","sas4.jpg","sas5.jpg","sas6.jpg"]
+  },
+
+  // MODE HOMME
+  {
+    id:"chemises", cat:"mode-homme", nom:"Chemises Homme", badge:null,
+    sous:"Coton · Polyester · Toutes tailles",
+    desc:"Chemises classiques et modernes. Couleurs variées, coupe ajustée ou large. Qualité premium.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
+    preview:["che1.jpg","che2.jpg","che3.jpg","che4.jpg"],
+    catalogue:["che1.jpg","che2.jpg","che3.jpg","che4.jpg","che5.jpg","che6.jpg"]
+  },
+  {
+    id:"pantalons-homme", cat:"mode-homme", nom:"Pantalons Homme", badge:"Populaire",
+    sous:"Slim · Regular · Large · Jeans · Chino",
+    desc:"Pantalons de qualité pour tous les styles. Confortables, durables, tendance.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:8000, prixTo:25000,
+    preview:["pan1.jpg","pan2.jpg","pan3.jpg","pan4.jpg"],
+    catalogue:["pan1.jpg","pan2.jpg","pan3.jpg","pan4.jpg","pan5.jpg"]
+  },
+
+  // SACS À MAIN HOMME
+  {
+    id:"sacs-dos-homme", cat:"sacs-homme", nom:"Sacs à Dos Homme", badge:null,
+    sous:"Bureau · Voyage · Casual · Avec compartiment PC",
+    desc:"Sacs résistants et stylés. Compartiments multiples, tissus de qualité, design moderne.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:40000,
+    preview:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg"],
+    catalogue:["sad1.jpg","sad2.jpg","sad3.jpg","sad4.jpg","sad5.jpg"]
+  },
+  {
+    id:"portefeuilles-homme", cat:"sacs-homme", nom:"Portefeuilles & Porte-cartes", badge:null,
+    sous:"Cuir · Synthétique · Avec RFID",
+    desc:"Portefeuilles pratiques et élégants. Protection RFID, rangements optimisés, matériaux premium.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:15000,
+    preview:["por1.jpg","por2.jpg","por3.jpg","por4.jpg"],
+    catalogue:["por1.jpg","por2.jpg","por3.jpg","por4.jpg"]
+  },
+  {
+    id:"sacs-messager-homme", cat:"sacs-homme", nom:"Sacs Messager Homme", badge:"Populaire",
+    sous:"Cuir · Toile · Bandoulière ajustable",
+    desc:"Parfaits pour le travail ou les déplacements. Style intemporel, durabilité garantie.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:45000,
+    preview:["mes1.jpg","mes2.jpg","mes3.jpg","mes4.jpg"],
+    catalogue:["mes1.jpg","mes2.jpg","mes3.jpg","mes4.jpg","mes5.jpg","mes6.jpg"]
+  },
+
+  // MODE FEMME MUSULMANE
+  {
+    id:"hijabs", cat:"femme-musulmane", nom:"Hijabs & Foulards", badge:"Populaire",
+    sous:"Coton · Soie · Mousseline · Tous coloris",
+    desc:"Hijabs élégants et confortables. Motifs classiques et modernes. Qualité premium pour jour et soirée.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:3000, prixTo:12000,
+    preview:["hij1.jpg","hij2.jpg","hij3.jpg","hij4.jpg"],
+    catalogue:["hij1.jpg","hij2.jpg","hij3.jpg","hij4.jpg","hij5.jpg","hij6.jpg","hij7.jpg"]
+  },
+  {
+    id:"robes-musulmanes", cat:"femme-musulmane", nom:"Robes Musulmanes", badge:"Populaire",
+    sous:"Maxi · Midi · Diverses couleurs",
+    desc:"Robes musulmanes modernes et élégantes. Coupes flatteuses, tissus de qualité, tailles S à XXL.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:35000,
+    preview:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg"],
+    catalogue:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg","rob5.jpg","rob6.jpg"]
+  },
+  {
+    id:"abayas", cat:"femme-musulmane", nom:"Abayas & Djellabas", badge:null,
+    sous:"Noir · Couleurs · Brodées · Premium",
+    desc:"Abayas et djellabas de qualité supérieure. Design traditionnel et moderne, confortables et élégantes.",
+    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:20000, prixTo:60000,
+    preview:["aba1.jpg","aba2.jpg","aba3.jpg","aba4.jpg"],
+    catalogue:["aba1.jpg","aba2.jpg","aba3.jpg","aba4.jpg","aba5.jpg","aba6.jpg"]
+  },
+
+  // MODE FEMME GÉNÉRALE
+  {
+    id:"robes-femme", cat:"mode-femme", nom:"Robes Femme", badge:null,
+    sous:"Casual · Soirée · Maxi · Midi",
+    desc:"Robes pour tous les occasions. Styles variés, couleurs tendance, qualité durable.",
+    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:8000, prixTo:28000,
+    preview:["rofem1.jpg","rofem2.jpg","rofem3.jpg","rofem4.jpg"],
+    catalogue:["rofem1.jpg","rofem2.jpg","rofem3.jpg","rofem4.jpg","rofem5.jpg"]
+  },
+  {
+    id:"blouses", cat:"mode-femme", nom:"Blouses & Chemises Femme", badge:null,
+    sous:"Coton · Polyester · Diverses coupes",
+    desc:"Blouses élégantes et pratiques. Parfaites pour le bureau ou les sorties.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:16000,
+    preview:["blo1.jpg","blo2.jpg","blo3.jpg","blo4.jpg"],
+    catalogue:["blo1.jpg","blo2.jpg","blo3.jpg","blo4.jpg"]
+  },
+
+  // CHAUSSURES
+  {
+    id:"chaussures-sport", cat:"chaussures", nom:"Chaussures de Sport", badge:"Populaire",
+    sous:"Running · Basketball · Casual · Tailles 36-47",
+    desc:"Chaussures de grandes marques. Confort optimal, designs tendance, durabilité garantie.",
+    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h – Bénin · Togo · Nigeria",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:15000, prixTo:45000,
+    preview:["cho1.jpg","cho2.jpg","cho3.jpg","cho4.jpg"],
+    catalogue:["cho1.jpg","cho2.jpg","cho3.jpg","cho4.jpg","cho5.jpg","cho6.jpg"]
+  },
+
+  // ACCESSOIRES
+  {
+    id:"bijoux", cat:"accessoires", nom:"Bijoux & Montres", badge:null,
+    sous:"Colliers · Bracelets · Boucles · Montres",
+    desc:"Bijoux élégants et intemporels. Qualité premium, designs variés pour tous les styles.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:30000,
+    preview:["bij1.jpg","bij2.jpg","bij3.jpg","bij4.jpg"],
+    catalogue:["bij1.jpg","bij2.jpg","bij3.jpg","bij4.jpg","bij5.jpg"]
+  },
+
+  // SPORT
+  {
+    id:"maillots-foot", cat:"sport", nom:"Maillots de Football", badge:"Populaire",
+    sous:"PSG · Real Madrid · Barça · Équipes africaines",
+    desc:"Maillots de tous les clubs et sélections. Confortable, respirant, qualité official.",
+    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:18000,
+    preview:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg"],
+    catalogue:["mai1.jpg","mai2.jpg","mai3.jpg","mai4.jpg","mai5.jpg"]
+  },
+
+  // BEAUTÉ
+  {
+    id:"cosmetiques", cat:"beaute", nom:"Cosmétiques & Soins", badge:null,
+    sous:"Maquillage · Soins visage · Crèmes",
+    desc:"Produits de beauté qualité. Marques reconnues, formules efficaces, prix accessibles.",
+    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
+    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:22000,
+    preview:["cos1.jpg","cos2.jpg","cos3.jpg","cos4.jpg"],
+    catalogue:["cos1.jpg","cos2.jpg","cos3.jpg","cos4.jpg"]
   }
-  
-  switchTab(tab, index);
-}
+];
 
-function resetForm() {
-  formProfil.reset();
-  showAlert('Formulaire réinitialisé', 'info');
-}
+// ── LOGIQUE ──
+var currentCat = "tous";
+var lbImgs = [], lbIdx = 0;
 
-function showAlert(msg, type = 'info') {
-  alertBox.className = 'alert show alert-' + type;
-  alertBox.innerHTML = msg;
-}
+function fmt(n) { return n.toLocaleString("fr-FR") + " FCFA"; }
 
-function sendForm() {
-  const agree = document.getElementById('agree').checked;
-  
-  if (!agree) {
-    showAlert('Veuillez accepter les conditions avant de continuer', 'error');
-    return;
+function buildTabs() {
+  var el = document.getElementById("tabs");
+  if (!el) return;
+  var html = "";
+  for (var i = 0; i < CATS.length; i++) {
+    var c = CATS[i];
+    var cnt = c.id === "tous" ? GAMMES.length : GAMMES.filter(function(g){ return g.cat === c.id; }).length;
+    if (cnt === 0 && c.id !== "tous") continue;
+    html += '<button class="tab' + (c.id === currentCat ? " on" : "") + '" data-c="' + c.id + '">' + c.ico + ' ' + c.label + '</button>';
   }
-  
-  if (!formProfil.checkValidity()) {
-    formProfil.reportValidity();
-    showAlert('Formulaire incomplet', 'error');
-    return;
-  }
-  
-  const fd = new FormData(formProfil);
-  const data = {
-    to_email: 'yezidagnide@gmail.com',
-    nom: fd.get('nom'),
-    email: fd.get('email'),
-    telephone: fd.get('telephone'),
-    whatsapp: fd.get('whatsapp') || '-',
-    pays: fd.get('pays'),
-    ville: fd.get('ville'),
-    zone: fd.get('zone'),
-    experience: fd.get('experience'),
-    fournisseurs: fd.get('fournisseurs'),
-    equipe: fd.get('equipe'),
-    logistique: fd.get('logistique'),
-    delai: fd.get('delai'),
-    zones: fd.get('zones'),
-    date_signature: new Date().toLocaleDateString('fr-FR')
-  };
-  
-  loadingBox.classList.add('show');
-  document.getElementById('submitBtn').disabled = true;
-  
-  emailjs.send('service_geizbmp', 'template_6fx9wss', data)
-    .then(response => {
-      showAlert('✅ Demande envoyée avec succès ! Vous recevrez une réponse très bientôt.', 'success');
-      formProfil.reset();
-      setTimeout(() => switchTab('profil', 0), 2000);
-    })
-    .catch(error => {
-      console.error('Erreur:', error);
-      showAlert('❌ Erreur lors de l\'envoi: ' + error.message, 'error');
-    })
-    .finally(() => {
-      loadingBox.classList.remove('show');
-      document.getElementById('submitBtn').disabled = false;
+  el.innerHTML = html;
+  el.querySelectorAll(".tab").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      currentCat = btn.getAttribute("data-c");
+      el.querySelectorAll(".tab").forEach(function(b) { b.classList.toggle("on", b === btn); });
+      render();
+      document.getElementById("shop").scrollIntoView({behavior:"smooth", block:"start"});
     });
+  });
 }
-</script>
 
+function render() {
+  var wrap = document.getElementById("shopContent");
+  if (!wrap) return;
+  var q = (document.getElementById("searchInput").value || "").trim().toLowerCase();
+  var list = GAMMES.filter(function(g) {
+    if (currentCat !== "tous" && g.cat !== currentCat) return false;
+    if (q && g.nom.toLowerCase().indexOf(q) < 0 && g.sous.toLowerCase().indexOf(q) < 0) return false;
+    return true;
+  });
+
+  if (!list.length) {
+    wrap.innerHTML = '<div class="empty"><div class="empty-ico">🔍</div><p>Aucune gamme trouvée.</p></div>';
+    return;
+  }
+
+  var html = "";
+  for (var i = 0; i < list.length; i++) {
+    var g = list[i];
+    var ico = ICO[g.cat] || "📦";
+
+    // 4 cases images
+    var cells = "";
+    for (var j = 0; j < 4; j++) {
+      if (g.preview[j]) {
+        cells += '<img src="images/' + g.preview[j] + '" alt="' + g.nom + '" loading="lazy" ' +
+          'onerror="this.outerHTML=\'<div class=ph><div class=ph-ico>' + ico + '</div><span>Photo ' + (j+1) + '</span></div>\'">';
+      } else {
+        cells += '<div class="ph"><div class="ph-ico">' + ico + '</div><span>Photo ' + (j+1) + '</span></div>';
+      }
+    }
+
+    // Infos fournisseur
+    var ftags = "";
+    if (g.pays)      ftags += '<span class="ftag">📍 ' + g.pays + ' &nbsp;·&nbsp; ' + g.ville + '</span>';
+    if (g.verifie)   ftags += '<span class="ftag ftag-ok">✅ Fournisseur vérifié VendoB</span>';
+    if (g.livraison) ftags += '<span class="ftag">🚚 ' + g.livraison + '</span>';
+    if (g.paiement)  ftags += '<span class="ftag">🔒 ' + g.paiement + '</span>';
+    if (g.prixFrom)  ftags += '<span class="ftag ftag-prix">💰 ' + fmt(g.prixFrom) + (g.prixTo ? ' – ' + fmt(g.prixTo) : '') + '</span>';
+
+    html += '<div class="gamme" style="animation-delay:' + (i * 0.05) + 's">' +
+      '<div class="gamme-head">' +
+        '<div>' +
+          '<div class="gamme-title">' + g.nom + (g.badge ? ' <span class="gtag">' + g.badge + '</span>' : '') + '</div>' +
+          '<div class="gamme-sous">' + g.sous + '</div>' +
+        '</div>' +
+        '<button class="btn-voir" data-id="' + g.id + '">Voir le catalogue →</button>' +
+      '</div>' +
+      '<div class="ftags">' + ftags + '</div>' +
+      '<div class="preview-grid">' + cells + '</div>' +
+      '<div class="gamme-footer">' +
+        '<a href="https://wa.me/' + WA + '?text=' + msgWA(g.nom) + '" class="btn-wa-home" target="_blank">' +
+          '💬 Commander sur WhatsApp' +
+        '</a>' +
+        '<button class="btn-voir" data-id="' + g.id + '" style="background:transparent;color:var(--nv);border:1.5px solid var(--g2)">📷 Voir le catalogue</button>' +
+      '</div>' +
+    '</div>';
+  }
+  wrap.innerHTML = html;
+
+  wrap.querySelectorAll(".btn-voir").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      openCatalogue(btn.getAttribute("data-id"));
+    });
+  });
+}
+
+function openCatalogue(id) {
+  var g = null;
+  for (var i = 0; i < GAMMES.length; i++) { if (GAMMES[i].id === id) { g = GAMMES[i]; break; } }
+  if (!g) return;
+
+  document.getElementById("catTitle").textContent = g.nom;
+  document.getElementById("catDesc").textContent  = g.desc;
+  document.getElementById("cmdName").textContent  = g.nom + " — ";
+  document.getElementById("cmdBtn").href = "https://wa.me/" + WA + "?text=" + msgWA(g.nom);
+
+  lbImgs = g.catalogue;
+  var grid = document.getElementById("catGrid");
+  var html = "";
+  for (var i = 0; i < g.catalogue.length; i++) {
+    var ico = ICO[g.cat] || "📦";
+    html += '<div class="cat-item" data-i="' + i + '">' +
+      '<img src="images/' + g.catalogue[i] + '" alt="' + g.nom + ' ' + (i+1) + '" loading="lazy" ' +
+      'onerror="this.parentElement.innerHTML=\'<div style=padding:30px;text-align:center;color:#bbb><div style=font-size:2rem>' + ico + '</div><div style=font-size:.72rem;margin-top:6px>Photo ' + (i+1) + '</div></div>\'">' +
+      '<div class="cat-num">' + (i+1) + '</div>' +
+      '</div>';
+  }
+  grid.innerHTML = html;
+
+  grid.querySelectorAll(".cat-item").forEach(function(item) {
+    item.addEventListener("click", function() { openLb(parseInt(item.getAttribute("data-i"))); });
+  });
+
+  document.getElementById("catPage").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCatalogue() {
+  document.getElementById("catPage").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+function openLb(idx) {
+  lbIdx = idx;
+  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
+  document.getElementById("lb").classList.add("show");
+}
+function closeLb() { document.getElementById("lb").classList.remove("show"); }
+
+document.getElementById("btnBack").addEventListener("click", closeCatalogue);
+document.getElementById("lbX").addEventListener("click", closeLb);
+document.getElementById("lb").addEventListener("click", function(e) { if (e.target === this) closeLb(); });
+document.getElementById("lbP").addEventListener("click", function() {
+  lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length;
+  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
+});
+document.getElementById("lbN").addEventListener("click", function() {
+  lbIdx = (lbIdx + 1) % lbImgs.length;
+  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
+});
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") { closeLb(); closeCatalogue(); }
+  if (e.key === "ArrowLeft")  document.getElementById("lbP").click();
+  if (e.key === "ArrowRight") document.getElementById("lbN").click();
+});
+document.getElementById("searchInput").addEventListener("input", render);
+document.getElementById("burger").addEventListener("click", function() {
+  this.classList.toggle("open");
+  document.getElementById("mobNav").classList.toggle("show");
+});
+document.querySelectorAll(".mob-nav a").forEach(function(a) {
+  a.addEventListener("click", function() {
+    document.getElementById("burger").classList.remove("open");
+    document.getElementById("mobNav").classList.remove("show");
+  });
+});
+
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add("in"); });
+}, {threshold:0.1});
+document.querySelectorAll(".rv").forEach(function(el) { obs.observe(el); });
+
+document.addEventListener("DOMContentLoaded", function() {
+  buildTabs();
+  render();
+});
+</script>
 </body>
 </html>
