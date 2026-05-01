@@ -8,37 +8,20 @@
 <style>
 :root{--or:#F4821E;--nv:#0D1B2A;--g1:#F6F6F6;--g2:#E8E8E8;--g3:#ABABAB;--gr:#16A34A;--nav:64px}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:#fff;color:var(--nv);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-button{cursor:pointer;border:none;background:none;font-family:'Outfit',sans-serif}
-img{display:block;max-width:100%}
-ul{list-style:none}
-::-webkit-scrollbar{width:3px;height:3px}
-::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px}
+html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:#fff;color:var(--nv);overflow-x:hidden}
+a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;background:none;font-family:'Outfit',sans-serif}
+img{display:block;max-width:100%}ul{list-style:none}
+::-webkit-scrollbar{width:3px;height:3px}::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px}
 .W{max-width:1160px;margin:0 auto;padding:0 24px}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--g2)}
 .nav-in{height:100%;display:flex;align-items:center;gap:28px}
-.logo{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.5px;flex-shrink:0}
-.logo b{color:var(--or)}
-.nav-links{display:flex;gap:4px;margin-right:auto}
-.nav-links a{font-size:.85rem;font-weight:500;color:#666;padding:7px 12px;border-radius:8px;transition:.2s}
-.nav-links a:hover{color:var(--nv);background:var(--g1)}
-.nav-wa{display:flex;align-items:center;gap:7px;background:var(--or);color:#fff;padding:9px 20px;border-radius:50px;font-weight:700;font-size:.84rem;flex-shrink:0;transition:.2s}
-.nav-wa:hover{opacity:.88}
-.burger{display:none;flex-direction:column;gap:5px;padding:6px}
-.burger span{display:block;width:21px;height:2px;background:var(--nv);border-radius:2px;transition:.25s}
-.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mob-nav{display:none;position:fixed;top:var(--nav);inset-inline:0;background:#fff;border-bottom:1px solid var(--g2);padding:14px 20px;flex-direction:column;gap:4px;z-index:899;box-shadow:0 8px 24px rgba(0,0,0,.1)}
-.mob-nav.show{display:flex}
-.mob-nav a{padding:11px 12px;border-radius:8px;font-weight:500;font-size:.95rem;transition:.2s}
-.mob-nav a:hover{background:var(--g1)}
-
-/* HERO */
+.logo{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.5px;flex-shrink:0}.logo b{color:var(--or)}
+.nav-links{display:flex;gap:4px;margin-right:auto}.nav-links a{font-size:.85rem;font-weight:500;color:#666;padding:7px 12px;border-radius:8px;transition:.2s}.nav-links a:hover{color:var(--nv);background:var(--g1)}
+.nav-wa{display:flex;align-items:center;gap:7px;background:var(--or);color:#fff;padding:9px 20px;border-radius:50px;font-weight:700;font-size:.84rem;flex-shrink:0;transition:.2s}.nav-wa:hover{opacity:.88}
+.burger{display:none;flex-direction:column;gap:5px;padding:6px}.burger span{display:block;width:21px;height:2px;background:var(--nv);border-radius:2px;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:var(--nav);inset-inline:0;background:#fff;border-bottom:1px solid var(--g2);padding:14px 20px;flex-direction:column;gap:4px;z-index:899;box-shadow:0 8px 24px rgba(0,0,0,.1);max-height:70vh;overflow-y:auto}
+.mob-nav.show{display:flex}.mob-nav a{padding:11px 12px;border-radius:8px;font-weight:500;font-size:.95rem;transition:.2s}.mob-nav a:hover{background:var(--g1)}
 .hero{padding-top:calc(var(--nav)+60px);padding-bottom:64px;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;top:-80px;right:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(244,130,30,.08),transparent 65%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:center}
@@ -46,41 +29,30 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .dot{width:7px;height:7px;border-radius:50%;background:var(--gr);animation:pls 2s infinite}
 @keyframes pls{0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,.4)}70%{box-shadow:0 0 0 6px transparent}}
 .hero h1{font-family:'Nunito',sans-serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
-.hero h1 b{color:var(--or)}
-.hero p{font-size:.97rem;color:#555;line-height:1.75;max-width:440px;margin-bottom:28px}
+.hero h1 b{color:var(--or)}.hero p{font-size:.97rem;color:#555;line-height:1.75;max-width:440px;margin-bottom:28px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn-or{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;padding:13px 26px;border-radius:50px;font-weight:700;font-size:.88rem;transition:.22s;box-shadow:0 8px 24px rgba(244,130,30,.28)}
 .btn-or:hover{opacity:.9;transform:translateY(-2px)}
 .btn-brd{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--nv);padding:13px 22px;border-radius:50px;font-weight:600;font-size:.88rem;border:1.5px solid var(--g2);transition:.22s}
 .btn-brd:hover{border-color:var(--or);color:var(--or)}
 .hero-stats{display:flex;gap:24px;margin-top:32px;padding-top:28px;border-top:1px solid var(--g2);flex-wrap:wrap}
-.sn{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;line-height:1}
-.sl{font-size:.72rem;color:var(--g3);margin-top:3px}
+.sn{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;line-height:1}.sl{font-size:.72rem;color:var(--g3);margin-top:3px}
 .hero-cards{display:flex;flex-direction:column;gap:12px}
 .hc{background:#fff;border:1px solid var(--g2);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);animation:flt 4s ease-in-out infinite}
-.hc:nth-child(2){animation-delay:.7s}
-.hc:nth-child(3){animation-delay:1.4s}
+.hc:nth-child(2){animation-delay:.7s}.hc:nth-child(3){animation-delay:1.4s}
 @keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .hc-ico{width:40px;height:40px;border-radius:10px;background:var(--g1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.hc-n{font-size:.8rem;font-weight:600;margin-bottom:3px}
-.hc-p{font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:900;color:var(--or)}
-
-/* TABS */
+.hc-n{font-size:.8rem;font-weight:600;margin-bottom:3px}.hc-p{font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:900;color:var(--or)}
 .tabs-wrap{position:sticky;top:var(--nav);z-index:800;background:#fff;border-bottom:1px solid var(--g2)}
 .tabs-row{display:flex;gap:6px;padding:12px 0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .tabs-row::-webkit-scrollbar{display:none}
 .tab{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;font-size:.82rem;font-weight:600;color:#666;background:var(--g1);border:1.5px solid transparent;white-space:nowrap;transition:.2s;flex-shrink:0}
-.tab:hover{background:var(--g2);color:var(--nv)}
-.tab.on{background:var(--or);color:#fff;border-color:var(--or);box-shadow:0 4px 14px rgba(244,130,30,.22)}
-
-/* SHOP */
+.tab:hover{background:var(--g2);color:var(--nv)}.tab.on{background:var(--or);color:#fff;border-color:var(--or);box-shadow:0 4px 14px rgba(244,130,30,.22)}
 .shop{padding:32px 0 80px}
 .search-wrap{position:relative;max-width:480px;margin-bottom:28px}
 .search-wrap input{width:100%;padding:11px 18px 11px 40px;border:1.5px solid var(--g2);border-radius:50px;font-size:.88rem;font-family:'Outfit',sans-serif;outline:none;background:var(--g1);transition:.2s}
 .search-wrap input:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(244,130,30,.1);background:#fff}
 .s-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--g3);pointer-events:none}
-
-/* GAMME BLOC */
 .gamme{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--g2);animation:fadeUp .4s ease both}
 .gamme:last-child{border-bottom:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -90,30 +62,21 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .gamme-sous{font-size:.78rem;color:var(--g3);margin-top:3px}
 .btn-voir{display:inline-flex;align-items:center;gap:6px;background:var(--nv);color:#fff;padding:9px 18px;border-radius:50px;font-size:.8rem;font-weight:700;transition:.2s;white-space:nowrap;flex-shrink:0}
 .btn-voir:hover{background:var(--or)}
-
-/* INFOS FOURNISSEUR */
 .ftags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
 .ftag{display:inline-flex;align-items:center;gap:5px;background:var(--g1);border:1px solid var(--g2);padding:5px 11px;border-radius:50px;font-size:.73rem;font-weight:500;color:#444;white-space:nowrap}
 .ftag-ok{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;font-weight:600}
 .ftag-prix{background:#fff7ed;border-color:#fed7aa;color:#c2410c;font-weight:700}
-
-/* GRILLE 4 IMAGES */
 .preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .preview-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--g2);cursor:pointer;display:block;transition:transform .3s,box-shadow .3s}
 .preview-grid img:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .ph{aspect-ratio:1/1;border-radius:10px;background:var(--g1);border:1.5px dashed var(--g2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:var(--g3);font-size:.72rem}
 .ph-ico{font-size:1.8rem}
-
-/* BOUTONS BAS GAMME */
 .gamme-footer{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;align-items:center}
 .btn-wa-home{display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;font-size:.82rem;font-weight:700;transition:.2s;box-shadow:0 4px 14px rgba(37,211,102,.25)}
 .btn-wa-home:hover{background:#1da851;transform:translateY(-1px)}
-
-/* EMPTY */
-.empty{text-align:center;padding:60px 20px;color:var(--g3)}
-.empty-ico{font-size:2.5rem;margin-bottom:10px}
-
-/* CATALOGUE PAGE */
+.btn-plus{display:flex;align-items:center;justify-content:center;padding:16px;margin:40px auto;background:var(--or);color:#fff;border-radius:50px;font-weight:700;font-size:.95rem;gap:8px;max-width:300px;box-shadow:0 4px 14px rgba(244,130,30,.28);transition:.22s;cursor:pointer}
+.btn-plus:hover{opacity:.9;transform:translateY(-2px)}
+.empty{text-align:center;padding:60px 20px;color:var(--g3)}.empty-ico{font-size:2.5rem;margin-bottom:10px}
 .cat-page{display:none;position:fixed;inset:0;z-index:1800;background:#fff;overflow-y:auto}
 .cat-page.show{display:block}
 .cat-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--g2);padding:0 20px;height:56px;display:flex;align-items:center;gap:14px;z-index:10}
@@ -128,25 +91,18 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .cat-item img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform .3s}
 .cat-item:hover img{transform:scale(1.04)}
 .cat-num{position:absolute;top:7px;left:7px;background:rgba(0,0,0,.5);color:#fff;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:50px}
-
-/* BARRE COMMANDER FIXE */
 .cmd-bar{position:fixed;bottom:0;left:0;right:0;z-index:1900;background:#fff;border-top:2px solid var(--g2);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
-.cmd-info{font-size:.82rem;color:#555;line-height:1.4}
-.cmd-info b{color:var(--nv);font-size:.9rem;display:block}
-.btn-wa-big{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 24px;border-radius:50px;font-weight:800;font-size:.9rem;transition:.22s;box-shadow:0 6px 18px rgba(37,211,102,.32);white-space:nowrap}
+.cmd-info{font-size:.82rem;color:#555;line-height:1.4}.cmd-info b{color:var(--nv);font-size:.9rem;display:block}
+.btn-wa-big{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 24px;border-radius:50px;font-weight:800;font-size:.9rem;transition:.22s;box-shadow:0 6px 18px rgba(37,211,102,.32);white-space:nowrap;cursor:pointer;border:none;text-decoration:none}
 .btn-wa-big:hover{background:#1da851;transform:translateY(-1px)}
-
-/* LIGHTBOX */
 .lb{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.93);align-items:center;justify-content:center}
 .lb.show{display:flex}
 .lb-img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:10px}
-.lb-x{position:absolute;top:16px;right:18px;color:#fff;font-size:1.8rem;cursor:pointer;opacity:.75;line-height:1;transition:.2s}
+.lb-x{position:absolute;top:16px;right:18px;color:#fff;font-size:1.8rem;cursor:pointer;opacity:.75;line-height:1;transition:.2s;background:none;border:none}
 .lb-x:hover{opacity:1}
-.lb-p,.lb-n{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;cursor:pointer;padding:12px;background:rgba(255,255,255,.1);border-radius:50%;transition:.2s;user-select:none}
+.lb-p,.lb-n{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2rem;cursor:pointer;padding:12px;background:rgba(255,255,255,.1);border-radius:50%;transition:.2s;user-select:none;border:none}
 .lb-p{left:14px}.lb-n{right:14px}
 .lb-p:hover,.lb-n:hover{background:rgba(255,255,255,.2)}
-
-/* WHY */
 .why{background:var(--nv);padding:72px 0}
 .why h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:6px}
 .why .sub{font-size:.88rem;color:#555;margin-bottom:36px}
@@ -156,8 +112,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .wi{width:42px;height:42px;border-radius:10px;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:12px}
 .wc h4{font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:800;color:#fff;margin-bottom:6px}
 .wc p{font-size:.81rem;color:#666;line-height:1.6}
-
-/* REVIEWS */
 .reviews{padding:72px 0;background:var(--g1)}
 .reviews h2{font-family:'Nunito',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;letter-spacing:-1px;margin-bottom:6px}
 .reviews .sub{font-size:.88rem;color:var(--g3);margin-bottom:36px}
@@ -167,360 +121,229 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background
 .rtext{font-size:.86rem;color:#555;line-height:1.75;font-style:italic}
 .rauthor{display:flex;align-items:center;gap:10px;margin-top:14px}
 .rav{width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0}
-.rname{font-weight:700;font-size:.83rem}
-.rcity{font-size:.73rem;color:var(--g3)}
-
-/* CTA */
+.rname{font-weight:700;font-size:.83rem}.rcity{font-size:.73rem;color:var(--g3)}
 .cta{padding:72px 0;background:linear-gradient(135deg,#F4821E,#FF6B00);text-align:center;color:#fff}
 .cta h2{font-family:'Nunito',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;letter-spacing:-1px;margin-bottom:12px}
 .cta p{font-size:.97rem;opacity:.88;margin-bottom:28px}
-.btn-wh{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--or);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.92rem;transition:.22s;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+.btn-wh{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--or);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.92rem;transition:.22s;box-shadow:0 8px 24px rgba(0,0,0,.14);cursor:pointer;border:none;text-decoration:none}
 .btn-wh:hover{transform:translateY(-2px)}
-
-/* FOOTER */
 footer{background:#080808;padding:48px 0 22px}
 .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
 .flogo{font-family:'Nunito',sans-serif;font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:8px}
-.flogo b{color:var(--or)}
-.fdesc{font-size:.81rem;color:#555;line-height:1.7;max-width:240px}
+.flogo b{color:var(--or)}.fdesc{font-size:.81rem;color:#555;line-height:1.7;max-width:240px}
 .fcol h5{font-size:.78rem;font-weight:700;color:#fff;margin-bottom:11px;text-transform:uppercase;letter-spacing:.6px}
-.fcol li{margin-bottom:7px}
-.fcol a{font-size:.81rem;color:#555;transition:.2s}
+.fcol li{margin-bottom:7px}.fcol a{font-size:.81rem;color:#555;transition:.2s;cursor:pointer}
 .fcol a:hover{color:var(--or)}
 .fbot{border-top:1px solid #161616;padding-top:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.77rem;color:#444}
-.socs{display:flex;gap:8px}
-.soc{width:30px;height:30px;border-radius:50%;background:#131313;border:1px solid #222;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#555;transition:.2s}
+.socs{display:flex;gap:8px}.soc{width:30px;height:30px;border-radius:50%;background:#131313;border:1px solid #222;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#555;transition:.2s;cursor:pointer}
 .soc:hover{background:var(--or);border-color:var(--or);color:#fff}
-
-/* WA FLOAT */
-.wa-float{position:fixed;bottom:22px;right:22px;z-index:1200;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;font-size:1.35rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);animation:wab 2.5s ease-in-out infinite}
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:1200;width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;font-size:1.35rem;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);animation:wab 2.5s ease-in-out infinite;cursor:pointer;border:none;text-decoration:none}
 .wa-float:hover{transform:scale(1.12);animation:none}
 @keyframes wab{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
-
-/* REVEAL */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
-.rv.in{opacity:1;transform:none}
-
-/* RESPONSIVE */
-@media(max-width:860px){
-  .nav-links,.nav-wa{display:none}
-  .burger{display:flex}
-  .hero-grid{grid-template-columns:1fr}
-  .hero-cards{display:none}
-  .fgrid{grid-template-columns:1fr;gap:22px}
-  .fbot{flex-direction:column;text-align:center}
-}
-@media(max-width:560px){
-  .hero{padding-top:calc(var(--nav)+32px);padding-bottom:40px}
-  .W{padding:0 14px}
-  .preview-grid{grid-template-columns:repeat(2,1fr)}
-  .cat-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
-  .cmd-bar{flex-direction:column;align-items:stretch;gap:10px}
-  .btn-wa-big{justify-content:center}
-}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.nav-links,.nav-wa{display:none}.burger{display:flex}.hero-grid{grid-template-columns:1fr}.hero-cards{display:none}.fgrid{grid-template-columns:1fr;gap:22px}.fbot{flex-direction:column;text-align:center}}
+@media(max-width:560px){.hero{padding-top:calc(var(--nav)+32px);padding-bottom:40px}.W{padding:0 14px}.preview-grid{grid-template-columns:repeat(2,1fr)}.cat-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}.cmd-bar{flex-direction:column;align-items:stretch;gap:10px}.btn-wa-big{justify-content:center}}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="W nav-in">
-    <a href="#" class="logo">Vendo<b>b</b></a>
-    <ul class="nav-links">
-      <li><a href="#shop">Produits</a></li>
-      <li><a href="#why">Pourquoi nous</a></li>
-      <li><a href="#reviews">Avis</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="https://wa.me/22900000000" class="nav-wa" target="_blank">💬 WhatsApp</a>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="mob-nav" id="mobNav">
-  <a href="#shop">📱 Produits</a>
-  <a href="#why">✅ Pourquoi nous</a>
-  <a href="#reviews">⭐ Avis</a>
-  <a href="#contact">💬 Contact</a>
-</div>
+<nav><div class="W nav-in"><a href="#" class="logo">Vendo<b>b</b></a><ul class="nav-links"><li><a href="#shop">Produits</a></li><li><a href="#why">Pourquoi nous</a></li><li><a href="#reviews">Avis</a></li><li><a href="#contact">Contact</a></li></ul><a href="https://wa.me/22900000000" class="nav-wa" target="_blank">💬 WhatsApp</a><button class="burger" id="burger"><span></span><span></span><span></span></button></div></nav>
+<div class="mob-nav" id="mobNav"><a href="#shop">📱 Produits</a><a href="#why">✅ Pourquoi nous</a><a href="#reviews">⭐ Avis</a><a href="#contact">💬 Contact</a></div>
 
-<section class="hero">
-  <div class="W">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-pill"><span class="dot"></span>Bénin · Togo · Nigeria</div>
-        <h1>Fini de fouiller partout —<br><b>tout est là, moins cher.</b></h1>
-        <p>VendoB connecte acheteurs et fournisseurs vérifiés. Téléphones, mode, sport — commande en 1 clic via WhatsApp.</p>
-        <div class="hero-btns">
-          <a href="#shop" class="btn-or">🛍️ Voir les produits</a>
-          <a href="#why" class="btn-brd">Comment ça marche ?</a>
-        </div>
-        <div class="hero-stats">
-          <div><div class="sn">300+</div><div class="sl">Produits</div></div>
-          <div><div class="sn">3</div><div class="sl">Pays</div></div>
-          <div><div class="sn">98%</div><div class="sl">Satisfaits</div></div>
-          <div><div class="sn">24h</div><div class="sl">Livraison</div></div>
-        </div>
-      </div>
-      <div class="hero-cards">
-        <div class="hc"><div class="hc-ico">📱</div><div><div class="hc-n">iPhone 15 128Go</div><div class="hc-p">À partir de 235 000 FCFA</div></div></div>
-        <div class="hc"><div class="hc-ico">👜</div><div><div class="hc-n">Sacs à main</div><div class="hc-p">À partir de 5 000 FCFA</div></div></div>
-        <div class="hc"><div class="hc-ico">⚽</div><div><div class="hc-n">Articles de Sport</div><div class="hc-p">À partir de 3 000 FCFA</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="hero"><div class="W"><div class="hero-grid"><div><div class="hero-pill"><span class="dot"></span>Bénin · Togo · Nigeria</div><h1>Fini de fouiller partout —<br><b>tout est là, moins cher.</b></h1><p>VendoB connecte acheteurs et fournisseurs vérifiés. 70+ catégories — commande en 1 clic via WhatsApp.</p><div class="hero-btns"><a href="#shop" class="btn-or">🛍️ Voir les produits</a><a href="#why" class="btn-brd">Comment ça marche ?</a></div><div class="hero-stats"><div><div class="sn">70+</div><div class="sl">Catégories</div></div><div><div class="sn">300+</div><div class="sl">Produits</div></div><div><div class="sn">98%</div><div class="sl">Satisfaits</div></div><div><div class="sn">24h</div><div class="sl">Livraison</div></div></div></div><div class="hero-cards"><div class="hc"><div class="hc-ico">📱</div><div><div class="hc-n">Smartphones</div><div class="hc-p">À partir de 45 000 FCFA</div></div></div><div class="hc"><div class="hc-ico">👕</div><div><div class="hc-n">T-shirts</div><div class="hc-p">À partir de 3 000 FCFA</div></div></div><div class="hc"><div class="hc-ico">⚙️</div><div><div class="hc-n">Électronique</div><div class="hc-p">À partir de 1 000 FCFA</div></div></div></div></div></div></section>
 
-<div class="tabs-wrap">
-  <div class="W"><div class="tabs-row" id="tabs"></div></div>
-</div>
+<div class="tabs-wrap"><div class="W"><div class="tabs-row" id="tabs"></div></div></div>
 
-<section class="shop" id="shop">
-  <div class="W">
-    <div class="search-wrap">
-      <svg class="s-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input id="searchInput" type="text" placeholder="Rechercher une gamme…"/>
-    </div>
-    <div id="shopContent"></div>
-  </div>
-</section>
+<section class="shop" id="shop"><div class="W"><div class="search-wrap"><svg class="s-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input id="searchInput" type="text" placeholder="Rechercher une gamme…"/></div><div id="shopContent"></div><button class="btn-plus" id="loadMore">📦 Voir plus de produits</button></div></section>
 
-<section class="why" id="why">
-  <div class="W">
-    <h2 class="rv">Pourquoi choisir VendoB ?</h2>
-    <p class="sub rv">On a pensé à tout pour vous faciliter la vie</p>
-    <div class="why-grid">
-      <div class="wc rv"><div class="wi">✅</div><h4>Fournisseurs vérifiés</h4><p>Chaque vendeur est sélectionné personnellement avant d'apparaître sur VendoB.</p></div>
-      <div class="wc rv"><div class="wi">💬</div><h4>Commande via WhatsApp</h4><p>Un clic et vous êtes en contact direct. Aucune inscription requise.</p></div>
-      <div class="wc rv"><div class="wi">🚚</div><h4>Livraison rapide</h4><p>Bénin, Togo, Nigeria. Livraison locale sous 24h dans les grandes villes.</p></div>
-      <div class="wc rv"><div class="wi">🔒</div><h4>Paiement à la livraison</h4><p>Vous vérifiez le produit avant de payer. Zéro risque pour l'acheteur.</p></div>
-    </div>
-  </div>
-</section>
+<section class="why" id="why"><div class="W"><h2 class="rv">Pourquoi choisir VendoB ?</h2><p class="sub rv">On a pensé à tout pour vous faciliter la vie</p><div class="why-grid"><div class="wc rv"><div class="wi">✅</div><h4>Fournisseurs vérifiés</h4><p>Chaque vendeur est sélectionné personnellement avant d'apparaître sur VendoB.</p></div><div class="wc rv"><div class="wi">💬</div><h4>Commande via WhatsApp</h4><p>Un clic et vous êtes en contact direct. Aucune inscription requise.</p></div><div class="wc rv"><div class="wi">🚚</div><h4>Livraison rapide</h4><p>Bénin, Togo, Nigeria. Livraison locale sous 24h.</p></div><div class="wc rv"><div class="wi">🔒</div><h4>Paiement à la livraison</h4><p>Vous vérifiez avant de payer. Zéro risque.</p></div></div></div></section>
 
-<section class="reviews" id="reviews">
-  <div class="W">
-    <h2 class="rv">Ce que disent nos clients</h2>
-    <p class="sub rv">Des familles entières nous font déjà confiance</p>
-    <div class="rev-grid">
-      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« J'ai commandé un téléphone, il est arrivé le lendemain exactement comme sur la photo. »</p><div class="rauthor"><div class="rav">AM</div><div><div class="rname">Aminata M.</div><div class="rcity">🇧🇯 Cotonou</div></div></div></div>
-      <div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« Sérieux et rapide. Ils ont réglé mon souci en moins d'une heure sur WhatsApp. »</p><div class="rauthor"><div class="rav">KD</div><div><div class="rname">Kofi D.</div><div class="rcity">🇹🇬 Lomé</div></div></div></div>
-      <div class="rc rv"><div class="rstars">★★★★☆</div><p class="rtext">« Prix corrects, produits de qualité. Je commande régulièrement pour toute ma famille. »</p><div class="rauthor"><div class="rav">FS</div><div><div class="rname">Fatou S.</div><div class="rcity">🇧🇯 Parakou</div></div></div></div>
-    </div>
-  </div>
-</section>
+<section class="reviews" id="reviews"><div class="W"><h2 class="rv">Ce que disent nos clients</h2><p class="sub rv">Des familles entières nous font confiance</p><div class="rev-grid"><div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« Téléphone parfait, livré en 24h exactement comme sur la photo. »</p><div class="rauthor"><div class="rav">AM</div><div><div class="rname">Aminata M.</div><div class="rcity">🇧🇯 Cotonou</div></div></div></div><div class="rc rv"><div class="rstars">★★★★★</div><p class="rtext">« Sérieux et rapide. Excellent service WhatsApp. »</p><div class="rauthor"><div class="rav">KD</div><div><div class="rname">Kofi D.</div><div class="rcity">🇹🇬 Lomé</div></div></div></div><div class="rc rv"><div class="rstars">★★★★☆</div><p class="rtext">« Bonne qualité. Je commande régulièrement pour toute la famille. »</p><div class="rauthor"><div class="rav">FS</div><div><div class="rname">Fatou S.</div><div class="rcity">🇧🇯 Parakou</div></div></div></div></div></div></section>
 
-<section class="cta" id="contact">
-  <div class="W">
-    <h2 class="rv">Prêt à commander ?</h2>
-    <p class="rv">On répond sur WhatsApp en quelques minutes.</p>
-    <a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="btn-wh rv" target="_blank">💬 Nous écrire sur WhatsApp</a>
-  </div>
-</section>
+<section class="cta" id="contact"><div class="W"><h2 class="rv">Prêt à commander ?</h2><p class="rv">On répond en quelques minutes sur WhatsApp.</p><a href="https://wa.me/22900000000" class="btn-wh rv" target="_blank">💬 Nous contacter</a></div></section>
 
-<footer>
-  <div class="W">
-    <div class="fgrid">
-      <div><div class="flogo">Vendo<b>b</b></div><p class="fdesc">Boutique en ligne de confiance. Produits vérifiés, prix honnêtes. Bénin · Togo · Nigeria.</p></div>
-      <div class="fcol"><h5>Navigation</h5><ul><li><a href="#">Accueil</a></li><li><a href="#shop">Produits</a></li><li><a href="#why">Comment ça marche</a></li><li><a href="#reviews">Avis clients</a></li></ul></div>
-      <div class="fcol"><h5>Contact</h5><ul><li><a href="#">📍 Cotonou, Bénin</a></li><li><a href="https://wa.me/22900000000" target="_blank">💬 WhatsApp</a></li><li><a href="#">📧 contact@vendob.com</a></li><li><a href="#">🇧🇯 🇹🇬 🇳🇬</a></li></ul></div>
-    </div>
-    <div class="fbot">
-      <span>© 2025 VendoB — Achetez Malin, Vivez Mieux</span>
-      <div class="socs"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a><a class="soc" href="#">tk</a></div>
-    </div>
-  </div>
-</footer>
+<footer><div class="W"><div class="fgrid"><div><div class="flogo">Vendo<b>b</b></div><p class="fdesc">Boutique en ligne de confiance. Produits vérifiés. Bénin · Togo · Nigeria.</p></div><div class="fcol"><h5>Navigation</h5><ul><li><a href="#">Accueil</a></li><li><a href="#shop">Produits</a></li><li><a href="#why">Pourquoi nous</a></li><li><a href="#reviews">Avis</a></li></ul></div><div class="fcol"><h5>Contact</h5><ul><li><a href="#">📍 Cotonou, Bénin</a></li><li><a href="https://wa.me/22900000000" target="_blank">💬 WhatsApp</a></li><li><a href="#">📧 contact@vendob.com</a></li></ul></div></div><div class="fbot"><span>© 2025 VendoB — Achetez Malin, Vivez Mieux</span><div class="socs"><a class="soc" href="#">f</a><a class="soc" href="#">ig</a><a class="soc" href="#">tk</a></div></div></div></footer>
 
-<a href="https://wa.me/22900000000?text=Bonjour%20VendoB%20!" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/22900000000" class="wa-float" target="_blank">💬</a>
 
-<div class="cat-page" id="catPage">
-  <div class="cat-nav">
-    <button class="btn-back" id="btnBack">← Retour</button>
-    <div class="cat-nav-title" id="catTitle"></div>
-  </div>
-  <div class="cat-body">
-    <p class="cat-desc" id="catDesc"></p>
-    <div class="cat-grid" id="catGrid"></div>
-  </div>
-  <div class="cmd-bar">
-    <div class="cmd-info"><b id="cmdName"></b>Appuyez pour commander via WhatsApp</div>
-    <a href="#" class="btn-wa-big" id="cmdBtn" target="_blank">💬 Commander sur WhatsApp</a>
-  </div>
-</div>
+<div class="cat-page" id="catPage"><div class="cat-nav"><button class="btn-back" id="btnBack">← Retour</button><div class="cat-nav-title" id="catTitle"></div></div><div class="cat-body"><p class="cat-desc" id="catDesc"></p><div class="cat-grid" id="catGrid"></div></div><div class="cmd-bar"><div class="cmd-info"><b id="cmdName"></b>Appuyez pour commander via WhatsApp</div><a href="#" class="btn-wa-big" id="cmdBtn" target="_blank">💬 Commander sur WhatsApp</a></div></div>
 
-<div class="lb" id="lb">
-  <span class="lb-x" id="lbX">✕</span>
-  <span class="lb-p" id="lbP">‹</span>
-  <img class="lb-img" id="lbImg" src="" alt=""/>
-  <span class="lb-n" id="lbN">›</span>
-</div>
+<div class="lb" id="lb"><button class="lb-x" id="lbX">✕</button><button class="lb-p" id="lbP">‹</button><img class="lb-img" id="lbImg" src="" alt=""/><button class="lb-n" id="lbN">›</button></div>
 
 <script>
-// ✅ TON NUMÉRO WHATSAPP
 var WA = "22900000000";
+function msgWA(nom) { return encodeURIComponent("Bonjour VendoB ! 👋\nJe suis intéressé(e) par:\n🛍️ *" + nom + "*\n\nPouvez-vous me donner les disponibilités et les prix ?\n\nMerci 🙏"); }
 
-// ✅ MESSAGE WHATSAPP
-function msgWA(nom) {
-  return encodeURIComponent(
-    "Bonjour VendoB ! 👋\n\n" +
-    "Je suis intéressé(e) par :\n" +
-    "🛍️ *" + nom + "*\n\n" +
-    "Pouvez-vous me donner les disponibilités et les prix ?\n\nMerci 🙏"
-  );
-}
-
-// ✅ 5 CATÉGORIES FINALES
 var CATS = [
   {id:"tous",label:"Tout voir",ico:"🛒"},
-  {id:"telephone",label:"Téléphone",ico:"📱"},
-  {id:"sac-femmes",label:"Sac Femmes",ico:"👜"},
-  {id:"sport",label:"Sport",ico:"⚽"},
-  {id:"sac-homme",label:"Sac Homme",ico:"👜"},
+  {id:"telephone",label:"Téléphone",ico:"📱"},{id:"tshirt",label:"T-shirts",ico:"👕"},{id:"ecouteur",label:"Écouteurs",ico:"🎧"},{id:"riz",label:"Riz",ico:"🍚"},{id:"baskets",label:"Baskets",ico:"👟"},
+  {id:"perruques",label:"Perruques",ico:"💇"},{id:"chargeur",label:"Chargeurs",ico:"🔌"},{id:"marmites",label:"Marmites",ico:"🍲"},{id:"powerbank",label:"Power Banks",ico:"🔋"},{id:"robes",label:"Robes",ico:"👗"},
+  {id:"huile",label:"Huile",ico:"🫒"},{id:"casque",label:"Casques Audio",ico:"🎙️"},{id:"sac-femmes",label:"Sac Femmes",ico:"👜"},{id:"tele",label:"Téléviseurs",ico:"📺"},{id:"cable",label:"Câbles USB",ico:"🔗"},
+  {id:"friperie",label:"Friperie",ico:"👔"},{id:"parfum",label:"Parfums",ico:"💐"},{id:"ventilateur",label:"Ventilateurs",ico:"💨"},{id:"chaussure-sport",label:"Chaussures Sport",ico:"🏃"},
+  {id:"cahier",label:"Cahiers",ico:"📓"},{id:"meches",label:"Mèches",ico:"✨"},{id:"boisson",label:"Boissons",ico:"🥤"},{id:"montre",label:"Montres",ico:"⌚"},{id:"mixeur",label:"Mixeurs",ico:"🔄"},
+  {id:"coque",label:"Coques",ico:"📱"},{id:"pantalon",label:"Pantalons",ico:"👖"},{id:"lampe-solaire",label:"Lampes Solaires",ico:"💡"},{id:"stylo",label:"Stylos",ico:"✏️"},
+  {id:"produits-capillaires",label:"Produits Capillaires",ico:"💆"},{id:"ordinateur",label:"Ordinateurs",ico:"💻"},{id:"sandales",label:"Sandales",ico:"👡"},{id:"conserve",label:"Conserves",ico:"🥫"},
+  {id:"imprimante",label:"Imprimantes",ico:"🖨️"},{id:"matelas",label:"Matelas",ico:"🛏️"},{id:"tissage",label:"Tissages",ico:"🧵"},{id:"casque-moto",label:"Casques Moto",ico:"🏍️"},
+  {id:"livre",label:"Livres",ico:"📚"},{id:"multiprise",label:"Multiprises",ico:"⚡"},{id:"vetement-enfant",label:"Vêtements Enfants",ico:"👶"},{id:"snacks",label:"Snacks",ico:"🍿"},
+  {id:"sac-scolaire",label:"Sacs Scolaires",ico:"🎒"},{id:"creme-visage",label:"Crèmes Visage",ico:"✨"},{id:"moto",label:"Motos",ico:"🏍️"},{id:"rideau",label:"Rideaux",ico:"🪟"},
+  {id:"sous-vetement",label:"Sous-vêtements",ico:"👕"},{id:"batterie",label:"Batteries",ico:"🔋"},{id:"jouet",label:"Jouets",ico:"🧸"},{id:"couche",label:"Couches",ico:"👶"},
+  {id:"haut-parleur",label:"Haut-parleurs",ico:"🔊"},{id:"chemise",label:"Chemises",ico:"👕"},{id:"peinture",label:"Peinture",ico:"🎨"},{id:"lunette",label:"Lunettes",ico:"👓"},
+  {id:"telephone-simple",label:"Téléphones Simples",ico:"☎️"},{id:"eau",label:"Eau",ico:"💧"},{id:"produits-locaux",label:"Produits Locaux",ico:"🥘"},{id:"sport",label:"Tenues de Sport",ico:"⚽"},
+  {id:"outil",label:"Outils",ico:"🔧"},{id:"formation",label:"Formation",ico:"📚"},{id:"marketing",label:"Marketing Digital",ico:"📊"},{id:"vaisselle",label:"Vaisselle",ico:"🍽️"},
+  {id:"huile-moteur",label:"Huiles Moteur",ico:"🛢️"},{id:"site-web",label:"Création Site Web",ico:"🌐"},{id:"livraison",label:"Livraison",ico:"🚚"},{id:"chaussure-classique",label:"Chaussures Classiques",ico:"👞"},
+  {id:"fitness",label:"Équipements Fitness",ico:"💪"},{id:"ciment",label:"Ciment",ico:"🏗️"},{id:"vitre",label:"Vitres de Protection",ico:"🔒"},{id:"sac-homme",label:"Sac Homme",ico:"👜"},
   {id:"mode-musulman",label:"Mode Musulman",ico:"🧕"}
 ];
 
-var ICO = {telephone:"📱",sac:"👜",sport:"⚽",mus:"🧕"};
+var ICO = {telephone:"📱",tshirt:"👕",ecouteur:"🎧",riz:"🍚",baskets:"👟",perruques:"💇",chargeur:"🔌",marmites:"🍲",powerbank:"🔋",robes:"👗",huile:"🫒",casque:"🎙️","sac-femmes":"👜",tele:"📺",cable:"🔗",friperie:"👔",parfum:"💐",ventilateur:"💨","chaussure-sport":"🏃",cahier:"📓",meches:"✨",boisson:"🥤",montre:"⌚",mixeur:"🔄",coque:"📱",pantalon:"👖","lampe-solaire":"💡",stylo:"✏️","produits-capillaires":"💆",ordinateur:"💻",sandales:"👡",conserve:"🥫",imprimante:"🖨️",matelas:"🛏️",tissage:"🧵","casque-moto":"🏍️",livre:"📚",multiprise:"⚡","vetement-enfant":"👶",snacks:"🍿","sac-scolaire":"🎒","creme-visage":"✨",moto:"🏍️",rideau:"🪟","sous-vetement":"👕",batterie:"🔋",jouet:"🧸",couche:"👶","haut-parleur":"🔊",chemise:"👕",peinture:"🎨",lunette:"👓","telephone-simple":"☎️",eau:"💧","produits-locaux":"🥘",sport:"⚽",outil:"🔧",formation:"📚",marketing:"📊",vaisselle:"🍽️","huile-moteur":"🛢️","site-web":"🌐",livraison:"🚚","chaussure-classique":"👞",fitness:"💪",ciment:"🏗️",vitre:"🔒","sac-homme":"👜","mode-musulman":"🧕"};
 
-// ✅ GAMMES - CODE NAMING : 3 LETTRES + CHIFFRE
 var GAMMES = [
-  // TÉLÉPHONE
-  {
-    id:"iphone", cat:"telephone", nom:"iPhone", badge:"Populaire",
-    sous:"iPhone 11 · 12 · 13 · 14 · 15 · 16",
-    desc:"Tous modèles disponibles, reconditionnés ou neufs. Débloqués tout opérateur.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:60000, prixTo:490000,
-    preview:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg"],
-    catalogue:["iph5.jpg","iph7.jpg","iph8.jpg","iph9.jpg","iph10.jpg","iph11.jpg","iph12.jpg","iph13.jpg"]
-  },
-  {
-    id:"samsung", cat:"telephone", nom:"Samsung", badge:null,
-    sous:"Galaxy S · A · Note · Tab",
-    desc:"Gamme complète Samsung. Écran AMOLED, caméras performantes.",
-    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:45000, prixTo:250000,
-    preview:["sam1.jpg","sam2.jpg","sam3.jpg","sam4.jpg"],
-    catalogue:["sam5.jpg","sam6.jpg","sam7.jpg","sam8.jpg"]
-  },
-  {
-    id:"google-pixel", cat:"telephone", nom:"Google Pixel", badge:null,
-    sous:"Pixel 6 · 7 · 8 · Pro",
-    desc:"Caméra exceptionnelle, IA Google intégrée. Performance premium.",
-    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h – Bénin · Togo · Nigeria",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:120000, prixTo:320000,
-    preview:["goo1.jpg","goo2.jpg","goo3.jpg","goo4.jpg"],
-    catalogue:["goo5.jpg","goo6.jpg","goo7.jpg","goo8.jpg"]
-  },
-
-  // SAC FEMMES
-  {
-    id:"sac-main-femme", cat:"sac-femmes", nom:"Sacs à Main Femme", badge:"Populaire",
-    sous:"Cuir · Tissu · Tous coloris",
-    desc:"Sacs élégants et pratiques. Designs variés, qualité premium.",
-    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:1000, prixTo:12000,
-    preview:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg"],
-    catalogue:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg","sac5.jpg","sac6.jpg"]
-  },
-  {
-    id:"sac-dos-femme", cat:"sac-femmes", nom:"Sacs à Dos Femme", badge:null,
-    sous:"Casual · Voyage · Sport",
-    desc:"Sacs à dos féminins et fonctionnels. Confortables et stylés.",
-    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:28000,
-    preview:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"],
-    catalogue:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"]
-  },
-  {
-    id:"pochettes", cat:"sac-femmes", nom:"Pochettes & Clutch", badge:null,
-    sous:"Soirée · Casual · Mini",
-    desc:"Pochettes élégantes pour tous les occasions. Designs tendance.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:15000,
-    preview:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"],
-    catalogue:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"]
-  },
-
-  // SPORT
-  {
-    id:"ballon", cat:"sport", nom:"Ballons de Sport", badge:"Populaire",
-    sous:"Football · Basketball · Volleyball",
-    desc:"Ballons officiels de qualité supérieure. Durabilité garantie.",
-    pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h – Bénin · Togo · Nigeria",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
-    preview:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg"],
-    catalogue:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg","spo5.jpg","spo6.jpg"]
-  },
-  {
-    id:"tenue-sport", cat:"sport", nom:"Tenues de Sport", badge:null,
-    sous:"Homme · Femme · Enfant",
-    desc:"Vêtements de sport confortables et respirants. Tous styles.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:6000, prixTo:22000,
-    preview:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg"],
-    catalogue:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg","spo11.jpg"]
-  },
-
-  // SAC À MAIN HOMME
-  {
-    id:"sac-dos-homme", cat:"sac-homme", nom:"Sacs à Dos Homme", badge:"Populaire",
-    sous:"Bureau · Voyage · Casual",
-    desc:"Sacs résistants avec compartiments PC. Style professionnel.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:12000, prixTo:40000,
-    preview:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg"],
-    catalogue:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg","sah5.jpg","sah6.jpg"]
-  },
-  {
-    id:"messager", cat:"sac-homme", nom:"Sacs Messager Homme", badge:null,
-    sous:"Cuir · Bandoulière · Travail",
-    desc:"Sacs intemporels et élégants. Parfaits pour le bureau.",
-    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:11000, prixTo: 25000,
-    preview:["smh(1).jpg","smh(2).jpg","smh(3).jpg","smh(4).jpg"],
-    catalogue:["smh(5).jpg","smh(6).jpg","smh(7).jpg","smh(8).jpg","smh(9).jpg","smh(10).jpg","smh(11).jpg","smh(12).jpg"]
-  },
-  {
-    id:"porte-feuille", cat:"sac-homme", nom:"Portefeuilles Homme", badge:null,
-    sous:"Cuir · Synthétique · RFID",
-    desc:"Portefeuilles robustes et pratiques. Protection RFID.",
-    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:5000, prixTo:18000,
-    preview:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"],
-    catalogue:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"]
-  },
-
-  // MODE MUSULMANE
-  {
-    id:"hijab", cat:"mode-musulman", nom:"Hijabs & Foulards", badge:"Populaire",
-    sous:"Coton · Soie · Mousseline",
-    desc:"Hijabs élégants et confortables. Motifs variés pour tous les styles.",
-    pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:3000, prixTo:12000,
-    preview:["mush(1).jpg","mush(2).jpg","mush(3).jpg","mush(4).jpg"],
-    catalogue:["mush(1).jpg","mush(2).jpg","mush(3).jpg","mush(4).jpg"]
-  },
-  {
-    id:"robe-musulmane", cat:"mode-musulman", nom:"Robes Musulmanes", badge:"Populaire",
-    sous:"Maxi · Midi · Diverses couleurs",
-    desc:"Robes modernes et élégantes. Coupes flatteuses, qualité premium.",
-    pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:10000, prixTo:30000,
-    preview:["mus(1).jpg","mus(2).jpg","mus(3).jpg","mus(4).jpg"],
-    catalogue:["mus(1).jpg","mus(2).jpg","mus(3).jpg","mus(4).jpg", "mus(5).jpg","mus(6).jpg","mus(7).jpg","mus(8).jpg","mus(9).jpg","mus(10).jpg","mus(11).jpg","mus(12).jpg", "mus(13).jpg","mus(14).jpg","mus(15).jpg","mus(16).jpg "]
-  },
-  {
-    id:"abaya", cat:"mode-musulman", nom:"Abayas & Djellabas", badge:null,
-    sous:"Noir · Couleurs · Brodées",
-    desc:"Abayas de qualité supérieure. Design traditionnel et moderne.",
-    pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo",
-    verifie:true, paiement:"Paiement à la livraison", prixFrom:20000, prixTo:65000,
-    preview:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg"],
-    catalogue:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg","mus18.jpg"]
-  }
+  {id:"iphone", cat:"telephone", nom:"iPhone", badge:"Populaire", sous:"11·12·13·14·15·16", desc:"Tous modèles disponibles. Débloqués.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:60000, prixTo:490000, preview:["iph1.jpg","iph2.jpg","iph3.jpg","iph4.jpg"], catalogue:["iph5.jpg","iph7.jpg","iph8.jpg","iph9.jpg","iph10.jpg","iph11.jpg","iph12.jpg","iph13.jpg"]},
+  {id:"samsung", cat:"telephone", nom:"Samsung", badge:null, sous:"Galaxy S·A·Note", desc:"Gamme complète Samsung AMOLED.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:45000, prixTo:250000, preview:["sam1.jpg","sam2.jpg","sam3.jpg","sam4.jpg"], catalogue:["sam5.jpg","sam6.jpg","sam7.jpg","sam8.jpg"]},
+  {id:"google-pixel", cat:"telephone", nom:"Google Pixel", badge:null, sous:"Pixel 6·7·8·Pro", desc:"Caméra exceptionnelle IA Google.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:120000, prixTo:320000, preview:["goo1.jpg","goo2.jpg","goo3.jpg","goo4.jpg"], catalogue:["goo5.jpg","goo6.jpg","goo7.jpg","goo8.jpg"]},
+  {id:"tshirt-homme", cat:"tshirt", nom:"T-shirts Homme", badge:"Populaire", sous:"Coton·Motifs", desc:"T-shirts confortables stylés.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1500, prixTo:8000, preview:["tsh1.jpg","tsh2.jpg","tsh3.jpg","tsh4.jpg"], catalogue:["tsh1.jpg","tsh2.jpg","tsh3.jpg","tsh4.jpg","tsh5.jpg","tsh6.jpg","tsh7.jpg","tsh8.jpg"]},
+  {id:"tshirt-femme", cat:"tshirt", nom:"T-shirts Femme", badge:null, sous:"Col rond·Fitted", desc:"T-shirts élégants femme.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:9000, preview:["tsf1.jpg","tsf2.jpg","tsf3.jpg","tsf4.jpg"], catalogue:["tsf1.jpg","tsf2.jpg","tsf3.jpg","tsf4.jpg","tsf5.jpg"]},
+  {id:"ecouteur-wireless", cat:"ecouteur", nom:"Écouteurs Wireless", badge:"Populaire", sous:"Bluetooth·ANC", desc:"Sans fil haute qualité.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:45000, preview:["ecu1.jpg","ecu2.jpg","ecu3.jpg","ecu4.jpg"], catalogue:["ecu1.jpg","ecu2.jpg","ecu3.jpg","ecu4.jpg","ecu5.jpg","ecu6.jpg"]},
+  {id:"ecouteur-filaire", cat:"ecouteur", nom:"Écouteurs Filaires", badge:null, sous:"Jack 3.5mm·Graves", desc:"Filaires qualité supérieure.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:12000, preview:["ecu7.jpg","ecu8.jpg","ecu9.jpg","ecu10.jpg"], catalogue:["ecu7.jpg","ecu8.jpg","ecu9.jpg","ecu10.jpg"]},
+  {id:"riz-blanc", cat:"riz", nom:"Riz Blanc", badge:"Populaire", sous:"1kg·10kg", desc:"Qualité premium grains longs.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:500, prixTo:4000, preview:["riz1.jpg","riz2.jpg","riz3.jpg","riz4.jpg"], catalogue:["riz1.jpg","riz2.jpg","riz3.jpg","riz4.jpg"]},
+  {id:"riz-complet", cat:"riz", nom:"Riz Complet", badge:null, sous:"Biologique·Fibre", desc:"Sain nutritif pour santé.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:700, prixTo:5000, preview:["riz5.jpg","riz6.jpg","riz7.jpg","riz8.jpg"], catalogue:["riz5.jpg","riz6.jpg","riz7.jpg","riz8.jpg"]},
+  {id:"baskets-running", cat:"baskets", nom:"Baskets Running", badge:"Populaire", sous:"Course·Amorti", desc:"Performance optimale running.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:65000, preview:["bas1.jpg","bas2.jpg","bas3.jpg","bas4.jpg"], catalogue:["bas1.jpg","bas2.jpg","bas3.jpg","bas4.jpg","bas5.jpg","bas6.jpg"]},
+  {id:"baskets-casual", cat:"baskets", nom:"Baskets Casual", badge:null, sous:"Streetwear·Confort", desc:"Tous les jours confort.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:50000, preview:["bas7.jpg","bas8.jpg","bas9.jpg","bas10.jpg"], catalogue:["bas7.jpg","bas8.jpg","bas9.jpg","bas10.jpg"]},
+  {id:"perruque-lisse", cat:"perruques", nom:"Perruques Lisses", badge:"Populaire", sous:"Naturels·Synthétiques", desc:"Lisses élégantes finition parfaite.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:40000, preview:["per1.jpg","per2.jpg","per3.jpg","per4.jpg"], catalogue:["per1.jpg","per2.jpg","per3.jpg","per4.jpg","per5.jpg"]},
+  {id:"perruque-bouclees", cat:"perruques", nom:"Perruques Bouclées", badge:null, sous:"Curly·Afro", desc:"Bouclées tendance volume.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:10000, prixTo:50000, preview:["per6.jpg","per7.jpg","per8.jpg","per9.jpg"], catalogue:["per6.jpg","per7.jpg","per8.jpg","per9.jpg"]},
+  {id:"chargeur-usb", cat:"chargeur", nom:"Chargeurs USB-C", badge:"Populaire", sous:"Fast·65W·100W", desc:"Fast charge compatible tous.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:3000, prixTo:15000, preview:["cha1.jpg","cha2.jpg","cha3.jpg","cha4.jpg"], catalogue:["cha1.jpg","cha2.jpg","cha3.jpg","cha4.jpg","cha5.jpg"]},
+  {id:"chargeur-lightning", cat:"chargeur", nom:"Chargeurs Lightning", badge:null, sous:"iPhone·iPad", desc:"Lightning certifiés Apple.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:12000, preview:["cha6.jpg","cha7.jpg","cha8.jpg","cha9.jpg"], catalogue:["cha6.jpg","cha7.jpg","cha8.jpg","cha9.jpg"]},
+  {id:"marmite-aluminium", cat:"marmites", nom:"Marmites Aluminium", badge:"Populaire", sous:"5L·20L·Légère", desc:"Robustes légères cuisine.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:35000, preview:["mar1.jpg","mar2.jpg","mar3.jpg","mar4.jpg"], catalogue:["mar1.jpg","mar2.jpg","mar3.jpg","mar4.jpg","mar5.jpg"]},
+  {id:"marmite-inox", cat:"marmites", nom:"Marmites Inox", badge:null, sous:"Inoxydable·Durable", desc:"Inoxydables qualité haute.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:60000, preview:["mar6.jpg","mar7.jpg","mar8.jpg","mar9.jpg"], catalogue:["mar6.jpg","mar7.jpg","mar8.jpg","mar9.jpg"]},
+  {id:"powerbank-10000", cat:"powerbank", nom:"Power Banks 10000mAh", badge:"Populaire", sous:"Compact·Rapide", desc:"Portables 10000mAh déplacements.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:6000, prixTo:18000, preview:["pow1.jpg","pow2.jpg","pow3.jpg","pow4.jpg"], catalogue:["pow1.jpg","pow2.jpg","pow3.jpg","pow4.jpg"]},
+  {id:"powerbank-20000", cat:"powerbank", nom:"Power Banks 20000mAh", badge:null, sous:"Capacité·USB-C", desc:"20000mAh autonomie extrême.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:35000, preview:["pow5.jpg","pow6.jpg","pow7.jpg","pow8.jpg"], catalogue:["pow5.jpg","pow6.jpg","pow7.jpg","pow8.jpg"]},
+  {id:"robe-soiree", cat:"robes", nom:"Robes de Soirée", badge:"Populaire", sous:"Maxi·Midi·Élégante", desc:"Magnifiques soirées tendance.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:50000, preview:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg"], catalogue:["rob1.jpg","rob2.jpg","rob3.jpg","rob4.jpg","rob5.jpg"]},
+  {id:"robe-casual", cat:"robes", nom:"Robes Casual", badge:null, sous:"Quotidien·Confortable", desc:"Décontractées quotidien.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:7000, prixTo:25000, preview:["rob6.jpg","rob7.jpg","rob8.jpg","rob9.jpg"], catalogue:["rob6.jpg","rob7.jpg","rob8.jpg","rob9.jpg"]},
+  {id:"huile-olive", cat:"huile", nom:"Huile d'Olive", badge:"Populaire", sous:"Bio·Extra vierge", desc:"Extra vierge premium.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:4000, prixTo:20000, preview:["hui1.jpg","hui2.jpg","hui3.jpg","hui4.jpg"], catalogue:["hui1.jpg","hui2.jpg","hui3.jpg","hui4.jpg"]},
+  {id:"huile-vegetale", cat:"huile", nom:"Huile Végétale", badge:null, sous:"Arachide·Palme", desc:"Huiles cuisson saveur.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:12000, preview:["hui5.jpg","hui6.jpg","hui7.jpg","hui8.jpg"], catalogue:["hui5.jpg","hui6.jpg","hui7.jpg","hui8.jpg"]},
+  {id:"casque-bluetooth", cat:"casque", nom:"Casques Bluetooth", badge:"Populaire", sous:"ANC·40h·Premium", desc:"Sans fil immersif qualité.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:80000, preview:["cas1.jpg","cas2.jpg","cas3.jpg","cas4.jpg"], catalogue:["cas1.jpg","cas2.jpg","cas3.jpg","cas4.jpg","cas5.jpg"]},
+  {id:"casque-filaire", cat:"casque", nom:"Casques Filaires", badge:null, sous:"Pro·Studio·Graves", desc:"Filaires professionnels cristallin.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:45000, preview:["cas6.jpg","cas7.jpg","cas8.jpg","cas9.jpg"], catalogue:["cas6.jpg","cas7.jpg","cas8.jpg","cas9.jpg"]},
+  {id:"sac-main-femme", cat:"sac-femmes", nom:"Sacs à Main Femme", badge:"Populaire", sous:"Cuir·Tissu", desc:"Sacs élégants pratiques design.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1000, prixTo:12000, preview:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg"], catalogue:["sac1.jpg","sac2.jpg","sac3.jpg","sac4.jpg","sac5.jpg","sac6.jpg"]},
+  {id:"sac-dos-femme", cat:"sac-femmes", nom:"Sacs à Dos Femme", badge:null, sous:"Voyage·Sport", desc:"Dos féminins confortables.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:28000, preview:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"], catalogue:["saf7.jpg","saf8.jpg","saf9.jpg","saf10.jpg"]},
+  {id:"pochettes", cat:"sac-femmes", nom:"Pochettes & Clutch", badge:null, sous:"Soirée·Casual", desc:"Pochettes élégantes occasions.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:15000, preview:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"], catalogue:["saf11.jpg","saf12.jpg","saf13.jpg","saf14.jpg"]},
+  {id:"tele-32", cat:"tele", nom:"Téléviseurs 32\"", badge:"Populaire", sous:"HD·Smart TV", desc:"32 pouces qualité HD Smart.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:80000, prixTo:200000, preview:["tev1.jpg","tev2.jpg","tev3.jpg","tev4.jpg"], catalogue:["tev1.jpg","tev2.jpg","tev3.jpg","tev4.jpg"]},
+  {id:"tele-55", cat:"tele", nom:"Téléviseurs 55\"", badge:null, sous:"4K·Smart·Premium", desc:"55\" 4K ultra cinéma.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:300000, prixTo:800000, preview:["tev5.jpg","tev6.jpg","tev7.jpg","tev8.jpg"], catalogue:["tev5.jpg","tev6.jpg","tev7.jpg","tev8.jpg"]},
+  {id:"cable-usb-c", cat:"cable", nom:"Câbles USB-C", badge:"Populaire", sous:"1m·2m·Rapide", desc:"USB-C robustes charge rapide.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1000, prixTo:5000, preview:["cab1.jpg","cab2.jpg","cab3.jpg","cab4.jpg"], catalogue:["cab1.jpg","cab2.jpg","cab3.jpg","cab4.jpg"]},
+  {id:"cable-lightning", cat:"cable", nom:"Câbles Lightning", badge:null, sous:"iPhone·Apple", desc:"Lightning certifiés Apple.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:3000, prixTo:8000, preview:["cab5.jpg","cab6.jpg","cab7.jpg","cab8.jpg"], catalogue:["cab5.jpg","cab6.jpg","cab7.jpg","cab8.jpg"]},
+  {id:"friperie-homme", cat:"friperie", nom:"Friperie Homme", badge:"Populaire", sous:"Vintage·Casual", desc:"Vintage tendance homme prix mini.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:15000, preview:["fri1.jpg","fri2.jpg","fri3.jpg","fri4.jpg"], catalogue:["fri1.jpg","fri2.jpg","fri3.jpg","fri4.jpg"]},
+  {id:"friperie-femme", cat:"friperie", nom:"Friperie Femme", badge:null, sous:"Tendance·Élégant", desc:"Vintage modernes femme qualité.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:2500, prixTo:18000, preview:["fri5.jpg","fri6.jpg","fri7.jpg","fri8.jpg"], catalogue:["fri5.jpg","fri6.jpg","fri7.jpg","fri8.jpg"]},
+  {id:"parfum-homme", cat:"parfum", nom:"Parfums Homme", badge:"Populaire", sous:"Eau toilette", desc:"Prestige homme senteurs durables.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:45000, preview:["par1.jpg","par2.jpg","par3.jpg","par4.jpg"], catalogue:["par1.jpg","par2.jpg","par3.jpg","par4.jpg"]},
+  {id:"parfum-femme", cat:"parfum", nom:"Parfums Femme", badge:null, sous:"Floral·Fruité", desc:"Élégants femme fragrances.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:10000, prixTo:55000, preview:["par5.jpg","par6.jpg","par7.jpg","par8.jpg"], catalogue:["par5.jpg","par6.jpg","par7.jpg","par8.jpg"]},
+  {id:"ventilateur-table", cat:"ventilateur", nom:"Ventilateurs Table", badge:"Populaire", sous:"3 vitesses·Compact", desc:"Table puissants silencieux.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:35000, preview:["ven1.jpg","ven2.jpg","ven3.jpg","ven4.jpg"], catalogue:["ven1.jpg","ven2.jpg","ven3.jpg","ven4.jpg"]},
+  {id:"ventilateur-sol", cat:"ventilateur", nom:"Ventilateurs Pied", badge:null, sous:"Standing·Puissant", desc:"Pied robustes refroidissement.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:18000, prixTo:50000, preview:["ven5.jpg","ven6.jpg","ven7.jpg","ven8.jpg"], catalogue:["ven5.jpg","ven6.jpg","ven7.jpg","ven8.jpg"]},
+  {id:"chaussure-running", cat:"chaussure-sport", nom:"Chaussures Running", badge:"Populaire", sous:"Marathon·Trail", desc:"Course performance amorti.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:25000, prixTo:90000, preview:["chs1.jpg","chs2.jpg","chs3.jpg","chs4.jpg"], catalogue:["chs1.jpg","chs2.jpg","chs3.jpg","chs4.jpg"]},
+  {id:"chaussure-foot", cat:"chaussure-sport", nom:"Chaussures Foot", badge:null, sous:"Crampons·Futsal", desc:"Football professionnelles grip.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:20000, prixTo:75000, preview:["chs5.jpg","chs6.jpg","chs7.jpg","chs8.jpg"], catalogue:["chs5.jpg","chs6.jpg","chs7.jpg","chs8.jpg"]},
+  {id:"cahier-96", cat:"cahier", nom:"Cahiers 96 pages", badge:"Populaire", sous:"Ligné·Uni", desc:"Scolaires 96 pages premium.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:500, prixTo:2000, preview:["cah1.jpg","cah2.jpg","cah3.jpg","cah4.jpg"], catalogue:["cah1.jpg","cah2.jpg","cah3.jpg","cah4.jpg"]},
+  {id:"cahier-200", cat:"cahier", nom:"Cahiers 200 pages", badge:null, sous:"Grand format·Durable", desc:"200 pages capacité papier qualité.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1000, prixTo:4000, preview:["cah5.jpg","cah6.jpg","cah7.jpg","cah8.jpg"], catalogue:["cah5.jpg","cah6.jpg","cah7.jpg","cah8.jpg"]},
+  {id:"meche-cheveux", cat:"meches", nom:"Mèches de Cheveux", badge:"Populaire", sous:"Synthétique·Naturel", desc:"Cheveux tendance tous types.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:3000, prixTo:25000, preview:["mec1.jpg","mec2.jpg","mec3.jpg","mec4.jpg"], catalogue:["mec1.jpg","mec2.jpg","mec3.jpg","mec4.jpg"]},
+  {id:"meche-lisse", cat:"meches", nom:"Mèches Lisses", badge:null, sous:"Soyeuses·Brillantes", desc:"Lisses brillantes finition.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:35000, preview:["mec5.jpg","mec6.jpg","mec7.jpg","mec8.jpg"], catalogue:["mec5.jpg","mec6.jpg","mec7.jpg","mec8.jpg"]},
+  {id:"boisson-gazeuse", cat:"boisson", nom:"Boissons Gazeuses", badge:"Populaire", sous:"Cola·Sprite", desc:"Gazeuses rafraîchissantes goûts.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:500, prixTo:3000, preview:["boi1.jpg","boi2.jpg","boi3.jpg","boi4.jpg"], catalogue:["boi1.jpg","boi2.jpg","boi3.jpg","boi4.jpg"]},
+  {id:"boisson-jus", cat:"boisson", nom:"Jus de Fruits", badge:null, sous:"Naturel·100% pur", desc:"Fruits naturels frais.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1000, prixTo:4000, preview:["boi5.jpg","boi6.jpg","boi7.jpg","boi8.jpg"], catalogue:["boi5.jpg","boi6.jpg","boi7.jpg","boi8.jpg"]},
+  {id:"montre-homme", cat:"montre", nom:"Montres Homme", badge:"Populaire", sous:"Classique·Sport", desc:"Élégantes homme marques prestige.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:150000, preview:["mon1.jpg","mon2.jpg","mon3.jpg","mon4.jpg"], catalogue:["mon1.jpg","mon2.jpg","mon3.jpg","mon4.jpg"]},
+  {id:"montre-femme", cat:"montre", nom:"Montres Femme", badge:null, sous:"Élégante·Moderne", desc:"Stylées femme tendance designs.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:120000, preview:["mon5.jpg","mon6.jpg","mon7.jpg","mon8.jpg"], catalogue:["mon5.jpg","mon6.jpg","mon7.jpg","mon8.jpg"]},
+  {id:"mixeur-cuisine", cat:"mixeur", nom:"Mixeurs Cuisine", badge:"Populaire", sous:"1000W·2000W", desc:"Puissants cuisine lames tranchantes.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:18000, prixTo:60000, preview:["mix1.jpg","mix2.jpg","mix3.jpg","mix4.jpg"], catalogue:["mix1.jpg","mix2.jpg","mix3.jpg","mix4.jpg"]},
+  {id:"mixeur-plongeant", cat:"mixeur", nom:"Mixeurs Plongeants", badge:null, sous:"Portable·Compact", desc:"Plongeants pratiques nettoyage.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:25000, preview:["mix5.jpg","mix6.jpg","mix7.jpg","mix8.jpg"], catalogue:["mix5.jpg","mix6.jpg","mix7.jpg","mix8.jpg"]},
+  {id:"coque-silicone", cat:"coque", nom:"Coques Silicone", badge:"Populaire", sous:"iPhone·Samsung", desc:"Silicone protection absorption chocs.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1000, prixTo:5000, preview:["coq1.jpg","coq2.jpg","coq3.jpg","coq4.jpg"], catalogue:["coq1.jpg","coq2.jpg","coq3.jpg","coq4.jpg"]},
+  {id:"coque-rigide", cat:"coque", nom:"Coques Rigides", badge:null, sous:"Anti-choc·Slim", desc:"Rigides design protection maximale.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:8000, preview:["coq5.jpg","coq6.jpg","coq7.jpg","coq8.jpg"], catalogue:["coq5.jpg","coq6.jpg","coq7.jpg","coq8.jpg"]},
+  {id:"pantalon-homme", cat:"pantalon", nom:"Pantalons Homme", badge:"Populaire", sous:"Chinos·Jeans", desc:"Modernes homme tous styles.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:30000, preview:["pan1.jpg","pan2.jpg","pan3.jpg","pan4.jpg"], catalogue:["pan1.jpg","pan2.jpg","pan3.jpg","pan4.jpg"]},
+  {id:"pantalon-femme", cat:"pantalon", nom:"Pantalons Femme", badge:null, sous:"Jeans·Legging", desc:"Élégants femme coupes flatteuses.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:9000, prixTo:35000, preview:["pan5.jpg","pan6.jpg","pan7.jpg","pan8.jpg"], catalogue:["pan5.jpg","pan6.jpg","pan7.jpg","pan8.jpg"]},
+  {id:"lampe-solaire-exterieur", cat:"lampe-solaire", nom:"Lampes Solaires Extérieur", badge:"Populaire", sous:"LED·Rechargeable", desc:"Solaires jardin énergie gratuite.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:25000, preview:["lam1.jpg","lam2.jpg","lam3.jpg","lam4.jpg"], catalogue:["lam1.jpg","lam2.jpg","lam3.jpg","lam4.jpg"]},
+  {id:"lampe-solaire-portable", cat:"lampe-solaire", nom:"Lampes Solaires Portables", badge:null, sous:"Camping·Pique-nique", desc:"Portables voyage camping secours.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:35000, preview:["lam5.jpg","lam6.jpg","lam7.jpg","lam8.jpg"], catalogue:["lam5.jpg","lam6.jpg","lam7.jpg","lam8.jpg"]},
+  {id:"stylo-bic", cat:"stylo", nom:"Stylos BIC", badge:"Populaire", sous:"Bleu·Noir·Rouge", desc:"BIC classiques fiables durables.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:100, prixTo:500, preview:["sty1.jpg","sty2.jpg","sty3.jpg","sty4.jpg"], catalogue:["sty1.jpg","sty2.jpg","sty3.jpg","sty4.jpg"]},
+  {id:"stylo-gel", cat:"stylo", nom:"Stylos Gel", badge:null, sous:"Premium·Smooth", desc:"Gel doux coulissants fluidité.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:300, prixTo:1500, preview:["sty5.jpg","sty6.jpg","sty7.jpg","sty8.jpg"], catalogue:["sty5.jpg","sty6.jpg","sty7.jpg","sty8.jpg"]},
+  {id:"shampoing", cat:"produits-capillaires", nom:"Shampoings", badge:"Populaire", sous:"Hydratant·Réparant", desc:"Qualité cheveux sains brillants.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:12000, preview:["pro1.jpg","pro2.jpg","pro3.jpg","pro4.jpg"], catalogue:["pro1.jpg","pro2.jpg","pro3.jpg","pro4.jpg"]},
+  {id:"apres-shampoing", cat:"produits-capillaires", nom:"Après-Shampoings", badge:null, sous:"Lissant·Nutrition", desc:"Nourrissants cheveux soyeux.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2500, prixTo:15000, preview:["pro5.jpg","pro6.jpg","pro7.jpg","pro8.jpg"], catalogue:["pro5.jpg","pro6.jpg","pro7.jpg","pro8.jpg"]},
+  {id:"laptop-gaming", cat:"ordinateur", nom:"Laptops Gaming", badge:"Populaire", sous:"GTX·RTX·16GB", desc:"Gaming haute performance gamers.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:400000, prixTo:1200000, preview:["ord1.jpg","ord2.jpg","ord3.jpg","ord4.jpg"], catalogue:["ord1.jpg","ord2.jpg","ord3.jpg","ord4.jpg"]},
+  {id:"laptop-bureau", cat:"ordinateur", nom:"Laptops Bureau", badge:null, sous:"Intel·AMD·Portable", desc:"Travail fiables bureau portables.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:250000, prixTo:800000, preview:["ord5.jpg","ord6.jpg","ord7.jpg","ord8.jpg"], catalogue:["ord5.jpg","ord6.jpg","ord7.jpg","ord8.jpg"]},
+  {id:"sandale-femme", cat:"sandales", nom:"Sandales Femme", badge:"Populaire", sous:"Confort·Élégant", desc:"Féminines confortables styles variés.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:25000, preview:["san1.jpg","san2.jpg","san3.jpg","san4.jpg"], catalogue:["san1.jpg","san2.jpg","san3.jpg","san4.jpg"]},
+  {id:"sandale-homme", cat:"sandales", nom:"Sandales Homme", badge:null, sous:"Casual·Robustes", desc:"Masculines durables très confortables.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:4000, prixTo:20000, preview:["san5.jpg","san6.jpg","san7.jpg","san8.jpg"], catalogue:["san5.jpg","san6.jpg","san7.jpg","san8.jpg"]},
+  {id:"conserve-legumes", cat:"conserve", nom:"Conserves Légumes", badge:"Populaire", sous:"Tomate·Maïs", desc:"Légumes qualité conservation longue.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:1500, prixTo:6000, preview:["con1.jpg","con2.jpg","con3.jpg","con4.jpg"], catalogue:["con1.jpg","con2.jpg","con3.jpg","con4.jpg"]},
+  {id:"conserve-fruits", cat:"conserve", nom:"Conserves Fruits", badge:null, sous:"Naturel·Sans sucre", desc:"Fruits naturelles saveur authentique.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:8000, preview:["con5.jpg","con6.jpg","con7.jpg","con8.jpg"], catalogue:["con5.jpg","con6.jpg","con7.jpg","con8.jpg"]},
+  {id:"imprimante-laser", cat:"imprimante", nom:"Imprimantes Laser", badge:"Populaire", sous:"Couleur·N/B", desc:"Laser professionnelles rapides fiables.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:150000, prixTo:500000, preview:["imp1.jpg","imp2.jpg","imp3.jpg","imp4.jpg"], catalogue:["imp1.jpg","imp2.jpg","imp3.jpg","imp4.jpg"]},
+  {id:"imprimante-jet", cat:"imprimante", nom:"Imprimantes Jet d'Encre", badge:null, sous:"Couleur·Photo", desc:"Jet encre polyvalentes photo qualité.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:80000, prixTo:300000, preview:["imp5.jpg","imp6.jpg","imp7.jpg","imp8.jpg"], catalogue:["imp5.jpg","imp6.jpg","imp7.jpg","imp8.jpg"]},
+  {id:"matelas-mousse", cat:"matelas", nom:"Matelas Mousse", badge:"Populaire", sous:"1 place·2 places", desc:"Mousse confortables soutien optimal.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:30000, prixTo:150000, preview:["mat1.jpg","mat2.jpg","mat3.jpg","mat4.jpg"], catalogue:["mat1.jpg","mat2.jpg","mat3.jpg","mat4.jpg"]},
+  {id:"matelas-ressort", cat:"matelas", nom:"Matelas à Ressorts", badge:null, sous:"Qualité·Durable", desc:"Ressorts durables aération naturelle.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:50000, prixTo:250000, preview:["mat5.jpg","mat6.jpg","mat7.jpg","mat8.jpg"], catalogue:["mat5.jpg","mat6.jpg","mat7.jpg","mat8.jpg"]},
+  {id:"tissage-afro", cat:"tissage", nom:"Tissages Afro", badge:"Populaire", sous:"Synthétique·Bouclé", desc:"Afro mode tous motifs.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:30000, preview:["tis1.jpg","tis2.jpg","tis3.jpg","tis4.jpg"], catalogue:["tis1.jpg","tis2.jpg","tis3.jpg","tis4.jpg"]},
+  {id:"tissage-lisse", cat:"tissage", nom:"Tissages Lisses", badge:null, sous:"Soyeux·Brillant", desc:"Lisses premium finition impeccable.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:50000, preview:["tis5.jpg","tis6.jpg","tis7.jpg","tis8.jpg"], catalogue:["tis5.jpg","tis6.jpg","tis7.jpg","tis8.jpg"]},
+  {id:"casque-moto-integral", cat:"casque-moto", nom:"Casques Intégrals", badge:"Populaire", sous:"Sécurité·Confortable", desc:"Intégrals sécurisés homologués.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:30000, prixTo:120000, preview:["csm1.jpg","csm2.jpg","csm3.jpg","csm4.jpg"], catalogue:["csm1.jpg","csm2.jpg","csm3.jpg","csm4.jpg"]},
+  {id:"casque-moto-demi", cat:"casque-moto", nom:"Casques Demi-Jet", badge:null, sous:"Léger·Ventilé", desc:"Demi-jet légers confort optimal.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:20000, prixTo:80000, preview:["csm5.jpg","csm6.jpg","csm7.jpg","csm8.jpg"], catalogue:["csm5.jpg","csm6.jpg","csm7.jpg","csm8.jpg"]},
+  {id:"livre-roman", cat:"livre", nom:"Romans", badge:"Populaire", sous:"Français·Anglais", desc:"Romans passionnants tous genres.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:3000, prixTo:15000, preview:["liv1.jpg","liv2.jpg","liv3.jpg","liv4.jpg"], catalogue:["liv1.jpg","liv2.jpg","liv3.jpg","liv4.jpg"]},
+  {id:"livre-education", cat:"livre", nom:"Livres Éducation", badge:null, sous:"Scolaire·Professionnel", desc:"Éducatifs qualité apprentissage garanti.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:4000, prixTo:20000, preview:["liv5.jpg","liv6.jpg","liv7.jpg","liv8.jpg"], catalogue:["liv5.jpg","liv6.jpg","liv7.jpg","liv8.jpg"]},
+  {id:"multiprise-2", cat:"multiprise", nom:"Multiprises 2 Sorties", badge:"Populaire", sous:"Sécurisée·Compacte", desc:"2 sorties protection intégrée.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:8000, preview:["mul1.jpg","mul2.jpg","mul3.jpg","mul4.jpg"], catalogue:["mul1.jpg","mul2.jpg","mul3.jpg","mul4.jpg"]},
+  {id:"multiprise-5", cat:"multiprise", nom:"Multiprises 5 Sorties", badge:null, sous:"Longue portée·USB", desc:"5 sorties USB parfait bureau.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:15000, preview:["mul5.jpg","mul6.jpg","mul7.jpg","mul8.jpg"], catalogue:["mul5.jpg","mul6.jpg","mul7.jpg","mul8.jpg"]},
+  {id:"vetement-enfant-garcon", cat:"vetement-enfant", nom:"Vêtements Garçons", badge:"Populaire", sous:"T-shirt·Pantalon", desc:"Enfants garçons tendance tous âges.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:12000, preview:["vet1.jpg","vet2.jpg","vet3.jpg","vet4.jpg"], catalogue:["vet1.jpg","vet2.jpg","vet3.jpg","vet4.jpg"]},
+  {id:"vetement-enfant-fille", cat:"vetement-enfant", nom:"Vêtements Filles", badge:null, sous:"Robe·Pantalon", desc:"Enfants filles élégants styles.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2500, prixTo:15000, preview:["vet5.jpg","vet6.jpg","vet7.jpg","vet8.jpg"], catalogue:["vet5.jpg","vet6.jpg","vet7.jpg","vet8.jpg"]},
+  {id:"snack-sucre", cat:"snacks", nom:"Snacks Sucrés", badge:"Populaire", sous:"Biscuits·Bonbons", desc:"Sucrés savoureux grignotage parfaits.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:500, prixTo:3000, preview:["sna1.jpg","sna2.jpg","sna3.jpg","sna4.jpg"], catalogue:["sna1.jpg","sna2.jpg","sna3.jpg","sna4.jpg"]},
+  {id:"snack-sale", cat:"snacks", nom:"Snacks Salés", badge:null, sous:"Chips·Cacahuète", desc:"Salés croustillants saveur authentique.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:800, prixTo:4000, preview:["sna5.jpg","sna6.jpg","sna7.jpg","sna8.jpg"], catalogue:["sna5.jpg","sna6.jpg","sna7.jpg","sna8.jpg"]},
+  {id:"sac-scolaire-garcon", cat:"sac-scolaire", nom:"Sacs Scolaires Garçons", badge:"Populaire", sous:"Ergonomique·Durable", desc:"Scolaires garçons robustes tous compartiments.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:30000, preview:["ssc1.jpg","ssc2.jpg","ssc3.jpg","ssc4.jpg"], catalogue:["ssc1.jpg","ssc2.jpg","ssc3.jpg","ssc4.jpg"]},
+  {id:"sac-scolaire-fille", cat:"sac-scolaire", nom:"Sacs Scolaires Filles", badge:null, sous:"Stylé·Confortable", desc:"Scolaires filles tendance designs modernes.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:9000, prixTo:35000, preview:["ssc5.jpg","ssc6.jpg","ssc7.jpg","ssc8.jpg"], catalogue:["ssc5.jpg","ssc6.jpg","ssc7.jpg","ssc8.jpg"]},
+  {id:"creme-hydratante", cat:"creme-visage", nom:"Crèmes Hydratantes", badge:"Populaire", sous:"Tous types peau", desc:"Hydratantes nourrissantes peau douce.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:25000, preview:["cre1.jpg","cre2.jpg","cre3.jpg","cre4.jpg"], catalogue:["cre1.jpg","cre2.jpg","cre3.jpg","cre4.jpg"]},
+  {id:"creme-anti-age", cat:"creme-visage", nom:"Crèmes Anti-âge", badge:null, sous:"Rides·Fermeté", desc:"Anti-âge efficaces rajeunissantes.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:10000, prixTo:40000, preview:["cre5.jpg","cre6.jpg","cre7.jpg","cre8.jpg"], catalogue:["cre5.jpg","cre6.jpg","cre7.jpg","cre8.jpg"]},
+  {id:"moto-scooter", cat:"moto", nom:"Scooters", badge:"Populaire", sous:"50cc·125cc", desc:"Économiques déplacements parfaits.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:200000, prixTo:600000, preview:["mot1.jpg","mot2.jpg","mot3.jpg","mot4.jpg"], catalogue:["mot1.jpg","mot2.jpg","mot3.jpg","mot4.jpg"]},
+  {id:"moto-sport", cat:"moto", nom:"Motos Sports", badge:null, sous:"150cc·200cc", desc:"Sports haute performance puissance.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:400000, prixTo:1200000, preview:["mot5.jpg","mot6.jpg","mot7.jpg","mot8.jpg"], catalogue:["mot5.jpg","mot6.jpg","mot7.jpg","mot8.jpg"]},
+  {id:"rideau-tissu", cat:"rideau", nom:"Rideaux Tissus", badge:"Populaire", sous:"Tous motifs·Occultant", desc:"Tissus tendance tous styles décoration.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:40000, preview:["rid1.jpg","rid2.jpg","rid3.jpg","rid4.jpg"], catalogue:["rid1.jpg","rid2.jpg","rid3.jpg","rid4.jpg"]},
+  {id:"rideau-velours", cat:"rideau", nom:"Rideaux Velours", badge:null, sous:"Luxe·Doux·Premium", desc:"Velours luxueux toucher doux.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:60000, preview:["rid5.jpg","rid6.jpg","rid7.jpg","rid8.jpg"], catalogue:["rid5.jpg","rid6.jpg","rid7.jpg","rid8.jpg"]},
+  {id:"sous-vetement-homme", cat:"sous-vetement", nom:"Sous-vêtements Homme", badge:"Populaire", sous:"Confort·Coton", desc:"Confortables homme qualité premium.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:10000, preview:["sov1.jpg","sov2.jpg","sov3.jpg","sov4.jpg"], catalogue:["sov1.jpg","sov2.jpg","sov3.jpg","sov4.jpg"]},
+  {id:"sous-vetement-femme", cat:"sous-vetement", nom:"Sous-vêtements Femme", badge:null, sous:"Élégant·Dentelle", desc:"Féminins élégants confort garanti.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2500, prixTo:12000, preview:["sov5.jpg","sov6.jpg","sov7.jpg","sov8.jpg"], catalogue:["sov5.jpg","sov6.jpg","sov7.jpg","sov8.jpg"]},
+  {id:"batterie-auto", cat:"batterie", nom:"Batteries Auto", badge:"Populaire", sous:"12V·Puissante", desc:"Automobiles fiables puissance garantie.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:40000, prixTo:120000, preview:["bat1.jpg","bat2.jpg","bat3.jpg","bat4.jpg"], catalogue:["bat1.jpg","bat2.jpg","bat3.jpg","bat4.jpg"]},
+  {id:"batterie-appareil", cat:"batterie", nom:"Batteries pour Appareils", badge:null, sous:"AA·AAA·Lithium", desc:"Rechargeables écologiques économiques.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1000, prixTo:8000, preview:["bat5.jpg","bat6.jpg","bat7.jpg","bat8.jpg"], catalogue:["bat5.jpg","bat6.jpg","bat7.jpg","bat8.jpg"]},
+  {id:"jouet-peluche", cat:"jouet", nom:"Peluches", badge:"Populaire", sous:"Doux·Sûr·Lavable", desc:"Peluches douces sécurisées amusement.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:3000, prixTo:15000, preview:["jou1.jpg","jou2.jpg","jou3.jpg","jou4.jpg"], catalogue:["jou1.jpg","jou2.jpg","jou3.jpg","jou4.jpg"]},
+  {id:"jouet-educatif", cat:"jouet", nom:"Jouets Éducatifs", badge:null, sous:"Apprentissage·Amusement", desc:"Jouets développent intelligence pédagogiques.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:25000, preview:["jou5.jpg","jou6.jpg","jou7.jpg","jou8.jpg"], catalogue:["jou5.jpg","jou6.jpg","jou7.jpg","jou8.jpg"]},
+  {id:"couche-bebe", cat:"couche", nom:"Couches Bébé", badge:"Populaire", sous:"Taille 1·2·3", desc:"Bébé douces sécurité confort.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:30000, preview:["cou1.jpg","cou2.jpg","cou3.jpg","cou4.jpg"], catalogue:["cou1.jpg","cou2.jpg","cou3.jpg","cou4.jpg"]},
+  {id:"couche-premium", cat:"couche", nom:"Couches Premium", badge:null, sous:"Ultra-doux·Hypoallergénique", desc:"Premium ultra-doux protection maximale.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:50000, preview:["cou5.jpg","cou6.jpg","cou7.jpg","cou8.jpg"], catalogue:["cou5.jpg","cou6.jpg","cou7.jpg","cou8.jpg"]},
+  {id:"haut-parleur-portable", cat:"haut-parleur", nom:"Haut-parleurs Portables", badge:"Populaire", sous:"Bluetooth·Batterie", desc:"Portables puissants son cristallin.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:50000, preview:["hau1.jpg","hau2.jpg","hau3.jpg","hau4.jpg"], catalogue:["hau1.jpg","hau2.jpg","hau3.jpg","hau4.jpg"]},
+  {id:"haut-parleur-home", cat:"haut-parleur", nom:"Haut-parleurs Maison", badge:null, sous:"2.0·2.1·Cinéma", desc:"Maison cinéma domicile.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:30000, prixTo:150000, preview:["hau5.jpg","hau6.jpg","hau7.jpg","hau8.jpg"], catalogue:["hau5.jpg","hau6.jpg","hau7.jpg","hau8.jpg"]},
+  {id:"chemise-homme", cat:"chemise", nom:"Chemises Homme", badge:"Populaire", sous:"Classique·Casual", desc:"Élégantes homme tous styles.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:10000, prixTo:40000, preview:["che1.jpg","che2.jpg","che3.jpg","che4.jpg"], catalogue:["che1.jpg","che2.jpg","che3.jpg","che4.jpg"]},
+  {id:"chemise-femme", cat:"chemise", nom:"Chemises Femme", badge:null, sous:"Élégante·Moderne", desc:"Féminines modernes coupes flatteuses.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:45000, preview:["che5.jpg","che6.jpg","che7.jpg","che8.jpg"], catalogue:["che5.jpg","che6.jpg","che7.jpg","che8.jpg"]},
+  {id:"peinture-interieur", cat:"peinture", nom:"Peintures Intérieur", badge:"Populaire", sous:"Mat·Brillant·Satin", desc:"Intérieur premium tous coloris.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:30000, preview:["pei1.jpg","pei2.jpg","pei3.jpg","pei4.jpg"], catalogue:["pei1.jpg","pei2.jpg","pei3.jpg","pei4.jpg"]},
+  {id:"peinture-exterieur", cat:"peinture", nom:"Peintures Extérieur", badge:null, sous:"Résistant·Durable", desc:"Extérieur durables intempéries.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:45000, preview:["pei5.jpg","pei6.jpg","pei7.jpg","pei8.jpg"], catalogue:["pei5.jpg","pei6.jpg","pei7.jpg","pei8.jpg"]},
+  {id:"lunette-soleil", cat:"lunette", nom:"Lunettes Soleil", badge:"Populaire", sous:"UV·Stylée", desc:"Solaires protectrices styles variés.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:40000, preview:["lun1.jpg","lun2.jpg","lun3.jpg","lun4.jpg"], catalogue:["lun1.jpg","lun2.jpg","lun3.jpg","lun4.jpg"]},
+  {id:"lunette-vue", cat:"lunette", nom:"Lunettes Vue", badge:null, sous:"Tendance·Légère", desc:"Vue élégantes correction optimale.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:60000, preview:["lun5.jpg","lun6.jpg","lun7.jpg","lun8.jpg"], catalogue:["lun5.jpg","lun6.jpg","lun7.jpg","lun8.jpg"]},
+  {id:"telephone-2g", cat:"telephone-simple", nom:"Téléphones 2G", badge:"Populaire", sous:"Classique·Batterie", desc:"Simples fiables autonomie excellente.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:25000, preview:["tls1.jpg","tls2.jpg","tls3.jpg","tls4.jpg"], catalogue:["tls1.jpg","tls2.jpg","tls3.jpg","tls4.jpg"]},
+  {id:"telephone-3g", cat:"telephone-simple", nom:"Téléphones 3G", badge:null, sous:"Internet·WhatsApp", desc:"3G basiques internet.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:45000, preview:["tls5.jpg","tls6.jpg","tls7.jpg","tls8.jpg"], catalogue:["tls5.jpg","tls6.jpg","tls7.jpg","tls8.jpg"]},
+  {id:"eau-mineral", cat:"eau", nom:"Eau Minérale", badge:"Populaire", sous:"1L·10L·Naturelle", desc:"Minérale pure hydratation quotidienne.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:500, prixTo:3000, preview:["eau1.jpg","eau2.jpg","eau3.jpg","eau4.jpg"], catalogue:["eau1.jpg","eau2.jpg","eau3.jpg","eau4.jpg"]},
+  {id:"eau-source", cat:"eau", nom:"Eau Source", badge:null, sous:"Filtrée·Pure", desc:"Source filtrée naturellement saveur équilibrée.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:600, prixTo:4000, preview:["eau5.jpg","eau6.jpg","eau7.jpg","eau8.jpg"], catalogue:["eau5.jpg","eau6.jpg","eau7.jpg","eau8.jpg"]},
+  {id:"produit-local-gari", cat:"produits-locaux", nom:"Gari & Maïs Moulu", badge:"Populaire", sous:"Frais·Biologique", desc:"Gari maïs tradition saveur authentique.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:1000, prixTo:6000, preview:["prd1.jpg","prd2.jpg","prd3.jpg","prd4.jpg"], catalogue:["prd1.jpg","prd2.jpg","prd3.jpg","prd4.jpg"]},
+  {id:"produit-local-igname", cat:"produits-locaux", nom:"Igname & Tubercules", badge:null, sous:"Frais·Biologique", desc:"Igname tubercules frais produits locaux.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:2000, prixTo:8000, preview:["prd5.jpg","prd6.jpg","prd7.jpg","prd8.jpg"], catalogue:["prd5.jpg","prd6.jpg","prd7.jpg","prd8.jpg"]},
+  {id:"ballon", cat:"sport", nom:"Ballons Sport", badge:"Populaire", sous:"Football·Basketball", desc:"Ballons officiels qualité supérieure durabilité.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:18000, preview:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg"], catalogue:["spo1.jpg","spo2.jpg","spo3.jpg","spo4.jpg","spo5.jpg","spo6.jpg"]},
+  {id:"tenue-sport", cat:"sport", nom:"Tenues de Sport", badge:null, sous:"Homme·Femme", desc:"Sport confortables respirants tous styles.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:6000, prixTo:22000, preview:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg"], catalogue:["spo7.jpg","spo8.jpg","spo9.jpg","spo10.jpg","spo11.jpg"]},
+  {id:"outil-main", cat:"outil", nom:"Outils Main", badge:"Populaire", sous:"Marteau·Clé·Tournevis", desc:"Main robustes qualité professionnelle.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:30000, preview:["out1.jpg","out2.jpg","out3.jpg","out4.jpg"], catalogue:["out1.jpg","out2.jpg","out3.jpg","out4.jpg"]},
+  {id:"outil-electrique", cat:"outil", nom:"Outils Électriques", badge:null, sous:"Perceuse·Scie", desc:"Électriques puissants professionnel.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:40000, prixTo:250000, preview:["out5.jpg","out6.jpg","out7.jpg","out8.jpg"], catalogue:["out5.jpg","out6.jpg","out7.jpg","out8.jpg"]},
+  {id:"formation-informatique", cat:"formation", nom:"Formation Informatique", badge:"Populaire", sous:"Online·Certifiée", desc:"Informatique certifiées apprentissage complet.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"Accès immédiat", verifie:true, paiement:"Après essai", prixFrom:15000, prixTo:100000, preview:["for1.jpg","for2.jpg","for3.jpg","for4.jpg"], catalogue:["for1.jpg","for2.jpg","for3.jpg","for4.jpg"]},
+  {id:"formation-commerce", cat:"formation", nom:"Formation Commerce", badge:null, sous:"Digital·Pratique", desc:"Commerce numérique expertise garantie.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"Accès immédiat", verifie:true, paiement:"Progressif", prixFrom:20000, prixTo:150000, preview:["for5.jpg","for6.jpg","for7.jpg","for8.jpg"], catalogue:["for5.jpg","for6.jpg","for7.jpg","for8.jpg"]},
+  {id:"marketing-seo", cat:"marketing", nom:"Service SEO", badge:"Populaire", sous:"Google·Ranking·Trafic", desc:"SEO professionnels classement garanti.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"Résultats 90j", verifie:true, paiement:"Mensuel", prixFrom:50000, prixTo:500000, preview:["mkd1.jpg","mkd2.jpg","mkd3.jpg","mkd4.jpg"], catalogue:["mkd1.jpg","mkd2.jpg","mkd3.jpg","mkd4.jpg"]},
+  {id:"marketing-social", cat:"marketing", nom:"Gestion Réseaux Sociaux", badge:null, sous:"Facebook·Instagram·TikTok", desc:"Réseaux complète engagement garanti.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"Livraison mensuelle", verifie:true, paiement:"Flexible", prixFrom:40000, prixTo:400000, preview:["mkd5.jpg","mkd6.jpg","mkd7.jpg","mkd8.jpg"], catalogue:["mkd5.jpg","mkd6.jpg","mkd7.jpg","mkd8.jpg"]},
+  {id:"vaisselle-porcelaine", cat:"vaisselle", nom:"Vaisselle Porcelaine", badge:"Populaire", sous:"Service·Assiette", desc:"Porcelaine élégante tous services.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:10000, prixTo:50000, preview:["vai1.jpg","vai2.jpg","vai3.jpg","vai4.jpg"], catalogue:["vai1.jpg","vai2.jpg","vai3.jpg","vai4.jpg"]},
+  {id:"vaisselle-verre", cat:"vaisselle", nom:"Vaisselle Verre", badge:null, sous:"Cristal·Brillant", desc:"Verre haute qualité transparent brillant.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:40000, preview:["vai5.jpg","vai6.jpg","vai7.jpg","vai8.jpg"], catalogue:["vai5.jpg","vai6.jpg","vai7.jpg","vai8.jpg"]},
+  {id:"huile-moteur-diesel", cat:"huile-moteur", nom:"Huiles Diesel", badge:"Populaire", sous:"15W40·10W30", desc:"Diesel moteur premium protection maximale.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:8000, prixTo:35000, preview:["hum1.jpg","hum2.jpg","hum3.jpg","hum4.jpg"], catalogue:["hum1.jpg","hum2.jpg","hum3.jpg","hum4.jpg"]},
+  {id:"huile-moteur-essence", cat:"huile-moteur", nom:"Huiles Essence", badge:null, sous:"5W30·10W40", desc:"Essence moteur performance moteur protégé.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:7000, prixTo:30000, preview:["hum5.jpg","hum6.jpg","hum7.jpg","hum8.jpg"], catalogue:["hum5.jpg","hum6.jpg","hum7.jpg","hum8.jpg"]},
+  {id:"site-web-basic", cat:"site-web", nom:"Site Web Basic", badge:"Populaire", sous:"5 pages·Domain·SSL", desc:"Web simples élégants professionnel.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"2 semaines", verifie:true, paiement:"Comptant", prixFrom:100000, prixTo:300000, preview:["csw1.jpg","csw2.jpg","csw3.jpg","csw4.jpg"], catalogue:["csw1.jpg","csw2.jpg","csw3.jpg","csw4.jpg"]},
+  {id:"site-web-ecommerce", cat:"site-web", nom:"Site E-commerce", badge:null, sous:"Complet·Paiement·Panier", desc:"E-commerce complets ventes en ligne.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"3 semaines", verifie:true, paiement:"Progressif", prixFrom:300000, prixTo:1000000, preview:["csw5.jpg","csw6.jpg","csw7.jpg","csw8.jpg"], catalogue:["csw5.jpg","csw6.jpg","csw7.jpg","csw8.jpg"]},
+  {id:"livraison-express", cat:"livraison", nom:"Livraison Express", badge:"Populaire", sous:"24h·Gratuit·Garanti", desc:"Express rapide partout sûr.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"Selon commande", verifie:true, paiement:"Livraison", prixFrom:2000, prixTo:10000, preview:["lvr1.jpg","lvr2.jpg","lvr3.jpg","lvr4.jpg"], catalogue:["lvr1.jpg","lvr2.jpg","lvr3.jpg","lvr4.jpg"]},
+  {id:"livraison-normal", cat:"livraison", nom:"Livraison Standard", badge:null, sous:"48-72h·Économique", desc:"Standard économique fiable rapide.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"Région", verifie:true, paiement:"Livraison", prixFrom:1000, prixTo:5000, preview:["lvr5.jpg","lvr6.jpg","lvr7.jpg","lvr8.jpg"], catalogue:["lvr5.jpg","lvr6.jpg","lvr7.jpg","lvr8.jpg"]},
+  {id:"chaussure-cuir", cat:"chaussure-classique", nom:"Chaussures Cuir", badge:"Populaire", sous:"Homme·Femme·Oxford", desc:"Cuir classiques élégantes événements.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:20000, prixTo:80000, preview:["chc1.jpg","chc2.jpg","chc3.jpg","chc4.jpg"], catalogue:["chc1.jpg","chc2.jpg","chc3.jpg","chc4.jpg"]},
+  {id:"chaussure-ceremonie", cat:"chaussure-classique", nom:"Chaussures Cérémonie", badge:null, sous:"Mariage·Gala·Premium", desc:"Cérémonie luxueuses prestige assuré.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:30000, prixTo:150000, preview:["chc5.jpg","chc6.jpg","chc7.jpg","chc8.jpg"], catalogue:["chc5.jpg","chc6.jpg","chc7.jpg","chc8.jpg"]},
+  {id:"fitness-haltere", cat:"fitness", nom:"Haltères", badge:"Populaire", sous:"1kg·30kg·Réglable", desc:"Haltères qualité gym tous poids.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:15000, prixTo:80000, preview:["equ1.jpg","equ2.jpg","equ3.jpg","equ4.jpg"], catalogue:["equ1.jpg","equ2.jpg","equ3.jpg","equ4.jpg"]},
+  {id:"fitness-tapis", cat:"fitness", nom:"Tapis Roulants", badge:null, sous:"Électrique·Pliable", desc:"Roulants maison exercice optimal.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:150000, prixTo:500000, preview:["equ5.jpg","equ6.jpg","equ7.jpg","equ8.jpg"], catalogue:["equ5.jpg","equ6.jpg","equ7.jpg","equ8.jpg"]},
+  {id:"ciment-gris", cat:"ciment", nom:"Ciment Gris", badge:"Populaire", sous:"50kg·25kg", desc:"Gris construction résistance optimale.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:15000, preview:["cim1.jpg","cim2.jpg","cim3.jpg","cim4.jpg"], catalogue:["cim1.jpg","cim2.jpg","cim3.jpg","cim4.jpg"]},
+  {id:"ciment-blanc", cat:"ciment", nom:"Ciment Blanc", badge:null, sous:"Construction·Finition", desc:"Blanc finitions couleur éclatante.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:10000, prixTo:30000, preview:["cim5.jpg","cim6.jpg","cim7.jpg","cim8.jpg"], catalogue:["cim5.jpg","cim6.jpg","cim7.jpg","cim8.jpg"]},
+  {id:"vitre-phone", cat:"vitre", nom:"Vitres de Phone", badge:"Populaire", sous:"Verre trempé·Antichoc", desc:"Phone protection anti-rayures.", pays:"Nigeria 🇳🇬", ville:"Lagos", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:1500, prixTo:6000, preview:["vit1.jpg","vit2.jpg","vit3.jpg","vit4.jpg"], catalogue:["vit1.jpg","vit2.jpg","vit3.jpg","vit4.jpg"]},
+  {id:"vitre-fenetre", cat:"vitre", nom:"Vitres Fenêtre", badge:null, sous:"Sécurité·Isolation", desc:"Fenêtre sécurité isolation thermique.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:20000, prixTo:100000, preview:["vit5.jpg","vit6.jpg","vit7.jpg","vit8.jpg"], catalogue:["vit5.jpg","vit6.jpg","vit7.jpg","vit8.jpg"]},
+  {id:"sac-dos-homme", cat:"sac-homme", nom:"Sacs à Dos Homme", badge:"Populaire", sous:"Bureau·Voyage", desc:"Dos homme résistants compartiments PC.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:12000, prixTo:40000, preview:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg"], catalogue:["sah1.jpg","sah2.jpg","sah3.jpg","sah4.jpg","sah5.jpg","sah6.jpg"]},
+  {id:"messager", cat:"sac-homme", nom:"Sacs Messager Homme", badge:null, sous:"Cuir·Bandoulière", desc:"Messager intemporels élégants bureau.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h", verifie:true, paiement:"À la livraison", prixFrom:11000, prixTo:25000, preview:["smh(1).jpg","smh(2).jpg","smh(3).jpg","smh(4).jpg"], catalogue:["smh(5).jpg","smh(6).jpg","smh(7).jpg","smh(8).jpg","smh(9).jpg","smh(10).jpg","smh(11).jpg","smh(12).jpg"]},
+  {id:"porte-feuille", cat:"sac-homme", nom:"Portefeuilles Homme", badge:null, sous:"Cuir·RFID", desc:"Portefeuilles robustes pratiques protection.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h", verifie:true, paiement:"À la livraison", prixFrom:5000, prixTo:18000, preview:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"], catalogue:["sah12.jpg","sah13.jpg","sah14.jpg","sah15.jpg"]},
+  {id:"hijab", cat:"mode-musulman", nom:"Hijabs & Foulards", badge:"Populaire", sous:"Coton·Soie", desc:"Hijabs élégants confortables motifs variés.", pays:"Bénin 🇧🇯", ville:"Cotonou", livraison:"24h – Bénin · Togo · Nigeria", verifie:true, paiement:"Paiement à la livraison", prixFrom:3000, prixTo:12000, preview:["mush(1).jpg","mush(2).jpg","mush(3).jpg","mush(4).jpg"], catalogue:["mush(1).jpg","mush(2).jpg","mush(3).jpg","mush(4).jpg"]},
+  {id:"robe-musulmane", cat:"mode-musulman", nom:"Robes Musulmanes", badge:"Populaire", sous:"Maxi·Midi·Couleurs", desc:"Robes modernes élégantes coupes flatteuses qualité.", pays:"Bénin 🇧🇯", ville:"Porto-Novo", livraison:"24h – Bénin · Togo", verifie:true, paiement:"Paiement à la livraison", prixFrom:10000, prixTo:30000, preview:["mus(1).jpg","mus(2).jpg","mus(3).jpg","mus(4).jpg"], catalogue:["mus(1).jpg","mus(2).jpg","mus(3).jpg","mus(4).jpg","mus(5).jpg","mus(6).jpg","mus(7).jpg","mus(8).jpg","mus(9).jpg","mus(10).jpg","mus(11).jpg","mus(12).jpg","mus(13).jpg","mus(14).jpg","mus(15).jpg","mus(16).jpg"]},
+  {id:"abaya", cat:"mode-musulman", nom:"Abayas & Djellabas", badge:null, sous:"Noir·Couleurs·Brodées", desc:"Abayas qualité supérieure design traditionnel moderne.", pays:"Togo 🇹🇬", ville:"Lomé", livraison:"48h – Bénin · Togo", verifie:true, paiement:"Paiement à la livraison", prixFrom:20000, prixTo:65000, preview:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg"], catalogue:["mus14.jpg","mus15.jpg","mus16.jpg","mus17.jpg","mus18.jpg"]}
 ];
 
-// ── LOGIQUE ──
 var currentCat = "tous";
+var visibleCount = 10;
 var lbImgs = [], lbIdx = 0;
 
 function fmt(n) { return n.toLocaleString("fr-FR") + " FCFA"; }
@@ -539,9 +362,10 @@ function buildTabs() {
   el.querySelectorAll(".tab").forEach(function(btn) {
     btn.addEventListener("click", function() {
       currentCat = btn.getAttribute("data-c");
+      visibleCount = 10;
       el.querySelectorAll(".tab").forEach(function(b) { b.classList.toggle("on", b === btn); });
       render();
-      document.getElementById("shop").scrollIntoView({behavior:"smooth", block:"start"});
+      document.getElementById("shop").scrollIntoView({behavior:"smooth"});
     });
   });
 }
@@ -557,86 +381,83 @@ function render() {
   });
 
   if (!list.length) {
-    wrap.innerHTML = '<div class="empty"><div class="empty-ico">🔍</div><p>Aucune gamme trouvée.</p></div>';
+    wrap.innerHTML = '<div class="empty"><div class="empty-ico">🔍</div><p>Aucun produit trouvé.</p></div>';
     return;
   }
 
   var html = "";
-  for (var i = 0; i < list.length; i++) {
-    var g = list[i];
+  var displayList = list.slice(0, visibleCount);
+  
+  for (var i = 0; i < displayList.length; i++) {
+    var g = displayList[i];
     var ico = ICO[g.cat] || "📦";
 
-    // 4 cases images
     var cells = "";
     for (var j = 0; j < 4; j++) {
       if (g.preview[j]) {
-        cells += '<img src="images/' + g.preview[j] + '" alt="' + g.nom + '" loading="lazy" ' +
-          'onerror="this.outerHTML=\'<div class=ph><div class=ph-ico>' + ico + '</div><span>Photo ' + (j+1) + '</span></div>\'">';
+        cells += '<img src="images/' + g.preview[j] + '" alt="' + g.nom + '" loading="lazy" onerror="this.outerHTML=\'<div class=ph><div class=ph-ico>' + ico + '</div><span>Photo</span></div>\'">';
       } else {
-        cells += '<div class="ph"><div class="ph-ico">' + ico + '</div><span>Photo ' + (j+1) + '</span></div>';
+        cells += '<div class="ph"><div class="ph-ico">' + ico + '</div><span>Photo</span></div>';
       }
     }
 
-    // Infos fournisseur
-    var ftags = "";
-    if (g.pays)      ftags += '<span class="ftag">📍 ' + g.pays + ' &nbsp;·&nbsp; ' + g.ville + '</span>';
-    if (g.verifie)   ftags += '<span class="ftag ftag-ok">✅ Fournisseur vérifié VendoB</span>';
-    if (g.livraison) ftags += '<span class="ftag">🚚 ' + g.livraison + '</span>';
-    if (g.paiement)  ftags += '<span class="ftag">🔒 ' + g.paiement + '</span>';
-    if (g.prixFrom)  ftags += '<span class="ftag ftag-prix">💰 ' + fmt(g.prixFrom) + (g.prixTo ? ' – ' + fmt(g.prixTo) : '') + '</span>';
+    var badge = g.badge ? '<span class="gtag">' + g.badge + '</span>' : '';
+    var tags = '<span class="ftag ftag-ok">✅ Vérifié</span><span class="ftag">' + g.pays + '</span><span class="ftag ftag-prix">💰 ' + fmt(g.prixFrom) + '</span>';
 
-    html += '<div class="gamme" style="animation-delay:' + (i * 0.05) + 's">' +
-      '<div class="gamme-head">' +
-        '<div>' +
-          '<div class="gamme-title">' + g.nom + (g.badge ? ' <span class="gtag">' + g.badge + '</span>' : '') + '</div>' +
-          '<div class="gamme-sous">' + g.sous + '</div>' +
-        '</div>' +
-        '<button class="btn-voir" data-id="' + g.id + '">Voir le catalogue →</button>' +
-      '</div>' +
-      '<div class="ftags">' + ftags + '</div>' +
-      '<div class="preview-grid">' + cells + '</div>' +
-      '<div class="gamme-footer">' +
-        '<a href="https://wa.me/' + WA + '?text=' + msgWA(g.nom) + '" class="btn-wa-home" target="_blank">' +
-          '💬 Commander sur WhatsApp' +
-        '</a>' +
-        '<button class="btn-voir" data-id="' + g.id + '" style="background:transparent;color:var(--nv);border:1.5px solid var(--g2)">📷 Voir le catalogue</button>' +
-      '</div>' +
-    '</div>';
+    html += '<div class="gamme" data-id="' + g.id + '"><div class="gamme-head"><div><div class="gamme-title">' + ico + ' ' + g.nom + ' ' + badge + '</div><div class="gamme-sous">' + g.sous + '</div></div><button class="btn-voir" onclick="openCatalogue(\'' + g.id + '\')">📖 Voir tout</button></div><div class="ftags">' + tags + '</div><div class="preview-grid">' + cells + '</div><div class="gamme-footer"><a href="https://wa.me/' + WA + '?text=' + msgWA(g.nom) + '" class="btn-wa-home" target="_blank">💬 Commander</a></div></div>';
   }
-  wrap.innerHTML = html;
 
-  wrap.querySelectorAll(".btn-voir").forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      openCatalogue(btn.getAttribute("data-id"));
+  wrap.innerHTML = html;
+  
+  wrap.querySelectorAll(".preview-grid img").forEach(function(img) {
+    img.addEventListener("click", function() {
+      var gammeId = img.closest(".gamme").getAttribute("data-id");
+      var gamme = GAMMES.find(function(g){ return g.id === gammeId; });
+      lbImgs = gamme.catalogue;
+      lbIdx = 0;
+      openLb();
     });
   });
+
+  var btn = document.getElementById("loadMore");
+  if (btn) {
+    btn.style.display = visibleCount >= list.length ? "none" : "flex";
+    btn.onclick = function() {
+      visibleCount += 10;
+      render();
+    };
+  }
+
+  var allGammes = document.querySelectorAll(".gamme");
+  setTimeout(function() {
+    allGammes.forEach(function(g) { g.classList.add("rv", "in"); });
+  }, 50);
 }
 
-function openCatalogue(id) {
-  var g = null;
-  for (var i = 0; i < GAMMES.length; i++) { if (GAMMES[i].id === id) { g = GAMMES[i]; break; } }
-  if (!g) return;
+function openCatalogue(gammeId) {
+  var gamme = GAMMES.find(function(g){ return g.id === gammeId; });
+  if (!gamme) return;
 
-  document.getElementById("catTitle").textContent = g.nom;
-  document.getElementById("catDesc").textContent  = g.desc;
-  document.getElementById("cmdName").textContent  = g.nom + " — ";
-  document.getElementById("cmdBtn").href = "https://wa.me/" + WA + "?text=" + msgWA(g.nom);
+  document.getElementById("catTitle").textContent = gamme.nom;
+  document.getElementById("catDesc").textContent = gamme.desc;
+  document.getElementById("cmdName").textContent = gamme.nom + " → ";
+  document.getElementById("cmdBtn").href = "https://wa.me/" + WA + "?text=" + msgWA(gamme.nom);
 
-  lbImgs = g.catalogue;
   var grid = document.getElementById("catGrid");
   var html = "";
-  for (var i = 0; i < g.catalogue.length; i++) {
-    var ico = ICO[g.cat] || "📦";
-    html += '<div class="cat-item" data-i="' + i + '">' +
-      '<img src="images/' + g.catalogue[i] + '" alt="' + g.nom + ' ' + (i+1) + '" loading="lazy" ' +
-      'onerror="this.parentElement.innerHTML=\'<div style=padding:30px;text-align:center;color:#bbb><div style=font-size:2rem>' + ico + '</div><div style=font-size:.72rem;margin-top:6px>Photo ' + (i+1) + '</div></div>\'">' +
-      '<div class="cat-num">' + (i+1) + '</div>' +
-      '</div>';
+  for (var i = 0; i < gamme.catalogue.length; i++) {
+    var img = gamme.catalogue[i];
+    html += '<div class="cat-item"><img src="images/' + img + '" alt="' + gamme.nom + '" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=ph style=&quot;height:100%&quot;><div class=ph-ico>📦</div></div>\'"/><div class="cat-num">' + (i + 1) + '</div></div>';
   }
   grid.innerHTML = html;
 
-  grid.querySelectorAll(".cat-item").forEach(function(item) {
-    item.addEventListener("click", function() { openLb(parseInt(item.getAttribute("data-i"))); });
+  grid.querySelectorAll(".cat-item img").forEach(function(img) {
+    img.addEventListener("click", function() {
+      lbImgs = gamme.catalogue;
+      lbIdx = gamme.catalogue.indexOf(img.src.split("/").pop());
+      if (lbIdx < 0) lbIdx = 0;
+      openLb();
+    });
   });
 
   document.getElementById("catPage").classList.add("show");
@@ -648,50 +469,68 @@ function closeCatalogue() {
   document.body.style.overflow = "";
 }
 
-function openLb(idx) {
-  lbIdx = idx;
+function openLb() {
+  if (lbImgs.length === 0) return;
   document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
   document.getElementById("lb").classList.add("show");
+  document.body.style.overflow = "hidden";
 }
-function closeLb() { document.getElementById("lb").classList.remove("show"); }
 
-document.getElementById("btnBack").addEventListener("click", closeCatalogue);
-document.getElementById("lbX").addEventListener("click", closeLb);
-document.getElementById("lb").addEventListener("click", function(e) { if (e.target === this) closeLb(); });
-document.getElementById("lbP").addEventListener("click", function() {
-  lbIdx = (lbIdx - 1 + lbImgs.length) % lbImgs.length;
-  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
-});
-document.getElementById("lbN").addEventListener("click", function() {
-  lbIdx = (lbIdx + 1) % lbImgs.length;
-  document.getElementById("lbImg").src = "images/" + lbImgs[lbIdx];
-});
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") { closeLb(); closeCatalogue(); }
-  if (e.key === "ArrowLeft")  document.getElementById("lbP").click();
-  if (e.key === "ArrowRight") document.getElementById("lbN").click();
-});
-document.getElementById("searchInput").addEventListener("input", render);
+function closeLb() {
+  document.getElementById("lb").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+function moveLb(d) {
+  lbIdx += d;
+  if (lbIdx < 0) lbIdx = lbImgs.length - 1;
+  if (lbIdx >= lbImgs.length) lbIdx = 0;
+  openLb();
+}
+
 document.getElementById("burger").addEventListener("click", function() {
   this.classList.toggle("open");
   document.getElementById("mobNav").classList.toggle("show");
 });
-document.querySelectorAll(".mob-nav a").forEach(function(a) {
+
+document.getElementById("mobNav").querySelectorAll("a").forEach(function(a) {
   a.addEventListener("click", function() {
     document.getElementById("burger").classList.remove("open");
     document.getElementById("mobNav").classList.remove("show");
   });
 });
 
-var obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add("in"); });
-}, {threshold:0.1});
-document.querySelectorAll(".rv").forEach(function(el) { obs.observe(el); });
+document.getElementById("searchInput").addEventListener("input", function() { render(); });
+document.getElementById("btnBack").addEventListener("click", closeCatalogue);
+document.getElementById("lbX").addEventListener("click", closeLb);
+document.getElementById("lbP").addEventListener("click", function() { moveLb(-1); });
+document.getElementById("lbN").addEventListener("click", function() { moveLb(1); });
 
-document.addEventListener("DOMContentLoaded", function() {
-  buildTabs();
-  render();
+document.addEventListener("keydown", function(e) {
+  if (document.getElementById("lb").classList.contains("show")) {
+    if (e.key === "ArrowLeft") moveLb(-1);
+    if (e.key === "ArrowRight") moveLb(1);
+    if (e.key === "Escape") closeLb();
+  }
+  if (document.getElementById("catPage").classList.contains("show")) {
+    if (e.key === "Escape") closeCatalogue();
+  }
 });
+
+document.querySelectorAll(".rv").forEach(function(el) {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: .1});
+  obs.observe(el);
+});
+
+buildTabs();
+render();
 </script>
 </body>
 </html>
